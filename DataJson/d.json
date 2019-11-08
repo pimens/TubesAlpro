@@ -1,0 +1,20 @@
+[
+    {
+        "id": "4",
+	"KTP":"083129003134",
+        "nama": "pimen",
+        "email": "pimen@gmail",
+        "password": "pimenpimen",
+        "rule": "0"
+    
+    },
+    {
+        "id": "2",
+	"KTP":"03453454",
+        "nama": "eko",
+        "email": "eko@gmail",
+        "password": "ekoeko",
+        "rule": "1"
+    
+    }
+]
