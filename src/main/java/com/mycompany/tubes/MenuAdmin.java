@@ -12,13 +12,13 @@ import org.json.JSONObject;
  *
  * @author pmen
  */
-public class Admin {
+public class MenuAdmin {
     public static JSONObject session;
     public void menu() {
         Scanner cin = new Scanner(System.in);
         int pil;
         System.out.println("#Menu Admin#");
-        System.out.println("Welcome,Admin");
+        System.out.println("Welcome, Admin");
         System.out.println("1. Booking Tiket ");
         System.out.println("2. Kelola Profil ;");
         System.out.println("3. History ;");

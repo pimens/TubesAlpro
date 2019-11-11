@@ -5,25 +5,22 @@
  */
 package com.mycompany.tubes;
 
-import static com.mycompany.tubes.Data.indexUser;
+import controller.User;
 import java.util.Scanner;
-import org.json.JSONObject;
 
-public class User {
+public class MenuUser {  
 
-    public static JSONObject session;
-
-    public void menu() {
+    public void index() {
         Scanner cin = new Scanner(System.in);
         int pil;
         System.out.println("#Menu Pengguna#");
-        System.out.println("Welcome," + session.getString("nama".toString()));
+        System.out.println("Welcome, " + User.session.getString("nama".toString()));
         System.out.println("1. Booking Tiket ");
         System.out.println("2. Kelola Profil ;");
         System.out.println("3. History ;");
         System.out.println("0. Logout ;");
         cin.nextInt();
         
-
     }
+    
 }

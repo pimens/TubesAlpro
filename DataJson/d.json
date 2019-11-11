@@ -1,20 +1,74 @@
 [
-    {
-        "id": "4",
-	"KTP":"083129003134",
-        "nama": "pimen",
-        "email": "pimen@gmail",
-        "password": "pimenpimen",
-        "rule": "0"
-    
-    },
-    {
-        "id": "2",
-	"KTP":"03453454",
-        "nama": "eko",
-        "email": "eko@gmail",
-        "password": "ekoeko",
-        "rule": "1"
-    
-    }
+  {
+    "password": "pimenpimen",
+    "nama": "pimen",
+    "KTP": "083129003134",
+    "rule": "0",
+    "id": "4",
+    "email": "pimen@gmail"
+  },
+  {
+    "password": "ekoeko",
+    "nama": "eko",
+    "KTP": "03453454",
+    "rule": "1",
+    "id": "2",
+    "email": "eko@gmail"
+  },
+  {
+    "password": "alicealice",
+    "nama": "Alice",
+    "KTP": "66666",
+    "rule": "0",
+    "id": "66666",
+    "email": "alice@gmail"
+  },
+  {
+    "password": "AsusAsus",
+    "nama": "Asus",
+    "KTP": "7374",
+    "rule": "0",
+    "id": "8",
+    "email": "asus@gmail.com"
+  },
+  {
+    "password": "javacjavac",
+    "nama": "Javac",
+    "KTP": "12345",
+    "rule": "0",
+    "id": "8",
+    "email": "javac@gmail.com"
+  },
+  {
+    "password": "mousemouse",
+    "nama": "mouse",
+    "KTP": "689",
+    "rule": "0",
+    "id": "8",
+    "email": "mouse@gmail.com"
+  },
+  {
+    "password": "empatempat",
+    "nama": "anak empat",
+    "KTP": "4444",
+    "rule": "0",
+    "id": "8",
+    "email": "empat@gmail.com"
+  },
+  {
+    "password": "alprogalprog",
+    "nama": "alprog",
+    "KTP": "78",
+    "rule": "0",
+    "id": "8",
+    "email": "alprog@gmail.com"
+  },
+  {
+    "password": "pimpim",
+    "nama": "pim",
+    "KTP": "464",
+    "rule": "0",
+    "id": "8",
+    "email": "pim@gmail.com"
+  }
 ]
