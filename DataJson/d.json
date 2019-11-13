@@ -1,74 +1,26 @@
 [
   {
     "password": "pimenpimen",
-    "nama": "pimen",
+    "handphone": "pimen@gmail",
     "KTP": "083129003134",
     "rule": "0",
-    "id": "4",
+    "namaLengkap": "pimen",
     "email": "pimen@gmail"
   },
   {
-    "password": "ekoeko",
-    "nama": "eko",
-    "KTP": "03453454",
-    "rule": "1",
-    "id": "2",
-    "email": "eko@gmail"
+    "password": "tabtab",
+    "handphone": "898967674545",
+    "KTP": "1234123412341234",
+    "rule": "0",
+    "namaLengkap": "asus",
+    "email": "tab@gmail.com"
   },
   {
-    "password": "alicealice",
-    "nama": "Alice",
-    "KTP": "66666",
+    "password": "pim",
+    "handphone": "089253711833",
+    "KTP": "1234567890123456",
     "rule": "0",
-    "id": "66666",
-    "email": "alice@gmail"
-  },
-  {
-    "password": "AsusAsus",
-    "nama": "Asus",
-    "KTP": "7374",
-    "rule": "0",
-    "id": "8",
-    "email": "asus@gmail.com"
-  },
-  {
-    "password": "javacjavac",
-    "nama": "Javac",
-    "KTP": "12345",
-    "rule": "0",
-    "id": "8",
-    "email": "javac@gmail.com"
-  },
-  {
-    "password": "mousemouse",
-    "nama": "mouse",
-    "KTP": "689",
-    "rule": "0",
-    "id": "8",
-    "email": "mouse@gmail.com"
-  },
-  {
-    "password": "empatempat",
-    "nama": "anak empat",
-    "KTP": "4444",
-    "rule": "0",
-    "id": "8",
-    "email": "empat@gmail.com"
-  },
-  {
-    "password": "alprogalprog",
-    "nama": "alprog",
-    "KTP": "78",
-    "rule": "0",
-    "id": "8",
-    "email": "alprog@gmail.com"
-  },
-  {
-    "password": "pimpim",
-    "nama": "pim",
-    "KTP": "464",
-    "rule": "0",
-    "id": "8",
+    "namaLengkap": "iman hehe",
     "email": "pim@gmail.com"
   }
 ]

@@ -1,4 +1,3 @@
-
 package com.mycompany.tubes;
 
 import controller.User;
@@ -8,27 +7,30 @@ import java.io.IOException;
 import java.util.Scanner;
 import org.json.JSONObject;
 //controller utama
+
 public class MainMenu {
-    public void index() throws FileNotFoundException, IOException{
+
+    public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
         Home u = new Home();
         int pil;
+        System.out.println("Menu : ");
+        System.out.println("1. Login ");
+        System.out.println("2. Register ");
         do {
-            System.out.println("Menu : ");
-            System.out.println("1. Login ");
-            System.out.print("2. Register ;");
-            pil = cin.nextInt();           
-            if(pil>2 || pil<=0){
+            pil = cin.nextInt();
+            if (pil > 2 || pil <= 0) {
                 System.out.println("Menu tidak valid");
-            }            
-        }while(pil>2 || pil<=0);
-        if(pil==1){
+            }
+        } while (pil > 2 || pil <= 0);
+        if (pil == 1) {
             u.login();
-        }else{
+        } else {
             u.register();
         }
     }
-    public void login() throws FileNotFoundException, IOException{
+
+    public void login() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
         String email = "", pass = "";
         System.out.println("Email :");
@@ -37,36 +39,57 @@ public class MainMenu {
         pass = cin.next();
         Home conUtama = new Home();
         JSONObject object = conUtama.doLogin(email, pass);
-        if (object.getString("id").equals("gagal")) {
-              System.out.println("gagal!!");
+        if (object.getString("KTP").equals("gagal")) {
+            System.out.println("gagal!!");
         } else {
-             if (object.getString("rule").equals("0")) {
+            if (object.getString("rule").equals("0")) {
                 User u = new User();
                 User.session = object;
-                u.index();                
-             }else{
+                u.index();
+            } else {
                 //cont admin
-             }
+            }
         }
     }
+
     public void registerUser() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
-        String ktp, nama, alamat, email, p, p2;
+        Home u = new Home();
+        String ktp, nama, hp, email, p, p2;
         System.out.println("#Register#");
         System.out.println("Nomor KTP : ");
+        do {
         ktp = cin.nextLine();
+            if (!u.isNumber(ktp,16)) {
+                System.out.println("Tidak Valid");
+            }
+        } while (!u.isNumber(ktp,16));
         System.out.println("Nama Lengkap : ");
+        do {
         nama = cin.nextLine();
+            if (!u.isString(nama)) {
+                System.out.println("Tidak Valid");
+            }
+        } while (!u.isString(nama));
         System.out.println("Nomor Handphone : ");
-        alamat = cin.nextLine();
+        do {
+            hp = cin.nextLine();
+            if (!u.isNumber(hp, 11, 12)) {
+                System.out.println("Tidak Valid");
+            }
+        } while (!u.isNumber(hp, 11, 12));
         System.out.println("Email : ");
         email = cin.nextLine();
         System.out.println("Password : ");
         p = cin.nextLine();
         System.out.println("Re-Password : ");
-        p2 = cin.nextLine();
-        Home u = new Home();
-        u.addUser(ktp, nama, alamat, email,p);
+        do {
+            p2 = cin.nextLine();
+            if(!u.equals(p2)){
+                System.out.println("Tidak Sama");
+            }
+        }while(!u.isEqual(p, p2));
+        u.addUser(ktp, nama, hp, email, p);
     }
-    
+
 }
