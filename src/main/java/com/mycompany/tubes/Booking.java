@@ -7,6 +7,45 @@ public class Booking {
     Scanner sc = new Scanner(System.in);
     ArrayList<String> penumpang = new ArrayList<>();
 
+    public static void main(String[] args) {
+        Booking b = new Booking();
+        b.searchSchedule();
+    }
+
+    public void searchSchedule() {
+        System.out.println("Cari Jadwal Kereta Api");
+
+        System.out.print("Keberangkatan : ");
+        String origin = sc.next();
+        System.out.print("Tujuan : ");
+        String destination = sc.next();
+        System.out.print("Tanggal : ");
+        String date = sc.next();
+
+        System.out.println("------------------------------");
+
+        ArrayList<Jadwal> jadwal = new ArrayList<>();
+
+        // Dummy
+        jadwal.add(new Jadwal("JW00001", "01-11-2019", "08.00", "12.00", "Jakarta", "Bandung", "KAI18801", 4));
+        jadwal.add(new Jadwal("JW00002", "01-11-2019", "13.00", "17.00", "Jakarta", "Bandung", "KAI18801", 20));
+        jadwal.add(new Jadwal("JW00003", "01-11-2019", "09.00", "13.00", "Bandung", "Jakarta", "KAI18801", 0));
+        System.out.println("Kode Jadwal\tTanggal\t\tWaktu Keberangkatan\tKeberangkatan\tTujuan\t\tWaktu Tiba\tKAI\t\tStatus");
+        for (Jadwal j : jadwal) {
+            j.print();
+        }
+
+        System.out.println("------------------------------");
+        System.out.println("1. Booking Tiket");
+        System.out.println("99. Menu Utama");
+
+        System.out.print("Pilih Aksi : ");
+        int nextstep = sc.nextInt();
+        if (nextstep == 1) {
+            bookTicket();
+        }
+    }
+
     public void bookTicket() {
         System.out.print("Kode Jadwal : ");
         String kode = sc.next();
@@ -77,11 +116,6 @@ public class Booking {
 
         System.out.println("------------------------------------------");
         System.out.println("1. Pembayaran");
-    }
-
-    public static void main(String[] args) {
-        Booking b = new Booking();
-        b.bookTicket();
     }
 }
 
@@ -237,5 +271,111 @@ class Seat {
         } else {
             return 'F';
         }
+    }
+}
+
+class Jadwal {
+    // Attributes
+    private String kode;
+    private String date;
+    private String depart;
+    private String arrive;
+    private String origin;
+    private String destination;
+    private String name;
+    private int status;
+
+    // Constructor
+    public Jadwal(String k, String d, String dt, String a, String o, String ds, String n, int s) {
+        kode = k;
+        date = d;
+        depart = dt;
+        arrive = a;
+        origin = o;
+        destination = ds;
+        name = n;
+        status = s;
+    }
+
+    // Getter
+    public String getKode() {
+        return kode;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getDepart() {
+        return depart;
+    }
+
+    public String getArrive() {
+        return arrive;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    // Setter
+    public void setKode(String k) {
+        kode = k;
+    }
+
+    public void setDate(String d) {
+        date = d;
+    }
+
+    public void setDepart(String d) {
+        depart = d;
+    }
+
+    public void setArrive(String a) {
+        arrive = a;
+    }
+
+    public void setOrigin(String o) {
+        origin = o;
+    }
+
+    public void setDestination(String d) {
+        destination = d;
+    }
+
+    public void setName(String n) {
+        name = n;
+    }
+
+    public void setStatus(int s) {
+        status = s;
+    }
+
+    // Method
+    public String descStatus() {
+        String temp;
+        if (status > 0) {
+            temp = "Sisa " + status + " Kursi";
+        } else {
+            temp = "Full";
+        }
+
+        return temp;
+    }
+
+    public void print() {
+        System.out.println(String.format("%s\t\t%s\t%s\t\t\t%s\t\t%s\t\t%s\t\t%s\t%s", kode, date, depart, origin, destination, arrive, name, descStatus()));
     }
 }
