@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author pmen
  */
-public class ViewKelolaUser {
+public class ViewManageUser {
 
     public void index() throws IOException {
         Scanner cin = new Scanner(System.in);

@@ -1,26 +1,38 @@
 [
   {
-    "password": "pimenpimen",
-    "handphone": "pimen@gmail",
-    "KTP": "083129003134",
-    "rule": "0",
-    "namaLengkap": "pimen",
-    "email": "pimen@gmail"
-  },
-  {
-    "password": "tabtab",
-    "handphone": "898967674545",
-    "KTP": "1234123412341234",
-    "rule": "0",
-    "namaLengkap": "asus",
-    "email": "tab@gmail.com"
-  },
-  {
     "password": "pim",
-    "handphone": "089253711833",
+    "handphone": "123456123456",
     "KTP": "1234567890123456",
     "rule": "0",
-    "namaLengkap": "iman hehe",
-    "email": "pim@gmail.com"
+    "id": "3",
+    "namaLengkap": "pimpimpim",
+    "email": "pimpim@gmail.com"
+  },
+  {
+    "password": "pimen",
+    "handphone": "123412341234",
+    "KTP": "083129003134",
+    "rule": "0",
+    "id": "4",
+    "namaLengkap": "pimen pimen",
+    "email": "pimen@gmail.com"
+  },
+  {
+    "password": "oppo",
+    "handphone": "098712345678",
+    "KTP": "6789678967896789",
+    "rule": "0",
+    "id": "5",
+    "namaLengkap": "Oppo Smart",
+    "email": "oppo@gmail.com"
+  },
+  {
+    "password": "ia",
+    "handphone": "123456123456",
+    "KTP": "1234512345123456",
+    "rule": "0",
+    "id": "6",
+    "namaLengkap": "abc",
+    "email": "i@gmail"
   }
 ]

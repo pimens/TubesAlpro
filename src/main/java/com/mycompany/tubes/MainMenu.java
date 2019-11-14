@@ -33,13 +33,13 @@ public class MainMenu {
     public void login() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
         String email = "", pass = "";
-        System.out.println("Email :");
+        System.out.print("Email :");
         email = cin.next();
-        System.out.print("Password ;");
+        System.out.print("Password :");
         pass = cin.next();
         Home conUtama = new Home();
         JSONObject object = conUtama.doLogin(email, pass);
-        if (object.getString("KTP").equals("gagal")) {
+        if (object.getString("id").equals("gagal")) {
             System.out.println("gagal!!");
         } else {
             if (object.getString("rule").equals("0")) {
@@ -57,38 +57,38 @@ public class MainMenu {
         Home u = new Home();
         String ktp, nama, hp, email, p, p2;
         System.out.println("#Register#");
-        System.out.println("Nomor KTP : ");
         do {
-        ktp = cin.nextLine();
-            if (!u.isNumber(ktp,16)) {
-                System.out.println("Tidak Valid");
+            System.out.print("Nomor KTP : ");
+            ktp = cin.nextLine();
+            if (!u.isNumber(ktp, 16)) {
+                System.out.println("Tidak Valid ");
             }
-        } while (!u.isNumber(ktp,16));
-        System.out.println("Nama Lengkap : ");
+        } while (!u.isNumber(ktp, 16));
         do {
-        nama = cin.nextLine();
+            System.out.print("Nama Lengkap : ");
+            nama = cin.nextLine();
             if (!u.isString(nama)) {
-                System.out.println("Tidak Valid");
+                System.out.println("Tidak Valid ");
             }
         } while (!u.isString(nama));
-        System.out.println("Nomor Handphone : ");
         do {
+            System.out.print("Nomor Handphone : ");
             hp = cin.nextLine();
             if (!u.isNumber(hp, 11, 12)) {
                 System.out.println("Tidak Valid");
             }
         } while (!u.isNumber(hp, 11, 12));
-        System.out.println("Email : ");
+        System.out.print("Email : ");
         email = cin.nextLine();
-        System.out.println("Password : ");
+        System.out.print("Password : ");
         p = cin.nextLine();
-        System.out.println("Re-Password : ");
         do {
+            System.out.print("Re-Password : ");
             p2 = cin.nextLine();
-            if(!u.equals(p2)){
+            if (!u.equals(p2)) {
                 System.out.println("Tidak Sama");
             }
-        }while(!u.isEqual(p, p2));
+        } while (!u.isEqual(p, p2));
         u.addUser(ktp, nama, hp, email, p);
     }
 

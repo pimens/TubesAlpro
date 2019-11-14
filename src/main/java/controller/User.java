@@ -1,7 +1,7 @@
 package controller;
 
 import com.mycompany.tubes.MenuUser;
-import com.mycompany.tubes.ViewKelolaUser;
+import com.mycompany.tubes.ViewManageUser;
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
@@ -15,7 +15,7 @@ public class User {
         m.index();
     }    
     public void kelolaUser() throws IOException{
-        ViewKelolaUser v = new ViewKelolaUser();
+        ViewManageUser v = new ViewManageUser();
         v.index();
     }
     public void editUser(String ktp, String nama, String handphone, String email, String pass) throws IOException{

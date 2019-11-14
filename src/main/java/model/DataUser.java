@@ -51,7 +51,7 @@ public class DataUser {
             return object;
         } else {
             JSONObject object = new JSONObject();
-            object.put("KTP", "gagal");
+            object.put("id", "gagal");
             return object;
         }
     }
@@ -67,6 +67,8 @@ public class DataUser {
         br = new BufferedReader(new FileReader(file));
         JSONTokener tokener = new JSONTokener(br);
         JSONArray curentUser = new JSONArray(tokener);
+        JSONObject lastUser = new JSONObject(curentUser.get(curentUser.length() - 1).toString());
+        int id = Integer.valueOf(lastUser.get("id").toString()) + 1;
         JSONObject object = new JSONObject();
         object.put("KTP", ktp);
         object.put("namaLengkap", nama);
@@ -74,11 +76,13 @@ public class DataUser {
         object.put("email", email);
         object.put("password", pass);
         object.put("rule", "0");
+        object.put("id", String.valueOf(id));
         String jsonString = object.toString();
         curentUser.put(object);
-        System.out.println(curentUser.toString(2));
+//        System.out.println(curentUser.toString(2));
         this.writeToJson(curentUser.toString(2), "C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
     }
+
     public void editUser(String ktp, String nama, String handphone, String email, String pass) throws FileNotFoundException, IOException {
         br = new BufferedReader(new FileReader(file));
         JSONTokener tokener = new JSONTokener(br);
@@ -86,12 +90,14 @@ public class DataUser {
         JSONObject object = new JSONObject();
         //getDataWithoutCurrentUser
         JSONArray newUser = new JSONArray();
+        int id = 0;
         for (int i = 0; i < user.length(); i++) {
             JSONObject object1 = new JSONObject(user.get(i).toString());
             if (!object1.getString("KTP").equals(ktp)) {
                 newUser.put(user.get(i));
             }
-        }  
+            id = Integer.valueOf(object1.getString("id").toString()) + 1;
+        }
         //create new json object for store new data user        
         object.put("KTP", ktp);
         object.put("namaLengkap", nama);
@@ -99,6 +105,7 @@ public class DataUser {
         object.put("email", email);
         object.put("password", pass);
         object.put("rule", "0");
+        object.put("id", String.valueOf(id));
         newUser.put(object);
         User.session = object;
 //        System.out.println(newUser.toString(2));
