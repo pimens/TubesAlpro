@@ -1,5 +1,6 @@
 package com.mycompany.tubes;
 
+import controller.ControllerAdmin;
 import controller.User;
 import controller.Home;
 import java.io.FileNotFoundException;
@@ -18,6 +19,7 @@ public class MainMenu {
         System.out.println("1. Login ");
         System.out.println("2. Register ");
         do {
+            System.out.print("Pilihan : ");
             pil = cin.nextInt();
             if (pil > 2 || pil <= 0) {
                 System.out.println("Menu tidak valid");
@@ -33,6 +35,7 @@ public class MainMenu {
     public void login() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
         String email = "", pass = "";
+        System.out.println("#Login Sistem#");
         System.out.print("Email :");
         email = cin.next();
         System.out.print("Password :");
@@ -47,7 +50,8 @@ public class MainMenu {
                 User.session = object;
                 u.index();
             } else {
-                //cont admin
+                ControllerAdmin c = new ControllerAdmin();
+                c.index();
             }
         }
     }
@@ -56,28 +60,28 @@ public class MainMenu {
         Scanner cin = new Scanner(System.in);
         Home u = new Home();
         String ktp, nama, hp, email, p, p2;
-        System.out.println("#Register#");
+        System.out.println("#Register Sistem#");
         do {
             System.out.print("Nomor KTP : ");
             ktp = cin.nextLine();
-            if (!u.isNumber(ktp, 16)) {
+            if (!ktp.matches("^[0-9]*$") || ktp.length()!=16) {
                 System.out.println("Tidak Valid ");
             }
-        } while (!u.isNumber(ktp, 16));
+        } while (!ktp.matches("^[0-9]*$") || ktp.length()!=16);
         do {
             System.out.print("Nama Lengkap : ");
             nama = cin.nextLine();
-            if (!u.isString(nama)) {
+            if (!nama.matches("^[a-zA-Z\\s]*$")) {
                 System.out.println("Tidak Valid ");
             }
-        } while (!u.isString(nama));
+        } while (!nama.matches("^[a-zA-Z\\s]*$"));
         do {
             System.out.print("Nomor Handphone : ");
             hp = cin.nextLine();
             if (!u.isNumber(hp, 11, 12)) {
                 System.out.println("Tidak Valid");
             }
-        } while (!u.isNumber(hp, 11, 12));
+         }while(!u.isNumber(hp, 11, 12));
         System.out.print("Email : ");
         email = cin.nextLine();
         System.out.print("Password : ");
@@ -85,7 +89,7 @@ public class MainMenu {
         do {
             System.out.print("Re-Password : ");
             p2 = cin.nextLine();
-            if (!u.equals(p2)) {
+            if (!u.isEqual(p, p2)) {
                 System.out.println("Tidak Sama");
             }
         } while (!u.isEqual(p, p2));

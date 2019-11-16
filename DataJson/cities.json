@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1"
+    "kodeKota": "JKT",
+    "nama": "Jakarta",    
+  },
+  {
+    "id": "2"
+    "kodeKota": "BDG",
+    "nama": "Bandung",    
+  },
+  {
+    "id": "3"
+    "kodeKota": "GMR",
+    "nama": "Gambir",    
+  }
+]

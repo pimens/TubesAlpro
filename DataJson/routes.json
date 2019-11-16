@@ -1,0 +1,26 @@
+[
+  {
+    "src": "BDG",
+    "dst": "JKT",
+    "kodeRute": "BDG-JKT",
+    "bisnis": "10000",
+    "id": "1",
+    "premium": "25000"
+  },
+  {
+    "src": "JKT",
+    "dst": "BDG",
+    "kodeRute": "JKT-BDG",
+    "bisnis": "30000",
+    "id": "2",
+    "premium": "40000"
+  },
+  {
+    "src": "GMR",
+    "dst": "BKS",
+    "kodeRute": "GMR-BKS",
+    "bisnis": "25000",
+    "id": "3",
+    "premium": "35000"
+  }
+]

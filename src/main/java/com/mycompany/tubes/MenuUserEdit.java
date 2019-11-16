@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.tubes;
-
 import controller.Home;
 import controller.User;
 import java.io.IOException;
@@ -14,8 +8,7 @@ import java.util.Scanner;
  *
  * @author pmen
  */
-public class ViewManageUser {
-
+public class MenuUserEdit {
     public void index() throws IOException {
         Scanner cin = new Scanner(System.in);
         String nama = null, hp = null, email = null, p = null;
@@ -49,7 +42,7 @@ public class ViewManageUser {
         p = cin.nextLine();
         //call controller to parsing data into json
         User us = new User();
-        us.editUser(User.session.getString("KTP"), nama, hp, email, p);
+        us.editUser(User.session.getString("id"),User.session.getString("KTP"), nama, hp, email, p);
         System.out.println("-- Data Berhasil Diupdate, Berikut Data Terbaru --");
         System.out.println("Nomor KTP : " + User.session.getString("KTP"));
         System.out.println("Nama Lengkap : " + User.session.getString("namaLengkap"));

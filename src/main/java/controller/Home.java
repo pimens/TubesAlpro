@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.text.ParsePosition;
-import model.DataUser;
+import model.ModelUser;
 import org.json.JSONObject;
 
 public class Home {
@@ -29,15 +29,13 @@ public class Home {
     }
 
     public void addUser(String ktp, String nama, String handphone, String email, String pass) throws FileNotFoundException, IOException {
-        //cek logic input
-        DataUser d = new DataUser();
-        d.addUser(ktp, nama, handphone, email, pass);
+        ModelUser d = new ModelUser(ktp, handphone, nama, email, pass);
+        d.addUser();
         this.index();
     }
 
     public JSONObject doLogin(String email, String pass) throws FileNotFoundException, IOException {
-        //cek logic input
-        DataUser d = new DataUser();
+        ModelUser d = new ModelUser();
         JSONObject object = d.doLogin(email, pass);
         return object;
     }

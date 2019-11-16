@@ -1,0 +1,482 @@
+[
+  {
+    "kodeWaktu": "TM1",
+    "waktu": "00:00",
+    "id": "1"
+  },
+  {
+    "kodeWaktu": "TM2",
+    "waktu": "00:15",
+    "id": "2"
+  },
+  {
+    "kodeWaktu": "TM3",
+    "waktu": "00:30",
+    "id": "3"
+  },
+  {
+    "kodeWaktu": "TM4",
+    "waktu": "00:45",
+    "id": "4"
+  },
+  {
+    "kodeWaktu": "TM5",
+    "waktu": "01:00",
+    "id": "5"
+  },
+  {
+    "kodeWaktu": "TM6",
+    "waktu": "01:15",
+    "id": "6"
+  },
+  {
+    "kodeWaktu": "TM7",
+    "waktu": "01:30",
+    "id": "7"
+  },
+  {
+    "kodeWaktu": "TM8",
+    "waktu": "01:45",
+    "id": "8"
+  },
+  {
+    "kodeWaktu": "TM9",
+    "waktu": "02:00",
+    "id": "9"
+  },
+  {
+    "kodeWaktu": "TM10",
+    "waktu": "02:15",
+    "id": "10"
+  },
+  {
+    "kodeWaktu": "TM11",
+    "waktu": "02:30",
+    "id": "11"
+  },
+  {
+    "kodeWaktu": "TM12",
+    "waktu": "02:45",
+    "id": "12"
+  },
+  {
+    "kodeWaktu": "TM13",
+    "waktu": "03:00",
+    "id": "13"
+  },
+  {
+    "kodeWaktu": "TM14",
+    "waktu": "03:15",
+    "id": "14"
+  },
+  {
+    "kodeWaktu": "TM15",
+    "waktu": "03:30",
+    "id": "15"
+  },
+  {
+    "kodeWaktu": "TM16",
+    "waktu": "03:45",
+    "id": "16"
+  },
+  {
+    "kodeWaktu": "TM17",
+    "waktu": "04:00",
+    "id": "17"
+  },
+  {
+    "kodeWaktu": "TM18",
+    "waktu": "04:15",
+    "id": "18"
+  },
+  {
+    "kodeWaktu": "TM19",
+    "waktu": "04:30",
+    "id": "19"
+  },
+  {
+    "kodeWaktu": "TM20",
+    "waktu": "04:45",
+    "id": "20"
+  },
+  {
+    "kodeWaktu": "TM21",
+    "waktu": "05:00",
+    "id": "21"
+  },
+  {
+    "kodeWaktu": "TM22",
+    "waktu": "05:15",
+    "id": "22"
+  },
+  {
+    "kodeWaktu": "TM23",
+    "waktu": "05:30",
+    "id": "23"
+  },
+  {
+    "kodeWaktu": "TM24",
+    "waktu": "05:45",
+    "id": "24"
+  },
+  {
+    "kodeWaktu": "TM25",
+    "waktu": "06:00",
+    "id": "25"
+  },
+  {
+    "kodeWaktu": "TM26",
+    "waktu": "06:15",
+    "id": "26"
+  },
+  {
+    "kodeWaktu": "TM27",
+    "waktu": "06:30",
+    "id": "27"
+  },
+  {
+    "kodeWaktu": "TM28",
+    "waktu": "06:45",
+    "id": "28"
+  },
+  {
+    "kodeWaktu": "TM29",
+    "waktu": "07:00",
+    "id": "29"
+  },
+  {
+    "kodeWaktu": "TM30",
+    "waktu": "07:15",
+    "id": "30"
+  },
+  {
+    "kodeWaktu": "TM31",
+    "waktu": "07:30",
+    "id": "31"
+  },
+  {
+    "kodeWaktu": "TM32",
+    "waktu": "07:45",
+    "id": "32"
+  },
+  {
+    "kodeWaktu": "TM33",
+    "waktu": "08:00",
+    "id": "33"
+  },
+  {
+    "kodeWaktu": "TM34",
+    "waktu": "08:15",
+    "id": "34"
+  },
+  {
+    "kodeWaktu": "TM35",
+    "waktu": "08:30",
+    "id": "35"
+  },
+  {
+    "kodeWaktu": "TM36",
+    "waktu": "08:45",
+    "id": "36"
+  },
+  {
+    "kodeWaktu": "TM37",
+    "waktu": "09:00",
+    "id": "37"
+  },
+  {
+    "kodeWaktu": "TM38",
+    "waktu": "09:15",
+    "id": "38"
+  },
+  {
+    "kodeWaktu": "TM39",
+    "waktu": "09:30",
+    "id": "39"
+  },
+  {
+    "kodeWaktu": "TM40",
+    "waktu": "09:45",
+    "id": "40"
+  },
+  {
+    "kodeWaktu": "TM41",
+    "waktu": "10:00",
+    "id": "41"
+  },
+  {
+    "kodeWaktu": "TM42",
+    "waktu": "10:15",
+    "id": "42"
+  },
+  {
+    "kodeWaktu": "TM43",
+    "waktu": "10:30",
+    "id": "43"
+  },
+  {
+    "kodeWaktu": "TM44",
+    "waktu": "10:45",
+    "id": "44"
+  },
+  {
+    "kodeWaktu": "TM45",
+    "waktu": "11:00",
+    "id": "45"
+  },
+  {
+    "kodeWaktu": "TM46",
+    "waktu": "11:15",
+    "id": "46"
+  },
+  {
+    "kodeWaktu": "TM47",
+    "waktu": "11:30",
+    "id": "47"
+  },
+  {
+    "kodeWaktu": "TM48",
+    "waktu": "11:45",
+    "id": "48"
+  },
+  {
+    "kodeWaktu": "TM49",
+    "waktu": "12:00",
+    "id": "49"
+  },
+  {
+    "kodeWaktu": "TM50",
+    "waktu": "12:15",
+    "id": "50"
+  },
+  {
+    "kodeWaktu": "TM51",
+    "waktu": "12:30",
+    "id": "51"
+  },
+  {
+    "kodeWaktu": "TM52",
+    "waktu": "12:45",
+    "id": "52"
+  },
+  {
+    "kodeWaktu": "TM53",
+    "waktu": "13:00",
+    "id": "53"
+  },
+  {
+    "kodeWaktu": "TM54",
+    "waktu": "13:15",
+    "id": "54"
+  },
+  {
+    "kodeWaktu": "TM55",
+    "waktu": "13:30",
+    "id": "55"
+  },
+  {
+    "kodeWaktu": "TM56",
+    "waktu": "13:45",
+    "id": "56"
+  },
+  {
+    "kodeWaktu": "TM57",
+    "waktu": "14:00",
+    "id": "57"
+  },
+  {
+    "kodeWaktu": "TM58",
+    "waktu": "14:15",
+    "id": "58"
+  },
+  {
+    "kodeWaktu": "TM59",
+    "waktu": "14:30",
+    "id": "59"
+  },
+  {
+    "kodeWaktu": "TM60",
+    "waktu": "14:45",
+    "id": "60"
+  },
+  {
+    "kodeWaktu": "TM61",
+    "waktu": "15:00",
+    "id": "61"
+  },
+  {
+    "kodeWaktu": "TM62",
+    "waktu": "15:15",
+    "id": "62"
+  },
+  {
+    "kodeWaktu": "TM63",
+    "waktu": "15:30",
+    "id": "63"
+  },
+  {
+    "kodeWaktu": "TM64",
+    "waktu": "15:45",
+    "id": "64"
+  },
+  {
+    "kodeWaktu": "TM65",
+    "waktu": "16:00",
+    "id": "65"
+  },
+  {
+    "kodeWaktu": "TM66",
+    "waktu": "16:15",
+    "id": "66"
+  },
+  {
+    "kodeWaktu": "TM67",
+    "waktu": "16:30",
+    "id": "67"
+  },
+  {
+    "kodeWaktu": "TM68",
+    "waktu": "16:45",
+    "id": "68"
+  },
+  {
+    "kodeWaktu": "TM69",
+    "waktu": "17:00",
+    "id": "69"
+  },
+  {
+    "kodeWaktu": "TM70",
+    "waktu": "17:15",
+    "id": "70"
+  },
+  {
+    "kodeWaktu": "TM71",
+    "waktu": "17:30",
+    "id": "71"
+  },
+  {
+    "kodeWaktu": "TM72",
+    "waktu": "17:45",
+    "id": "72"
+  },
+  {
+    "kodeWaktu": "TM73",
+    "waktu": "18:00",
+    "id": "73"
+  },
+  {
+    "kodeWaktu": "TM74",
+    "waktu": "18:15",
+    "id": "74"
+  },
+  {
+    "kodeWaktu": "TM75",
+    "waktu": "18:30",
+    "id": "75"
+  },
+  {
+    "kodeWaktu": "TM76",
+    "waktu": "18:45",
+    "id": "76"
+  },
+  {
+    "kodeWaktu": "TM77",
+    "waktu": "19:00",
+    "id": "77"
+  },
+  {
+    "kodeWaktu": "TM78",
+    "waktu": "19:15",
+    "id": "78"
+  },
+  {
+    "kodeWaktu": "TM79",
+    "waktu": "19:30",
+    "id": "79"
+  },
+  {
+    "kodeWaktu": "TM80",
+    "waktu": "19:45",
+    "id": "80"
+  },
+  {
+    "kodeWaktu": "TM81",
+    "waktu": "20:00",
+    "id": "81"
+  },
+  {
+    "kodeWaktu": "TM82",
+    "waktu": "20:15",
+    "id": "82"
+  },
+  {
+    "kodeWaktu": "TM83",
+    "waktu": "20:30",
+    "id": "83"
+  },
+  {
+    "kodeWaktu": "TM84",
+    "waktu": "20:45",
+    "id": "84"
+  },
+  {
+    "kodeWaktu": "TM85",
+    "waktu": "21:00",
+    "id": "85"
+  },
+  {
+    "kodeWaktu": "TM86",
+    "waktu": "21:15",
+    "id": "86"
+  },
+  {
+    "kodeWaktu": "TM87",
+    "waktu": "21:30",
+    "id": "87"
+  },
+  {
+    "kodeWaktu": "TM88",
+    "waktu": "21:45",
+    "id": "88"
+  },
+  {
+    "kodeWaktu": "TM89",
+    "waktu": "22:00",
+    "id": "89"
+  },
+  {
+    "kodeWaktu": "TM90",
+    "waktu": "22:15",
+    "id": "90"
+  },
+  {
+    "kodeWaktu": "TM91",
+    "waktu": "22:30",
+    "id": "91"
+  },
+  {
+    "kodeWaktu": "TM92",
+    "waktu": "22:45",
+    "id": "92"
+  },
+  {
+    "kodeWaktu": "TM93",
+    "waktu": "23:00",
+    "id": "93"
+  },
+  {
+    "kodeWaktu": "TM94",
+    "waktu": "23:15",
+    "id": "94"
+  },
+  {
+    "kodeWaktu": "TM95",
+    "waktu": "23:30",
+    "id": "95"
+  },
+  {
+    "kodeWaktu": "TM96",
+    "waktu": "23:45",
+    "id": "96"
+  }
+]

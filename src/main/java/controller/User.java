@@ -1,11 +1,9 @@
 package controller;
 
 import com.mycompany.tubes.MenuUser;
-import com.mycompany.tubes.ViewManageUser;
+import com.mycompany.tubes.MenuUserEdit;
 import java.io.IOException;
-import java.text.NumberFormat;
-import java.text.ParsePosition;
-import model.DataUser;
+import model.ModelUser;
 import org.json.JSONObject;
 
 public class User {
@@ -15,11 +13,11 @@ public class User {
         m.index();
     }    
     public void kelolaUser() throws IOException{
-        ViewManageUser v = new ViewManageUser();
+        MenuUserEdit v = new MenuUserEdit();
         v.index();
     }
-    public void editUser(String ktp, String nama, String handphone, String email, String pass) throws IOException{
-        DataUser d = new DataUser();                
-        d.editUser(ktp, nama, handphone, email, pass);        
+    public void editUser(String id,String ktp, String nama, String handphone, String email, String pass) throws IOException{
+        ModelUser d = new ModelUser();                
+        d.editUser(id,ktp, nama, handphone, email, pass);        
     }
 }
