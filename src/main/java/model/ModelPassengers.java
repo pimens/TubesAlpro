@@ -67,6 +67,7 @@ public class ModelPassengers extends ModelJSON {
             object = new JSONObject(user.get(i).toString());
             if (ktp.equals(object.get("KTP"))) {
                 break;
+                        
             }
         }
         setEmail(object.getString("email"));

@@ -50,6 +50,12 @@ public class MenuPassengersManage {
         p.setNomorHandphone(hp);
         p.setPassword(p2);
         p.pushNewDataUser();
-
+        System.out.println("Data Berhasil Diupdate, Berikut Data Terbaru:");
+        System.out.println("Nomor KTP : " + p.getKtp());
+        System.out.println("Nama Lengkap : " + p.getNama());
+        System.out.println("Nomor Handphone : " + p.getNomorHandphone());
+        System.out.println("Email : " + p.getEmail());
+        System.out.println("Password : " + p.getPassword());
+        System.out.println("");
     }
 }

@@ -7,6 +7,7 @@ package com.mycompany.tubes;
 
 import controller.ControllerAdmin;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 import org.json.JSONObject;
 
@@ -18,7 +19,7 @@ public class MenuAdmin {
 
     public static JSONObject session;
 
-    public void index() throws FileNotFoundException {
+    public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
         int pil;
         ControllerAdmin admin = new ControllerAdmin();
