@@ -53,31 +53,41 @@ public class ModelPassengers extends ModelJSON {
     public void setId(String id) {
         this.id = id;
     }
+
     public String getKtp() {
         return ktp;
     }
+
     public void setKtp(String ktp) {
         this.ktp = ktp;
     }
+
     public void getDataByKTP(String ktp) throws FileNotFoundException {
         JSONArray user = readJson("C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
         JSONObject object = null;
         int i = 0;
+        int cek = 0;
         for (i = 0; i < user.length(); i++) {
             object = new JSONObject(user.get(i).toString());
             if (ktp.equals(object.get("KTP"))) {
+                cek = 1;
                 break;
-                        
             }
         }
-        setEmail(object.getString("email"));
-        setNama(object.getString("namaLengkap"));
-        setKtp(object.getString("KTP"));
-        setPassword(object.getString("password"));
-        setId(object.getString("id"));
-        setNomorHandphone(object.getString("handphone"));
+        if (cek == 1) {
+            setEmail(object.getString("email"));
+            setNama(object.getString("namaLengkap"));
+            setKtp(object.getString("KTP"));
+            setPassword(object.getString("password"));
+            setId(object.getString("id"));
+            setNomorHandphone(object.getString("handphone"));
+        }else{
+            setId("NO");
+        }
+
     }
-    public void pushNewDataUser() throws FileNotFoundException, IOException{
+
+    public void pushNewDataUser() throws FileNotFoundException, IOException {
         JSONArray user = readJson("C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
         JSONObject object = new JSONObject();
         // getDataWithoutCurrentUser
@@ -96,7 +106,7 @@ public class ModelPassengers extends ModelJSON {
         object.put("password", password);
         object.put("rule", "0");
         object.put("id", id);
-        newUser.put(object);        
+        newUser.put(object);
         this.writeToJson(newUser.toString(2),
                 "C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
     }

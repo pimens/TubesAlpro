@@ -1,5 +1,6 @@
 package com.mycompany.tubes;
 
+import controller.ControllerAdmin;
 import controller.Home;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,16 +11,23 @@ public class MenuPassengersManage {
 
     public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
-        ModelPassengers p = new ModelPassengers();
+        ControllerAdmin a = new ControllerAdmin();
         Home u = new Home();
+        ModelPassengers p;
         String ktp, nama, hp, email, p2;
         System.out.println("#Kelola Akun By Admin#");
         System.out.println("");
         do {
-            System.out.print("Masukkan Nomor KTP : ");
-            ktp = cin.nextLine();
-        } while (!ktp.matches("^[0-9]*$") || ktp.length() != 16);
-        p.getDataByKTP(ktp);
+            do {
+                System.out.print("Masukkan Nomor KTP : ");
+                ktp = cin.nextLine();
+            } while (!ktp.matches("^[0-9]*$") || ktp.length() != 16);
+            p = a.getDataByKTP(ktp);
+            if ("NO".equals(p.getId())) {
+                System.out.println("Tidak Ada Nomor KTP dalam sistem, silahkan coba lagi");
+            }
+        } while ("NO".equals(p.getId()));
+        
         System.out.println("--Data Pengguna--");
         System.out.println("Nama Lengkap : " + p.getNama());
         System.out.println("Nomor Handphone : " + p.getNomorHandphone());
@@ -45,11 +53,10 @@ public class MenuPassengersManage {
         email = cin.nextLine();
         System.out.print("Password : ");
         p2 = cin.nextLine();
-        p.setEmail(email);
-        p.setNama(nama);
-        p.setNomorHandphone(hp);
-        p.setPassword(p2);
-        p.pushNewDataUser();
+        p = a.editPassenger(nama, hp, email, p2, p.getKtp(), p.getId());
+        
+        System.out.println("");
+        System.out.println("");
         System.out.println("Data Berhasil Diupdate, Berikut Data Terbaru:");
         System.out.println("Nomor KTP : " + p.getKtp());
         System.out.println("Nama Lengkap : " + p.getNama());
