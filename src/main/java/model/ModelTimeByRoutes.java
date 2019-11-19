@@ -72,7 +72,7 @@ public class ModelTimeByRoutes extends ModelJSON {
         }
 		if(!isExist) {
         	input.put("id",i.toString());
-        	input.put("kodeWaktuRute","WR"+i.toString(2));
+        	input.put("kodeWaktuRute","WR"+i.toString());
         	timeByRoutes.put(i, input);
 		}
 	}

@@ -67,9 +67,9 @@ public class MenuTimeByRouteShow implements IMenuTimeByRoute{
         	
         	for(int i=0;i<kodeWaktu.size();i++) {
         		if(i==0) {
-        			System.out.println(count+"\t"+row.get("kodeWaktuRute")+"            \t"+row.get("kodeRute")+"   \t - "+kodeWaktu.get(i));
+        			System.out.println(count+"\t"+row.get("kodeWaktuRute")+"                 \t"+row.get("kodeRute")+"   \t - "+kodeWaktu.get(i));
         		}else {
-        			System.out.println("   "+"\t"+"     "                 +"            \t"+"        "         +"   \t - "+kodeWaktu.get(i));
+        			System.out.println("   "+"\t"+"     "                 +"                 \t"+"        "         +"   \t - "+kodeWaktu.get(i));
             		}
         	}
         	count++;
