@@ -36,7 +36,7 @@ public class ModelUser extends ModelJSON {
     }
 
     public int getMaxId() throws FileNotFoundException {
-        JSONArray user = readJson("C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
+        JSONArray user = readJson("DataJson/d.json");
         int max = 0;
         for (int i = 0; i < user.length(); i++) {
             JSONObject object = new JSONObject(user.get(i).toString());
@@ -48,7 +48,7 @@ public class ModelUser extends ModelJSON {
     }
 
     boolean cek(String email, String pass) throws FileNotFoundException {
-        JSONArray user = readJson("C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
+        JSONArray user = readJson("DataJson/d.json");
 
         int cek = 0;
         for (int i = 0; i < user.length(); i++) {
@@ -66,7 +66,7 @@ public class ModelUser extends ModelJSON {
     }
 
     public JSONObject doLogin(String email, String pass) throws FileNotFoundException {
-        JSONArray user = readJson("C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
+        JSONArray user = readJson("DataJson/d.json");
 
         if (cek(email, pass)) {
             JSONObject object = new JSONObject(user.get(indexUser).toString());
@@ -79,7 +79,7 @@ public class ModelUser extends ModelJSON {
     }
 
     public void addUser() throws FileNotFoundException, IOException {
-        JSONArray curentUser = readJson("C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
+        JSONArray curentUser = readJson("DataJson/d.json");
 
         JSONObject object = new JSONObject();
         object.put("KTP", ktp);
@@ -93,12 +93,12 @@ public class ModelUser extends ModelJSON {
         curentUser.put(object);
         // System.out.println(curentUser.toString(2));
         this.writeToJson(curentUser.toString(2),
-                "C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
+                "DataJson/d.json");
     }
 
     public void editUser(String id, String ktp, String nama, String handphone, String email, String pass)
             throws FileNotFoundException, IOException {
-        JSONArray user = readJson("C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
+        JSONArray user = readJson("DataJson/d.json");
         JSONObject object = new JSONObject();
         // getDataWithoutCurrentUser
         JSONArray newUser = new JSONArray();
@@ -120,7 +120,7 @@ public class ModelUser extends ModelJSON {
         User.session = object;
         // System.out.println(newUser.toString(2));
         this.writeToJson(newUser.toString(2),
-                "C:\\Users\\pmen\\Documents\\NetBeansProjects\\TubesAlpro\\DataJson\\d.json");
+                "DataJson/d.json");
     }
     public String getKtp() {
         return ktp;

@@ -44,6 +44,7 @@ public class MainMenu {
         JSONObject object = conUtama.doLogin(email, pass);
         if (object.getString("id").equals("gagal")) {
             System.out.println("gagal!!");
+        	this.login();
         } else {
             if (object.getString("rule").equals("0")) {
                 User u = new User();

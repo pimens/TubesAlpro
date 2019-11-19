@@ -6,6 +6,9 @@
 package com.mycompany.tubes;
 
 import controller.ControllerAdmin;
+import controller.ControllerReport;
+import controller.ControllerTimeByRoute;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -18,11 +21,14 @@ import org.json.JSONObject;
 public class MenuAdmin {
 
     public static JSONObject session;
-
+    
     public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
         int pil;
         ControllerAdmin admin = new ControllerAdmin();
+        ControllerReport reportService = new ControllerReport();
+        ControllerTimeByRoute timeByRoute = new ControllerTimeByRoute();
+        
         System.out.println("#Menu Admin#");
         System.out.println("Welcome, Admin");
         System.out.println("1. Kelola Akun ");
@@ -46,8 +52,17 @@ public class MenuAdmin {
             case 2:
                 System.out.println("2");
                 break;
+            case 7:
+            	timeByRoute.index();
+                this.index();
+                break;
+            case 10:
+            	reportService.index();
+                this.index();
+                break;
             default:
                 System.out.println("Salah");
+                this.index();
                 break;
         }
     }
