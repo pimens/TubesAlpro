@@ -1,15 +1,20 @@
 package com.mycompany.tubes;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import controller.ControllerTrainsByRoute;
 
 public class MenuTrainsByRoute {
     Scanner sc = new Scanner(System.in);
-    ControllerTrainsByRoute con = new ControllerTrainsByRoute();
+    ControllerTrainsByRoute con;
 
-    public void index(int act) throws FileNotFoundException {
+    public MenuTrainsByRoute() throws FileNotFoundException, IOException {
+        con = new ControllerTrainsByRoute();
+    }
+
+    public void index(int act) throws FileNotFoundException, IOException {
         if (act == 0) {
             System.out.print("Kode Rute : ");
             String rute = sc.next();
@@ -48,7 +53,7 @@ public class MenuTrainsByRoute {
         }
     }
 
-    public void addData(String rute) throws FileNotFoundException {
+    public void addData(String rute) throws FileNotFoundException, IOException {
         ArrayList<String> temp = new ArrayList<>();
 
         String code;

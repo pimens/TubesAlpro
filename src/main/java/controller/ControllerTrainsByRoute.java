@@ -1,14 +1,19 @@
 package controller;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import com.mycompany.tubes.MenuTrainsByRoute;
 import model.ModelTrainsByRoute;
 
 public class ControllerTrainsByRoute {
-    ModelTrainsByRoute m = new ModelTrainsByRoute();
+    ModelTrainsByRoute m;
 
-    public void index(int act) throws FileNotFoundException {
+    public ControllerTrainsByRoute() throws FileNotFoundException, IOException{
+        m = new ModelTrainsByRoute();
+    }
+
+    public void index(int act) throws FileNotFoundException, IOException {
         MenuTrainsByRoute mu = new MenuTrainsByRoute();
         mu.index(act);
     }
@@ -26,7 +31,7 @@ public class ControllerTrainsByRoute {
         return temp;
     }
 
-    public void addData(String rute, ArrayList<String> data) throws FileNotFoundException {
+    public void addData(String rute, ArrayList<String> data) throws FileNotFoundException, IOException {
         for (String d : data) {
             m.addRoutes(rute);
             m.addTrainCodes(d);

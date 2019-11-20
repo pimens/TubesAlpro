@@ -1,19 +1,17 @@
 package model;
 
 import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
-public class ModelTrainsByRoute {
+public class ModelTrainsByRoute extends ModelJSON {
     private ArrayList<String> trainCodes;
     private ArrayList<String> routes;
 
-    public ModelTrainsByRoute() {
+    public ModelTrainsByRoute() throws FileNotFoundException, IOException {
         trainCodes = new ArrayList<>();
         routes = new ArrayList<>();
 
@@ -48,14 +46,8 @@ public class ModelTrainsByRoute {
         return false;
     }
 
-    public void read () {
-        InputStream is = ModelTrainsByRoute.class.getResourceAsStream("../DataJson/trainbyroute.json");
-        if (is == null) {
-            throw new NullPointerException("Cannot find resource file ");
-        }
-
-        JSONTokener tokener = new JSONTokener(is);
-        JSONArray arr = new JSONArray(tokener);
+    public void read() throws FileNotFoundException, IOException {
+        JSONArray arr = readJson("DataJson/trainbyroute.json");
 
         for (int i=0; i<arr.length(); i++) {
             trainCodes.add(arr.getJSONObject(i).getString("kodeKereta"));
@@ -63,7 +55,7 @@ public class ModelTrainsByRoute {
         }
     }
 
-    public void write () throws FileNotFoundException {
+    public void write() throws FileNotFoundException, IOException {
         JSONArray arr = new JSONArray();
         for (int i=0; i<routes.size(); i++) {
             JSONObject object = new JSONObject();
@@ -72,22 +64,6 @@ public class ModelTrainsByRoute {
             arr.put(object);
         }
 
-        try (PrintWriter out = new PrintWriter("src/main/java/DataJson/trainbyroute.json")) {
-            out.println(arr);
-            out.close();
-        }
+        this.writeToJson(arr.toString(2), "DataJson/trainbyroute.json");
     }
-    /*public static void main (String[] args) {
-        //InputStream is = classloader.getResourceAsStream("test.csv");
-        InputStream is = ModelTrainsByRoute.class.getResourceAsStream("../DataJson/trainbyroute.json");
-        if (is == null) {
-            throw new NullPointerException("Cannot find resource file ");
-        }
-
-        JSONTokener tokener = new JSONTokener(is);
-        JSONArray arr = new JSONArray(tokener);
-        for (int i=0; i<arr.length(); i++) {
-            System.out.println(arr.getJSONObject(i).getString("kodeRute"));
-        }
-    }*/
 }
