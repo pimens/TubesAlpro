@@ -19,7 +19,9 @@ public class ModelJSON {
         JSONTokener tokener = new JSONTokener(br);
         JSONArray data = new JSONArray(tokener);
         return data;
-    } public void writeToJson(String data, String path) throws IOException {
+    } 
+    
+    public void writeToJson(String data, String path) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(path));
         writer.write(data);
         writer.close();
