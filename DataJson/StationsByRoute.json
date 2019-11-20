@@ -2,75 +2,43 @@
   {
     "routes": [
       {
-        "dst": "Gresik",
-        "kodeDst": "GSK",
-        "src": "Surabaya",
-        "kodeSrc": "SBY",
+        "dst": "6",
+        "src": "5",
         "id": "1",
         "time": "10"
       },
       {
-        "dst": "Sidoarjo",
-        "kodeDst": "SDR",
-        "src": "Gresik",
-        "kodeSrc": "GSK",
+        "dst": "7",
+        "src": "6",
         "id": "2",
         "time": "60"
       }
     ],
-    "kodeRute": "BDG-JKT",
-    "kodeJalur": "BDG-JKT1"
+    "kodeJalur": "BDG-JKT1",
+    "id": "1"
   },
   {
     "routes": [
       {
-        "dst": "Surabaya",
-        "kodeDst": "SBY",
-        "src": "Gresik",
-        "kodeSrc": "GSK",
+        "dst": "5",
+        "src": "6",
         "id": "1",
         "time": "10"
       },
       {
-        "dst": "Malang",
-        "kodeDst": "MLG",
-        "src": "Surabaya",
-        "kodeSrc": "SBY",
+        "dst": "4",
+        "src": "5",
         "id": "2",
         "time": "20"
       },
       {
-        "dst": "Bromo",
-        "kodeDst": "BRM",
-        "src": "Malang",
-        "kodeSrc": "MLG",
+        "dst": "7",
+        "src": "4",
         "id": "3",
         "time": "30"
       }
     ],
-    "kodeRute": "GSK-BRM",
-    "kodeJalur": "GSK-BRM1"
-  },
-  {
-    "routes": [
-      {
-        "kodeDst": "BRM",
-        "dst": "Bromo",
-        "src": "Batu",
-        "kodeSrc": "BT",
-        "id": "1",
-        "time": "10"
-      },
-      {
-        "kodeDst": "SBY",
-        "dst": "Surabaya",
-        "src": "Bromo",
-        "kodeSrc": "BRM",
-        "id": "2",
-        "time": "30"
-      }
-    ],
-    "kodeRute": "MLG-SBY",
-    "kodeJalur": "MLG-SBY1"
+    "kodeJalur": "GSK-BRM1",
+    "id": "2"
   }
 ]

@@ -35,7 +35,7 @@ public class MenuStationByRouteAdd {
         }
         for (i = 0; i < r.length(); i++) {
             JSONObject s = new JSONObject(r.get(i).toString());
-            System.out.println("Jalur " + (i + 1) + " : " + s.getString("src") + " " + s.getString("dst") + " " + s.getString("time"));
+            System.out.println("Jalur " + (i + 1) + " : " + c.getNameCityById(s.getString("src")) + " " + c.getNameCityById(s.getString("dst")) + " " + s.getString("time"));
             lastStation = s.getString("dst");
         }
         do {
@@ -62,19 +62,23 @@ public class MenuStationByRouteAdd {
                 if ((c.cekCity(jalur) && c.cekCity(jalur2) && waktu.matches("^[0-9]*$"))) {
                     if (c.cekStation(jalur, kode) || c.cekStation(jalur2, kode)) {
                         System.out.println("Jalur sudah dilewati");
-                    } else if (!jalur.equals(lastStation) && i != 0) {//src in next route must be last station
-                        System.out.println("Jalur harus " + lastStation);
+                    } else if (!jalur.equals(c.getNameCityById(lastStation)) && i != 0) {//src in next route must be last station
+                        System.out.println("Jalur harus " + c.getNameCityById(lastStation));
                     } else {
-                        lastStation = jalur2;
+                        lastStation = c.getIdByCity(jalur2);
                         cek1 = 1;
-                        i++;
-                        c.addRoute(kode, jalur, jalur2, String.valueOf(waktu), String.valueOf(i));
+                        i++;                        
+                        c.addRoute(kode, c.getIdByCity(jalur), c.getIdByCity(jalur2), String.valueOf(waktu), String.valueOf(i));
                     }
                 }
             }
         } while (cek1 == 0 || finish == 0);
         c.index("Jalur Stasiun Yang Dilewati berdasarkan Rute Berhasil Ditambahkan");
 
+    }
+    public static void main(String [] args) throws IOException{
+        MenuStationByRouteAdd m = new MenuStationByRouteAdd();
+        m.index();
     }
 
 }

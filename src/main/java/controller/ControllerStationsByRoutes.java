@@ -10,9 +10,14 @@ import model.ModelStationsByRoutes;
 import org.json.JSONArray;
 import org.json.JSONObject;
 // mvn compile exec:java -Dexec.mainClass=controller.Main
-public class ControllerStationsByRoutes {
 
-    //----------------------------------main menu
+public class ControllerStationsByRoutes {
+    ModelStationsByRoutes m;
+    public ControllerStationsByRoutes() {
+        m=new ModelStationsByRoutes();
+    }
+    
+   //----------------------------------main menu
     public void index(String msg) throws IOException {
         MenuStationByRouteMain m = new MenuStationByRouteMain();
         m.index(msg);
@@ -25,56 +30,62 @@ public class ControllerStationsByRoutes {
     }
 
     //cek routes in json routes
-    public boolean cekRoute(String kode) throws FileNotFoundException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
+    public boolean cekRoute(String kode) throws FileNotFoundException {        
         return m.cekRoute(kode);
     }
 
     //cek city in json cities
-    public boolean cekCity(String city) throws FileNotFoundException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
+    public boolean cekCity(String city) throws FileNotFoundException {       
         return m.cekCity(city);
     }
 
     //cek city in json StationsByRoute
-    public boolean cekStation(String city, String kodeRute) throws FileNotFoundException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
-        return m.cekStation(city, kodeRute);
+    public boolean cekStation(String city, String kodeRute) throws FileNotFoundException {       
+        String idKota = m.getIdByCity(city);
+        String idRute = m.getIdByKodeRute(kodeRute);
+        return m.cekStation(idKota, idRute);
     }
 
-    public JSONArray getStationsByRoutes(String kode) throws FileNotFoundException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
-        JSONArray stations = m.getStationsByRoutes(kode);
+    //get id kota dari nama
+    public String getIdByCity(String city) throws FileNotFoundException {       
+        String id = m.getIdByCity(city);
+        return id;
+    }
+
+    //get nama dari kota by id
+    public String getNameCityById(String id) throws FileNotFoundException {       
+        String nama = m.getCityByName(id);
+        return nama;
+    }
+
+    public JSONArray getStationsByRoutes(String kode) throws FileNotFoundException {       
+        String id = m.getIdByKodeRute(kode);
+        JSONArray stations = m.getStationsByRoutes(id);
         return stations;
     }
 
     public void addRoute(String kodeRute, String src, String dst, String time, String id) throws FileNotFoundException, IOException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
         JSONArray routes = getStationsByRoutes(kodeRute);
-        String kodeSrc = m.getCityByName(src);
-        String kodeDst = m.getCityByName(dst);
         JSONObject route = new JSONObject();
         JSONObject outerObject = new JSONObject();
         //make array routes update with new data
         route.put("id", id);
         route.put("src", src);
         route.put("dst", dst);
-        route.put("kodeSrc", kodeSrc);
-        route.put("kodeDst", kodeDst);
         route.put("time", time);
         routes.put(route);
         //add data 
-        outerObject.put("kodeRute", kodeRute);
+        outerObject.put("id", m.getIdByKodeRute(kodeRute));
         outerObject.put("routes", routes);
-        outerObject.put("kodeJalur", m.getCodeofRoute(kodeRute));
-        m.addData(outerObject, kodeRute);
+        outerObject.put("kodeJalur", m.getCodeofRoute(m.getIdByKodeRute(kodeRute)));
+        m.addData(outerObject, m.getIdByKodeRute(kodeRute));
     }
 
     public void initialStation(String kodeRute) throws IOException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
+        String id = m.getIdByKodeRute(kodeRute);
         JSONArray o = new JSONArray();
         JSONObject route = new JSONObject();
-        route.put("kodeRute", kodeRute);
+        route.put("id", id);
         route.put("kodeJalur", kodeRute + String.valueOf(1));
         route.put("routes", o);
         m.addData(route, kodeRute);
@@ -87,10 +98,16 @@ public class ControllerStationsByRoutes {
     }
 
     public JSONObject getDataByRoute(String kode) throws FileNotFoundException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
-        return m.getDataRoutes(kode);
+        String id = m.getIdByKodeRute(kode);
+        return m.getDataRoutes(id);
     }
 
+    public String getCityById(String idkota) throws FileNotFoundException {
+        String kode = m.getCityById(idkota);
+        return kode;
+    }
+    //-----------------------------------------menu lihat jalur 
+    
     //---------------------------------------menu delete
     public void indexDelete() throws IOException {
         MenuStationByRouteDelete m = new MenuStationByRouteDelete();
@@ -98,7 +115,7 @@ public class ControllerStationsByRoutes {
     }
 
     public void deleteStation(String kodeRute) throws IOException {
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
-        m.deleteStation(kodeRute);
+        String id = m.getIdByKodeRute(kodeRute);
+        m.deleteStation(id);
     }
 }

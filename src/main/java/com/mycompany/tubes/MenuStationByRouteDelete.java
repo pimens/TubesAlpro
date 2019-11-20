@@ -35,12 +35,12 @@ public class MenuStationByRouteDelete {
             total = total + Integer.valueOf(a.getString("time"));
         }
         for (int i = 0; i < rute.length(); i++) {
-            JSONObject a = rute.getJSONObject(i);
+            JSONObject a = rute.getJSONObject(i);            
             if (i == 0) {
-                System.out.print(1 + " \t " + r.get("kodeJalur") + " \t " + r.getString("kodeRute") + " \t ");
-                System.out.println(a.getString("kodeSrc") + "-" + a.get("kodeDst") + " \t\t " + total);
+                System.out.print(1 + " \t " + r.get("kodeJalur") + " \t "+kode+" \t ");
+                System.out.println(c.getCityById(a.getString("src")) + "-" + c.getCityById(a.getString("dst"))+" \t\t "+total);
             } else {
-                System.out.println("----\t----------\t---------\t " + a.getString("kodeSrc") + "-" + a.getString("kodeDst"));
+                System.out.println("----\t----------\t---------\t "+c.getCityById(a.getString("src"))+"-"+c.getCityById(a.getString("dst")));
             }
         }
         System.out.print("Delete Last Station (0/1):");

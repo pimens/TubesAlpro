@@ -1,6 +1,5 @@
 package com.mycompany.tubes;
 
-import controller.ControllerAdmin;
 import controller.ControllerStationsByRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -37,13 +36,17 @@ public class MenuStationViewByRoute {
         for (int i = 0; i < rute.length(); i++) {
             JSONObject a = rute.getJSONObject(i);            
             if (i == 0) {
-                System.out.print(1 + " \t " + r.get("kodeJalur") + " \t "+r.getString("kodeRute")+" \t ");
-                System.out.println(a.getString("kodeSrc") + "-" + a.get("kodeDst")+" \t\t "+total);
+                System.out.print(1 + " \t " + r.get("kodeJalur") + " \t "+kode+" \t ");
+                System.out.println(c.getCityById(a.getString("src")) + "-" + c.getCityById(a.getString("dst"))+" \t\t "+total);
             } else {
-                System.out.println("----\t----------\t---------\t "+a.getString("kodeSrc")+"-"+a.getString("kodeDst"));
+                System.out.println("----\t----------\t---------\t "+c.getCityById(a.getString("src"))+"-"+c.getCityById(a.getString("dst")));
             }
         }
         c.index("#- MENU - Lihat Statsiun#");
 
+    }
+    public static void main(String [] args) throws IOException{
+        MenuStationViewByRoute m = new MenuStationViewByRoute();
+        m.index();
     }
 }
