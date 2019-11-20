@@ -16,11 +16,19 @@
     "premium": "40000"
   },
   {
-    "src": "GMR",
-    "dst": "BKS",
-    "kodeRute": "GMR-BKS",
+    "src": "MLG",
+    "dst": "SBY",
+    "kodeRute": "MLG-SBY",
     "bisnis": "25000",
     "id": "3",
+    "premium": "35000"
+  },
+  {
+    "src": "GSK",
+    "dst": "BRM",
+    "kodeRute": "GSK-BRM",
+    "bisnis": "25000",
+    "id": "4",
     "premium": "35000"
   }
 ]

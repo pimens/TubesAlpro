@@ -1,17 +1,42 @@
 [
   {
-    "id": "1"
+    "id": "1",
     "kodeKota": "JKT",
-    "nama": "Jakarta",    
+    "nama": "Jakarta" 
   },
   {
-    "id": "2"
+    "id": "2",
     "kodeKota": "BDG",
-    "nama": "Bandung",    
+    "nama": "Bandung"  
   },
   {
-    "id": "3"
+    "id": "3",
     "kodeKota": "GMR",
-    "nama": "Gambir",    
+    "nama": "Gambir"   
+  },
+  {
+    "id": "4",
+    "kodeKota": "MLG",
+    "nama": "Malang"
+  },
+  {
+    "id": "5",
+    "kodeKota": "SBY",
+    "nama": "Surabaya"
+  },
+  {
+    "id": "6",
+    "kodeKota": "GSK",
+    "nama": "Gresik"
+  },
+  {
+    "id": "7",
+    "kodeKota": "SDR",
+    "nama": "Sidoarjo"
+  },
+  {
+    "id": "8",
+    "kodeKota": "BRM",
+    "nama": "Bromo"
   }
 ]

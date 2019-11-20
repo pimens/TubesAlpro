@@ -22,23 +22,23 @@ public class MenuUserEdit {
         //form
         System.out.println("-- Ubah Data Pengguna --");
         Home u = new Home();
-        System.out.println("Nama Lengkap : ");
+        System.out.print("Nama Lengkap : ");
         do {
             nama = cin.nextLine();
             if (!u.isString(nama)) {
-                System.out.println("Tidak Valid");
+                System.out.print("Tidak Valid");
             }
         } while (!u.isString(nama));
-        System.out.println("Nomor Handphone : ");
+        System.out.print("Nomor Handphone : ");
         do {
             hp = cin.nextLine();
             if (!u.isNumber(hp, 11, 12)) {
                 System.out.println("Tidak Valid");
             }
         } while (!u.isNumber(hp, 11, 12));
-        System.out.println("Email : ");
+        System.out.print("Email : ");
         email = cin.nextLine();
-        System.out.println("Password : ");
+        System.out.print("Password : ");
         p = cin.nextLine();
         //call controller to parsing data into json
         User us = new User();

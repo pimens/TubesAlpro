@@ -1,14 +1,5 @@
 [
   {
-    "password": "oppo",
-    "handphone": "098712345678",
-    "KTP": "6789678967896789",
-    "rule": "0",
-    "id": "5",
-    "namaLengkap": "Oppo Smart",
-    "email": "oppo@gmail.com"
-  },
-  {
     "password": "f",
     "handphone": "567123456789",
     "KTP": "1231231231231234",
@@ -18,12 +9,30 @@
     "email": "f@"
   },
   {
-    "password": "g",
-    "handphone": "087866560897",
+    "password": "0",
+    "handphone": "12345678910",
+    "KTP": "6789678967896789",
+    "rule": "0",
+    "id": "5",
+    "namaLengkap": "oooo",
+    "email": "0"
+  },
+  {
+    "password": "al",
+    "handphone": "123478903456",
+    "KTP": "1234123478907890",
+    "rule": "0",
+    "id": "10",
+    "namaLengkap": "Alrpg tuber",
+    "email": "al@gmail.com"
+  },
+  {
+    "password": "ggs",
+    "handphone": "678912343456",
     "KTP": "0831290031341234",
     "rule": "0",
     "id": "4",
-    "namaLengkap": "nggasu sekali",
-    "email": "gg"
+    "namaLengkap": "Ganteng ganteng serigala",
+    "email": "ggs@gmail.com"
   }
 ]

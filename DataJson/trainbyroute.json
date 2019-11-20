@@ -1,0 +1,50 @@
+[
+  {
+    "kodeKereta": "KAI18801",
+    "kodeRute": "BDG-JKT"
+  },
+  {
+    "kodeKereta": "KAI18802",
+    "kodeRute": "BDG-JKT"
+  },
+  {
+    "kodeKereta": "KAI18803",
+    "kodeRute": "BDG-JKT"
+  },
+  {
+    "kodeKereta": "KAI18804",
+    "kodeRute": "BDG-JKT"
+  },
+  {
+    "kodeKereta": "KAI18801",
+    "kodeRute": "MLG-SBY"
+  },
+  {
+    "kodeKereta": "KAI18802",
+    "kodeRute": "MLG-SBY"
+  },
+  {
+    "kodeKereta": "KAI18805",
+    "kodeRute": "MLG-SBY"
+  },
+  {
+    "kodeKereta": "KAI18806",
+    "kodeRute": "MLG-SBY"
+  },
+  {
+    "kodeKereta": "KAI18803",
+    "kodeRute": "GSK-BRM"
+    },
+    {
+    "kodeKereta": "KAI18804",
+    "kodeRute": "GSK-BRM"
+    },
+    {
+    "kodeKereta": "KAI18807",
+    "kodeRute": "GSK-BRM"
+    },
+    {
+    "kodeKereta": "KAI18808",
+    "kodeRute": "GSK-BRM"
+    }
+]

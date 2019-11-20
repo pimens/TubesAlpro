@@ -1,0 +1,20 @@
+[
+  {
+    "kodeWaktu": "TM1,TM12,TM23",
+    "kodeWaktuRute": "WR2",
+    "kodeRute": "GSK-BRM",
+    "id": "0"
+  },
+  {
+    "kodeWaktu": "TM3,TM7,TM10",
+    "kodeWaktuRute": "WR1",
+    "kodeRute": "BDG-JKT",
+    "id": "1"
+  },
+  {
+    "kodeWaktu": "TM3,TM7,TM10,TM32",
+    "kodeWaktuRute": "WR3",
+    "kodeRute": "MLG-SBY",
+    "id": "2"
+  }
+]
