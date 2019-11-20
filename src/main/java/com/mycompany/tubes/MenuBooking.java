@@ -3,12 +3,12 @@ package com.mycompany.tubes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Booking {
+public class MenuBooking {
     Scanner sc = new Scanner(System.in);
     ArrayList<String> penumpang = new ArrayList<>();
 
     public static void main(String[] args) {
-        Booking b = new Booking();
+        MenuBooking b = new MenuBooking();
         b.searchSchedule();
     }
 
@@ -21,7 +21,6 @@ public class Booking {
         String destination = sc.next();
         System.out.print("Tanggal : ");
         String date = sc.next();
-
         System.out.println("------------------------------");
 
         ArrayList<Jadwal> jadwal = new ArrayList<>();
@@ -39,7 +38,7 @@ public class Booking {
         System.out.println("1. Booking Tiket");
         System.out.println("99. Menu Utama");
 
-        System.out.print("Pilih Aksi : ");
+        System.out.print("\nPilih Aksi : ");
         int nextstep = sc.nextInt();
         if (nextstep == 1) {
             bookTicket();
