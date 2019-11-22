@@ -8,6 +8,7 @@ package com.mycompany.tubes;
 import controller.ControllerAdmin;
 import controller.ControllerReport;
 import controller.ControllerTimeByRoute;
+import controller.ControllerTrainsByRoute;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,6 +29,7 @@ public class MenuAdmin {
         ControllerAdmin admin = new ControllerAdmin();
         ControllerReport reportService = new ControllerReport();
         ControllerTimeByRoute timeByRoute = new ControllerTimeByRoute();
+        ControllerTrainsByRoute trainsByRoute = new ControllerTrainsByRoute();
         
         System.out.println("#Menu Admin#");
         System.out.println("Welcome, Admin");
@@ -54,6 +56,10 @@ public class MenuAdmin {
                 break;
             case 7:
             	timeByRoute.index();
+                this.index();
+                break;
+            case 8:
+                trainsByRoute.index();
                 this.index();
                 break;
             case 10:
