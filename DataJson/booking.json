@@ -1,0 +1,16 @@
+[{
+  "jadwal": "JW00001",
+  "kode": "0000000000",
+  "tanggal": "01-11-2019",
+  "penumpang": [
+    {
+      "nama": "Ahmad",
+      "kursi": "P1-1"
+    },
+    {
+      "nama": "Idris",
+      "kursi": "P1-2"
+    }
+  ],
+  "status": "1"
+}]

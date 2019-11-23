@@ -39,12 +39,20 @@ public class ControllerBooking {
         return m.getTrain(jadwal, tgl);
     }
 
+    public double getHarga(String tgl, String rute, String jenis) throws FileNotFoundException {
+        return m.getHarga(tgl, rute, jenis);
+    }
+
+    public ArrayList<String> payment(String kode) throws JSONException, IOException {
+        return m.payment(kode);
+    }
+
     public void subMenu(int act, String date) throws JSONException, IOException {
         MenuBooking b = new MenuBooking();
         if (act == 1) {
             b.bookTicket(date);
         } else if (act == 2) {
-
+            b.payment();
         }
     }
 }

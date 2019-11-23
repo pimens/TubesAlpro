@@ -20,7 +20,7 @@ public class MenuBooking {
     }
 
     public void searchSchedule() throws FileNotFoundException, IOException {
-        System.out.println("Cari Jadwal Kereta Api");
+        System.out.println("# Cari Jadwal Kereta Api #");
 
         System.out.print("Keberangkatan : ");
         String origin = sc.next();
@@ -49,6 +49,7 @@ public class MenuBooking {
     }
 
     public void bookTicket(String tgl) throws JSONException, IOException {
+        System.out.println("# Booking Ticket #");
         System.out.print("Kode Jadwal : ");
         String kode = sc.next();
         System.out.print("Jumlah : ");
@@ -72,18 +73,21 @@ public class MenuBooking {
 
         System.out.println("Pilih Kursi (Dengan Tanda E/Empty) :");
         
+        double jumlah = 0;
         ArrayList<String> kursi = new ArrayList<>();
         for (int i=0; i<jml; i++) {
             System.out.print("Kursi " + (i+1) + " : ");
             String temp = sc.next();
             kursi.add(temp);
+            String te = "" + temp.charAt(0);
+            jumlah += con.getHarga(tgl, kode, te);
         }
 
         con.booking(tgl, kode, kursi);
 
         System.out.println("------------------------------------------");
 
-        System.out.println("Total Pembayaran = ");
+        System.out.println("Total Pembayaran = " + jumlah);
         System.out.println("Kode Rekening = ");
 
         System.out.println("------------------------------------------");
@@ -93,4 +97,34 @@ public class MenuBooking {
         int pil = sc.nextInt();
         con.subMenu(pil + 1,"");
     }
+
+    public void payment() throws JSONException, IOException {
+        System.out.println("# Pembayaran Tiket #");
+        
+        String status = "N";
+        String rek;
+        do {
+            System.out.print("Kode Rekening : ");
+            rek = sc.next();
+            System.out.print("Total Pembayaran : ");
+            double jumlah = sc.nextDouble();
+            System.out.print("Apakah data pembayaran sudah benar (Y/N)? ");
+            status = sc.next();
+        } while (status.equals("N"));
+
+        ArrayList<String> penumpang = con.payment(rek);
+
+        System.out.println("------------------------------");
+        System.out.println("Pembayaran Berhasil!");
+        System.out.println("Kode Tiket Anda = <Ini dummy>");
+        for (int i=0; i<penumpang.size(); i++) {
+            int no = i+1;
+            System.out.println("Penumpang " + no + " = " + penumpang.get(i));
+        }
+        System.out.println("------------------------------");
+        System.out.println("99. Menu Utama");
+        System.out.print("\nPilih Aksi : ");
+        int pil = sc.nextInt();
+    }
+    
 }

@@ -38,6 +38,10 @@ public class MenuUser {
             case 3:
                 System.out.println("History");
                 break;
+            case 4:
+                book.subMenu(2, "");
+                this.index();
+                break;
             default:
                 System.out.println("Log");
                 break;

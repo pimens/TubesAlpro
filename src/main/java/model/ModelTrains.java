@@ -249,6 +249,113 @@ public class ModelTrains extends ModelJSON {
             }
         }
     }
+
+    public String convertJadwal(String tgl, String jadwal) throws FileNotFoundException {
+        JSONArray arr = readJson("DataJson/searchSchedule.json");
+
+        String r = "";
+
+        for (int i = 0; i < arr.length(); i++) {
+            if (tgl.equals(arr.getJSONObject(i).getString("tanggal"))) {
+                int flag = 0;
+                JSONArray jd = arr.getJSONObject(i).getJSONArray("jadwal");
+                for (int j = 0; j < jd.length(); j++) {
+                    if (jd.getJSONObject(j).getString("kode").equals(jadwal)) {
+                        r = jd.getJSONObject(j).getString("rute");
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 1) {
+                    break;
+                }
+            }
+        }
+
+        return r;
+    }
+
+    public double getHarga(String tgl, String jadwal, String jenis) throws FileNotFoundException {
+        JSONArray sepur = readJson("DataJson/routes.json");
+
+        String rute = convertJadwal(tgl, jadwal);
+
+        double d = 0;
+        for (int i=0; i<sepur.length(); i++) {
+            if (sepur.getJSONObject(i).getString("kodeRute").equals(rute)) {
+                if (jenis.equals("B")) {
+                    d = Double.parseDouble(sepur.getJSONObject(i).getString("premium"));
+                } else {
+                    d = Double.parseDouble(sepur.getJSONObject(i).getString("bisnis"));
+                }
+                break;
+            }
+        }
+
+        return d;
+    }
+
+    public ArrayList<String> payment(String kode) throws JSONException, IOException {
+        JSONArray book = readJson("DataJson/booking.json");
+
+        ArrayList<Pesan> list = new ArrayList<>();
+        ArrayList<String> temp = new ArrayList<>();
+
+        for (int i=0; i<book.length(); i++) {
+            Pesan p = new Pesan();
+
+            p.kode = book.getJSONObject(i).getString("kode");
+            p.jadwal = book.getJSONObject(i).getString("jadwal");
+            p.tanggal = book.getJSONObject(i).getString("tanggal");
+            JSONArray penumpang = book.getJSONObject(i).getJSONArray("penumpang");
+            for (int j=0; j<penumpang.length(); j++) {
+                p.nama.add(penumpang.getJSONObject(j).getString("nama"));
+                p.kursi.add(penumpang.getJSONObject(j).getString("kursi"));
+            }
+
+            if (kode.equals(book.getJSONObject(i).getString("kode"))) {
+                p.status = "1";
+                temp = p.nama;
+            } else {
+                p.status = book.getJSONObject(i).getString("status");;
+            }
+            list.add(p);
+        }
+
+        JSONArray arr = new JSONArray();
+        for (int i=0; i<list.size(); i++) {
+            JSONObject object = new JSONObject();
+            object.put("kode", list.get(i).kode);
+            object.put("tanggal", list.get(i).tanggal);
+            object.put("jadwal", list.get(i).jadwal);
+            object.put("status", list.get(i).status);
+
+            JSONArray penumpang = new JSONArray();
+            for (int j=0; j<list.get(i).nama.size(); j++) {
+                JSONObject o = new JSONObject();
+
+                o.put("nama", list.get(i).nama.get(j));
+                o.put("kursi", list.get(i).kursi.get(j));
+
+                penumpang.put(o);
+            }
+            object.put("penumpang", penumpang);
+            arr.put(object);
+        }
+
+        this.writeToJson(arr.toString(2), "DataJson/booking.json");
+
+        return temp;
+    }
+}
+
+class Pesan {
+    public String kode;
+    public String tanggal;
+    public String jadwal;
+    public String status;
+    public ArrayList<String> nama = new ArrayList<>();
+    public ArrayList<String> kursi = new ArrayList<>();
 }
 
 class Status1 {
