@@ -1,18 +1,23 @@
 package com.mycompany.tubes;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import controller.ControllerBooking;
+import controller.Schedule;
 
 public class MenuBooking {
     Scanner sc = new Scanner(System.in);
     ArrayList<String> penumpang = new ArrayList<>();
+    ControllerBooking con;
 
-    public static void main(String[] args) {
-        MenuBooking b = new MenuBooking();
-        b.searchSchedule();
+    public MenuBooking() {
+        con = new ControllerBooking();
     }
 
-    public void searchSchedule() {
+    public void searchSchedule() throws FileNotFoundException, IOException {
         System.out.println("Cari Jadwal Kereta Api");
 
         System.out.print("Keberangkatan : ");
@@ -23,14 +28,12 @@ public class MenuBooking {
         String date = sc.next();
         System.out.println("------------------------------");
 
-        ArrayList<Jadwal> jadwal = new ArrayList<>();
+        ArrayList<Schedule> jadwal = new ArrayList<>();
 
-        // Dummy
-        jadwal.add(new Jadwal("JW00001", "01-11-2019", "08.00", "12.00", "Jakarta", "Bandung", "KAI18801", 4));
-        jadwal.add(new Jadwal("JW00002", "01-11-2019", "13.00", "17.00", "Jakarta", "Bandung", "KAI18801", 20));
-        jadwal.add(new Jadwal("JW00003", "01-11-2019", "09.00", "13.00", "Bandung", "Jakarta", "KAI18801", 0));
+        jadwal = con.getSchedule(origin, destination, date);
+
         System.out.println("Kode Jadwal\tTanggal\t\tWaktu Keberangkatan\tKeberangkatan\tTujuan\t\tWaktu Tiba\tKAI\t\tStatus");
-        for (Jadwal j : jadwal) {
+        for (Schedule j : jadwal) {
             j.print();
         }
 
@@ -39,10 +42,8 @@ public class MenuBooking {
         System.out.println("99. Menu Utama");
 
         System.out.print("\nPilih Aksi : ");
-        int nextstep = sc.nextInt();
-        if (nextstep == 1) {
-            bookTicket();
-        }
+        int pil = sc.nextInt();
+        con.subMenu(pil);
     }
 
     public void bookTicket() {
@@ -115,266 +116,9 @@ public class MenuBooking {
 
         System.out.println("------------------------------------------");
         System.out.println("1. Pembayaran");
-    }
-}
-
-class Train {
-    // Attributes
-    private ArrayList<Wagon> wagons = new ArrayList<>();
-    
-    // Constructor
-    public Train() {
-        // Do nothing
-    }
-
-    public Train(ArrayList<Wagon> w) {
-        wagons.addAll(w);
-    }
-
-    // Method
-    public void addWagon(Wagon w) {
-        wagons.add(w);
-    }
-
-    public void removeWagon() {
-        wagons.remove(wagons.size() - 1);
-    }
-
-    public void print() {
-        for (Wagon w : wagons) {
-            w.print();
-            System.out.println("");
-        }
-    }
-}
-
-class Wagon {
-    // Attributes
-    private int type; // 0 : Premium, 1 : Bisnis
-    private int number; // Nomor gerbong
-    private ArrayList<Seat> seats = new ArrayList<>(); // Kumpulan kursi
-
-    // Constructor
-    public Wagon() {
-        type = 0;
-        number = 0;
-    }
-
-    public Wagon(int t, int n) {
-        type = t;
-        number = n;
-    }
-
-    // Getter
-    public int getType() {
-        return type;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    // Setter
-    public void setType(int t) {
-        type = t;
-    }
-
-    public void setNumber(int n) {
-        number = n;
-    }
-
-    // Method
-    public void addSeat() {
-        Seat s = new Seat(seats.size() + 1, 0);
-
-        seats.add(s);
-    }
-
-    public void deleteSeat() {
-        seats.remove(seats.size() - 1);
-    }
-
-    public void print() {
-        String nama = "Premium";
-        if (type == 1) {
-            nama = "Business";
-        }
-        System.out.println("Gerbong " + nama + " " + number);
-
-        int count = 0;
-        for (Seat s : seats) {
-            System.out.print(String.format("| %c%d-%d %c ", nama.charAt(0), number, s.getNumber(), s.representStatus()));
-            count += 1;
-            if (count == 10) {
-                System.out.println("|");
-                count = 0;
-            }
-        }
-        if (count != 0) {
-            System.out.println("|");
-        }
-    }
-}
-
-class Seat {
-    // Attributes
-    private int number;
-    private int status;
-    private double price;
-
-    // Constructor
-    public Seat() {
-        number = 0;
-        status = 0;
-    }
-
-    public Seat(int n, int s) {
-        number = n;
-        status = s;
-    }
-
-    // Getter
-    public int getNumber() {
-        return number;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    // Setter
-    public void setNumber(int n) {
-        number = n;
-    }
-
-    public void setStatus(int s) {
-        status = s;
-    }
-
-    public void setPrice(double p) {
-        price = p;
-    }
-
-    // Method
-    public boolean isAvailable() {
-        return (status == 0);
-    }
-
-    public char representStatus() {
-        if (status == 0) {
-            return 'E';
-        } else {
-            return 'F';
-        }
-    }
-}
-
-class Jadwal {
-    // Attributes
-    private String kode;
-    private String date;
-    private String depart;
-    private String arrive;
-    private String origin;
-    private String destination;
-    private String name;
-    private int status;
-
-    // Constructor
-    public Jadwal(String k, String d, String dt, String a, String o, String ds, String n, int s) {
-        kode = k;
-        date = d;
-        depart = dt;
-        arrive = a;
-        origin = o;
-        destination = ds;
-        name = n;
-        status = s;
-    }
-
-    // Getter
-    public String getKode() {
-        return kode;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getDepart() {
-        return depart;
-    }
-
-    public String getArrive() {
-        return arrive;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    // Setter
-    public void setKode(String k) {
-        kode = k;
-    }
-
-    public void setDate(String d) {
-        date = d;
-    }
-
-    public void setDepart(String d) {
-        depart = d;
-    }
-
-    public void setArrive(String a) {
-        arrive = a;
-    }
-
-    public void setOrigin(String o) {
-        origin = o;
-    }
-
-    public void setDestination(String d) {
-        destination = d;
-    }
-
-    public void setName(String n) {
-        name = n;
-    }
-
-    public void setStatus(int s) {
-        status = s;
-    }
-
-    // Method
-    public String descStatus() {
-        String temp;
-        if (status > 0) {
-            temp = "Sisa " + status + " Kursi";
-        } else {
-            temp = "Full";
-        }
-
-        return temp;
-    }
-
-    public void print() {
-        System.out.println(String.format("%s\t\t%s\t%s\t\t\t%s\t\t%s\t\t%s\t\t%s\t%s", kode, date, depart, origin, destination, arrive, name, descStatus()));
+        System.out.println("99. Menu Utama");
+        System.out.print("\nPilih Aksi : ");
+        int pil = sc.nextInt();
+        con.subMenu(pil + 1);
     }
 }

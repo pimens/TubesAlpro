@@ -1,0 +1,21 @@
+[
+  {
+    "tanggal": "01-11-2019",
+    "jadwal": [
+      { "kode": "JW00001", "rute": "BDG-JKT", "dep": "TM33", "arr": "TM49", "kereta": "1" },
+      { "kode": "JW00002", "rute": "BDG-JKT", "dep": "TM35", "arr": "TM51", "kereta": "1" },
+      { "kode": "JW00003", "rute": "BDG-JKT", "dep": "TM41", "arr": "TM57", "kereta": "1" },
+      { "kode": "JW00004", "rute": "BDG-JKT", "dep": "TM43", "arr": "TM59", "kereta": "1" },
+      { "kode": "JW00005", "rute": "JKT-BDG", "dep": "TM43", "arr": "TM59", "kereta": "1" }
+    ]
+  },
+  {
+    "tanggal": "02-11-2019",
+    "jadwal": [
+      { "kode": "JW00001", "rute": "BDG-JKT", "dep": "TM33", "arr": "TM49", "kereta": "1" },
+      { "kode": "JW00002", "rute": "BDG-JKT", "dep": "TM35", "arr": "TM51", "kereta": "1" },
+      { "kode": "JW00003", "rute": "BDG-JKT", "dep": "TM41", "arr": "TM57", "kereta": "1" },
+      { "kode": "JW00004", "rute": "BDG-JKT", "dep": "TM43", "arr": "TM59", "kereta": "1" }
+    ]
+  }
+]

@@ -8,6 +8,7 @@ package com.mycompany.tubes;
 import controller.User;
 import java.io.IOException;
 import java.util.Scanner;
+import controller.ControllerBooking;
 
 public class MenuUser {  
 
@@ -15,6 +16,8 @@ public class MenuUser {
         Scanner cin = new Scanner(System.in);
         int pil = 0;
         User u = new User();
+        ControllerBooking book = new ControllerBooking();
+
         System.out.println("#Menu Pengguna#");
         System.out.println("Welcome, " + User.session.getString("namaLengkap".toString()));
         System.out.println("1. Booking Tiket ");
@@ -25,7 +28,8 @@ public class MenuUser {
         pil=cin.nextInt();
         switch (pil) {
             case 1:
-                System.out.println("Book");
+                book.index();
+                this.index();
                 break;
             case 2:
                 u.kelolaUser();
