@@ -48,10 +48,27 @@ public class ModelTrainsByRoute extends ModelJSON {
 
     public void read() throws FileNotFoundException, IOException {
         JSONArray arr = readJson("DataJson/trainbyroute.json");
+        JSONArray kereta = readJson("DataJson/train.json");
+        JSONArray rute = readJson("DataJson/routes.json");
 
         for (int i=0; i<arr.length(); i++) {
-            trainCodes.add(arr.getJSONObject(i).getString("kodeKereta"));
-            routes.add(arr.getJSONObject(i).getString("kodeRute"));
+            String tempKereta = "";
+            String tempRute = "";
+            for (int j=0; j<kereta.length(); j++) {
+                if (arr.getJSONObject(i).getString("kodeKereta").equals(kereta.getJSONObject(j).getString("id"))) {
+                    tempKereta = kereta.getJSONObject(j).getString("kodeKAI");
+                    break;
+                }
+            }
+
+            for (int j=0; j<rute.length(); j++) {
+                if (arr.getJSONObject(i).getString("kodeRute").equals(rute.getJSONObject(j).getString("id"))) {
+                    tempRute = rute.getJSONObject(j).getString("kodeRute");
+                    break;
+                }
+            }
+            routes.add(tempRute);
+            trainCodes.add(tempKereta);
         }
     }
 
