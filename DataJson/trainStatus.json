@@ -1,162 +1,458 @@
 [
   {
-    "tanggal": "01-11-2019",
-    "kereta": [
-      { 
-        "id": "1",
-        "duduk": [
-          {
-            "gerbong": "1",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "2",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "3",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "4",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "5",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "6",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "1",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "2",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "3",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "4",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          }
-        ]
-      }
-    ]
+    "kereta": [{
+      "id": "1",
+      "duduk": [
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "F"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "F"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "1"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "2"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "3"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "4"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "5"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "6"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "1"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "2"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "3"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "F"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "4"
+        }
+      ]
+    }],
+    "tanggal": "01-11-2019"
   },
   {
-    "tanggal": "02-11-2019",
-    "kereta": [
-      { 
-        "id": "1",
-        "duduk": [
-          {
-            "gerbong": "1",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "2",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "3",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "4",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "5",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "6",
-            "jenis": "P",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "1",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "2",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "3",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          },
-          {
-            "gerbong": "4",
-            "jenis": "B",
-            "kursi": [
-              { "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" },{ "status": "E" }
-            ]
-          }
-        ]
-      }
-    ]
+    "kereta": [{
+      "id": "1",
+      "duduk": [
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "1"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "2"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "3"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "4"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "5"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "P",
+          "gerbong": "6"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "1"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "2"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "3"
+        },
+        {
+          "kursi": [
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"},
+            {"status": "E"}
+          ],
+          "jenis": "B",
+          "gerbong": "4"
+        }
+      ]
+    }],
+    "tanggal": "02-11-2019"
   }
 ]
