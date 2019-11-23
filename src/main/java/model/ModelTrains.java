@@ -10,15 +10,12 @@ import org.json.JSONObject;
 
 import controller.Train;
 import controller.Wagon;
-import controller.Seat;
 import controller.Schedule;
 
 public class ModelTrains extends ModelJSON {
-    private ArrayList<Train> trains;
     private ArrayList<Status1> status;
 
     public ModelTrains() throws FileNotFoundException {
-        trains = new ArrayList<>();
         status = new ArrayList<>();
 
         read();
@@ -65,11 +62,11 @@ public class ModelTrains extends ModelJSON {
                         for (int k = 0; k < waktu.length(); k++) {
                             if (waktu.getJSONObject(k).getString("kodeWaktu")
                                     .equals(jd.getJSONObject(j).getString("dep"))) {
-                                depart = waktu.getJSONObject(j).getString("waktu");
+                                depart = waktu.getJSONObject(k).getString("waktu");
                             }
                             if (waktu.getJSONObject(k).getString("kodeWaktu")
                                     .equals(jd.getJSONObject(j).getString("arr"))) {
-                                arrive = waktu.getJSONObject(j).getString("waktu");
+                                arrive = waktu.getJSONObject(k).getString("waktu");
                             }
                         }
 
@@ -94,8 +91,7 @@ public class ModelTrains extends ModelJSON {
                             if (tgl.equals(status.getJSONObject(k).getString("tanggal"))) {
                                 JSONArray temp1 = status.getJSONObject(k).getJSONArray("kereta");
                                 for (int l = 0; l < temp1.length(); l++) {
-                                    if (temp1.getJSONObject(l).getString("id")
-                                            .equals(jd.getJSONObject(j).getString("kereta"))) {
+                                    if (temp1.getJSONObject(l).getString("id").equals(kode)) {
                                         JSONArray temp2 = temp1.getJSONObject(l).getJSONArray("duduk");
                                         for (int m = 0; m < temp2.length(); m++) {
                                             JSONArray temp3 = temp2.getJSONObject(m).getJSONArray("kursi");
@@ -122,34 +118,14 @@ public class ModelTrains extends ModelJSON {
 
     public Train getTrain(String jadwal, String tgl) throws FileNotFoundException {
         JSONArray sepur = readJson("DataJson/trainStatus.json");
-        JSONArray arr = readJson("DataJson/searchSchedule.json");
-
-        String id = "";
 
         Train t = new Train();
-
-        for (int i = 0; i < arr.length(); i++) {
-            if (arr.getJSONObject(i).getString("tanggal").equals(tgl)) {
-                int flag = 0;
-                JSONArray jd = arr.getJSONObject(i).getJSONArray("jadwal");
-                for (int j = 0; j < arr.length(); j++) {
-                    if (jd.getJSONObject(j).getString("kode").equals(jadwal)) {
-                        id = jd.getJSONObject(j).getString("kereta");
-                        flag = 1;
-                        break;
-                    }
-                }
-                if (flag == 1) {
-                    break;
-                }
-            }
-        }
 
         for (int i = 0; i < sepur.length(); i++) {
             if (sepur.getJSONObject(i).getString("tanggal").equals(tgl)) {
                 JSONArray kereta = sepur.getJSONObject(i).getJSONArray("kereta");
                 for (int j = 0; j < kereta.length(); j++) {
-                    if (id.equals(kereta.getJSONObject(j).getString("id"))) {
+                    if (jadwal.equals(kereta.getJSONObject(j).getString("id"))) {
                         JSONArray duduk = kereta.getJSONObject(j).getJSONArray("duduk");
                         for (int k = 0; k < duduk.length(); k++) {
                             int jenis = 1;
@@ -251,34 +227,15 @@ public class ModelTrains extends ModelJSON {
     }
 
     public void booking(String tgl, String kode, ArrayList<String> kursi) throws FileNotFoundException {
-        String idkereta = "";
-        JSONArray arr = readJson("DataJson/searchSchedule.json");
-        for (int i=0; i<arr.length(); i++) {
-            if (arr.getJSONObject(i).getString("tanggal").equals(tgl)) {
-                int flag = 0;
-                JSONArray jd = arr.getJSONObject(i).getJSONArray("jadwal");
-                for (int j=0; j<arr.length(); j++) {
-                    if (jd.getJSONObject(j).getString("kode").equals(kode)) {
-                        idkereta = jd.getJSONObject(j).getString("kereta");
-                        flag = 1;
-                        break;
-                    }
-                }
-                if (flag == 1) {
-                    break;
-                }
-            }
-        }
-
         for (String seat : kursi) {
             String gerbong = "" + seat.charAt(0);
             String urutan = "" + seat.charAt(1);
-            int nomor = Integer.parseInt(seat.substring(3));
+            int nomor = Integer.parseInt(seat.substring(3)) - 1;
 
             for (int i=0; i<status.size(); i++) {
                 if (status.get(i).tanggal.equals(tgl)) {
                     for (int j=0; j<status.get(i).kereta.size(); j++) {
-                        if (status.get(i).kereta.get(j).id.equals(idkereta)) {
+                        if (status.get(i).kereta.get(j).id.equals(kode)) {
                             for (int k=0; k<status.get(i).kereta.get(j).duduk.size(); k++) {
                                 if (gerbong.equals(status.get(i).kereta.get(j).duduk.get(k).jenis)) {
                                     if (urutan.equals(status.get(i).kereta.get(j).duduk.get(k).gerbong)) {
