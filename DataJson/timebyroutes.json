@@ -1,20 +1,22 @@
 [
   {
-    "kodeWaktu": "TM1,TM12,TM23",
-    "kodeWaktuRute": "WR2",
-    "kodeRute": "GSK-BRM",
+    "kodeWaktu": "TM1,TM40,TM70",
+    "kodeWaktuRute": "WR0",
+    "kodeRute": "1",
     "id": "0"
-  },
+  },  
+ 
   {
-    "kodeWaktu": "TM3,TM7,TM10",
-    "kodeWaktuRute": "WR1",
-    "kodeRute": "BDG-JKT",
+    "kodeWaktu": "TM2",
+    "kodeWaktuRute": "WR2",
+    "kodeRute": "2",
     "id": "1"
   },
   {
-    "kodeWaktu": "TM3,TM7,TM10,TM32",
+    "kodeWaktu": "TM3,TM86",
     "kodeWaktuRute": "WR3",
-    "kodeRute": "MLG-SBY",
+    "kodeRute": "3",
     "id": "2"
   }
+
 ]

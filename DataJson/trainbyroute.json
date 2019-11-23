@@ -1,62 +1,26 @@
 [
   {
-    "kodeRute": "BDG-JKT",
-    "kodeKereta": "KAI18801"
+    "kodeRute": "1",
+    "kodeKereta": "1"
   },
   {
-    "kodeRute": "BDG-JKT",
-    "kodeKereta": "KAI18802"
+    "kodeRute": "1",
+    "kodeKereta": "2"
   },
   {
-    "kodeRute": "BDG-JKT",
-    "kodeKereta": "KAI18803"
+    "kodeRute": "1",
+    "kodeKereta": "3"
   },
   {
-    "kodeRute": "BDG-JKT",
-    "kodeKereta": "KAI18804"
+    "kodeRute": "2",
+    "kodeKereta": "5"
   },
   {
-    "kodeRute": "JKT-BDG",
-    "kodeKereta": "KAI28804"
+    "kodeRute": "3",
+    "kodeKereta": "5"
   },
   {
-    "kodeRute": "MLG-SBY",
-    "kodeKereta": "KAI18801"
-  },
-  {
-    "kodeRute": "MLG-SBY",
-    "kodeKereta": "KAI18802"
-  },
-  {
-    "kodeRute": "MLG-SBY",
-    "kodeKereta": "KAI18805"
-  },
-  {
-    "kodeRute": "MLG-SBY",
-    "kodeKereta": "KAI18806"
-  },
-  {
-    "kodeRute": "GSK-BRM",
-    "kodeKereta": "KAI18803"
-  },
-  {
-    "kodeRute": "GSK-BRM",
-    "kodeKereta": "KAI18804"
-  },
-  {
-    "kodeRute": "GSK-BRM",
-    "kodeKereta": "KAI18807"
-  },
-  {
-    "kodeRute": "GSK-BRM",
-    "kodeKereta": "KAI18808"
-  },
-  {
-    "kodeRute": "JKT-BDG",
-    "kodeKereta": "KAI20001"
-  },
-  {
-    "kodeRute": "JKT-BDG",
-    "kodeKereta": "KAI20002"
+    "kodeRute": "3",
+    "kodeKereta": "1"
   }
 ]

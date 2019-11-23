@@ -112,7 +112,7 @@ public class ModelStationsByRoutes extends ModelJSON {
     //get all data Station by kode rute
     public JSONObject getDataRoutes(String id) throws FileNotFoundException {
         JSONArray routes = readJson("DataJson/StationsByRoute.json");
-        JSONObject spesifik = null;
+        JSONObject spesifik = new JSONObject();
         for (int i = 0; i < routes.length(); i++) {
             JSONObject a = new JSONObject(routes.get(i).toString());
             if (id.equals(a.get("id"))) {

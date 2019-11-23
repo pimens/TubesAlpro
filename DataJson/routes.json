@@ -14,6 +14,13 @@
     "bisnis": "10000",
     "id": "2",
     "premium": "25000"
-  }
-  
+  },
+  {
+    "src": "4",
+    "dst": "5",
+    "kodeRute": "GRE-SDR",
+    "bisnis": "10000",
+    "id": "3",
+    "premium": "25000"
+  }  
 ]
