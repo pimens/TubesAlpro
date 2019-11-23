@@ -13,7 +13,7 @@
     "kodeKAI": "KAXXXX",
     "gerbong": "0",
     "id": "2",
-    "nameStation": "'kereta xxxx'"
+    "nameStation": "'KAI Delta xxxx'"
   },
   {
     "premium": "2",
@@ -21,54 +21,6 @@
     "kodeKAI": "KA11233333",
     "gerbong": "9",
     "id": "3",
-    "nameStation": "'KA123aasda tahun'"
-  },
-  {
-    "premium": "2",
-    "business": "7",
-    "kodeKAI": "KA112444444",
-    "gerbong": "9",
-    "id": "4",
-    "nameStation": "'KA123aasda tahun'"
-  },
-  {
-    "premium": "2",
-    "business": "5",
-    "kodeKAI": "KA11255555",
-    "gerbong": "9",
-    "id": "5",
-    "nameStation": "'KA123aasda tahun'"
-  },
-  {
-    "premium": "2",
-    "business": "7",
-    "kodeKAI": "KA1126666",
-    "gerbong": "9",
-    "id": "6",
-    "nameStation": "'KA123aasda tahun'"
-  },
-  {
-    "premium": "2",
-    "business": "7",
-    "kodeKAI": "KA11277",
-    "gerbong": "9",
-    "id": "7",
-    "nameStation": "'KA123aasda tahun'"
-  },
-  {
-    "premium": "2",
-    "business": "7",
-    "kodeKAI": "KA11288888",
-    "gerbong": "8",
-    "id": "8",
-    "nameStation": "'KA123aasda tahun'"
-  },
-  {
-    "premium": "2",
-    "business": "7",
-    "kodeKAI": "KA112999999",
-    "gerbong": "9",
-    "id": "9",
-    "nameStation": "'KA123aasda tahun'"
+    "nameStation": "'KAI2019'"
   }
 ]

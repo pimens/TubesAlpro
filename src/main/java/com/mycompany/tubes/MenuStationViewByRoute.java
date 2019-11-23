@@ -8,10 +8,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MenuStationViewByRoute {
-
+    ControllerStationsByRoutes c;
+    public MenuStationViewByRoute() {
+        c = new ControllerStationsByRoutes();
+    }
     public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
-        ControllerStationsByRoutes c = new ControllerStationsByRoutes();
         JSONObject r = null;
         JSONArray rute = new JSONArray();
         int total = 0, pil = 0;
@@ -47,10 +49,5 @@ public class MenuStationViewByRoute {
         }
         c.index("#- MENU - Lihat Statsiun#");
 
-    }
-
-    public static void main(String[] args) throws IOException {
-        MenuStationViewByRoute m = new MenuStationViewByRoute();
-        m.index();
     }
 }

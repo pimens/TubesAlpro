@@ -9,10 +9,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MenuStationByRouteDelete {
-
+    ControllerStationsByRoutes c;
+    public MenuStationByRouteDelete() {
+        c = new ControllerStationsByRoutes();
+    }
     public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
-        ControllerStationsByRoutes c = new ControllerStationsByRoutes();
         JSONObject r = null;
         JSONArray rute = null;
         int total = 0,pil,del=0;

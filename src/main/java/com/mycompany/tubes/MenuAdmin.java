@@ -7,6 +7,8 @@ package com.mycompany.tubes;
 
 import controller.ControllerAdmin;
 import controller.ControllerReport;
+import controller.ControllerSchedules;
+import controller.ControllerStationsByRoutes;
 import controller.ControllerTimeByRoute;
 import controller.ControllerTrainsByRoute;
 
@@ -22,7 +24,7 @@ import org.json.JSONObject;
 public class MenuAdmin {
 
     public static JSONObject session;
-    
+
     public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
         int pil;
@@ -30,7 +32,8 @@ public class MenuAdmin {
         ControllerReport reportService = new ControllerReport();
         ControllerTimeByRoute timeByRoute = new ControllerTimeByRoute();
         ControllerTrainsByRoute trainsByRoute = new ControllerTrainsByRoute();
-        
+        ControllerStationsByRoutes stationByRoute = new ControllerStationsByRoutes();
+        ControllerSchedules schedules = new ControllerSchedules();
         System.out.println("#Menu Admin#");
         System.out.println("Welcome, Admin");
         System.out.println("1. Kelola Akun ");
@@ -50,20 +53,42 @@ public class MenuAdmin {
         switch (pil) {
             case 1:
                 admin.managePassenger();
+                this.index();
                 break;
             case 2:
                 System.out.println("2");
                 break;
+            case 3:
+                System.out.println("Waktu");
+                break;
+            case 4:
+                System.out.println("Rute");
+                break;
+            case 5:
+                System.out.println("Stasiun");
+                break;          
+            case 6:
+                stationByRoute.index("#Menu Stasiun Berdasarkan Rute#");
+                this.index();
+                break;
             case 7:
-            	timeByRoute.index();
+                timeByRoute.index();
                 this.index();
                 break;
             case 8:
                 trainsByRoute.index();
                 this.index();
                 break;
+            case 9:
+                schedules.index();
+                this.index();
+                break;
             case 10:
-            	reportService.index();
+                reportService.index();
+                this.index();
+                break;
+            case 11:
+                schedules.showJadwal();
                 this.index();
                 break;
             default:

@@ -21,9 +21,22 @@ public class MenuUser {
         System.out.println("2. Kelola Profil ;");
         System.out.println("3. History ;");
         System.out.println("0. Logout ;");
+        System.out.print("Pilihan :");
         pil=cin.nextInt();
-        if(pil==2){
-           u.kelolaUser();           
+        switch (pil) {
+            case 1:
+                System.out.println("Book");
+                break;
+            case 2:
+                u.kelolaUser();
+                this.index();
+                break;
+            case 3:
+                System.out.println("History");
+                break;
+            default:
+                System.out.println("Log");
+                break;
         }
     }
     

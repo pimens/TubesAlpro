@@ -38,28 +38,28 @@
         "time": "30"
       }
     ],
-    "kodeJalur": "GSK-BRM1",
+    "kodeJalur": "MLG-SBY1",
     "id": "2"
   },
   {
     "routes": [
       {
-        "dst": "9",
-        "src": "5",
+        "dst": "7",
+        "src": "6",
         "id": "1",
-        "time": "19"
+        "time": "20"
       },
       {
-        "dst": "8",
-        "src": "9",
+        "dst": "5",
+        "src": "7",
         "id": "2",
-        "time": "30"
+        "time": "15"
       },
       {
-        "dst": "4",
-        "src": "8",
+        "dst": "3",
+        "src": "5",
         "id": "3",
-        "time": "40"
+        "time": "30"
       }
     ],
     "kodeJalur": "GRE-SDR1",

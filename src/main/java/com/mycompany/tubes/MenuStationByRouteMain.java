@@ -7,10 +7,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuStationByRouteMain {
-
+    ControllerStationsByRoutes c;
+    public MenuStationByRouteMain() {
+        c = new ControllerStationsByRoutes();
+    }
     public void index(String m) throws IOException {
         Scanner cin = new Scanner(System.in);
-        ControllerStationsByRoutes c = new ControllerStationsByRoutes();
         int pil;
         System.out.println("---------------------------------------------------------------------------");
         System.out.println(m);
@@ -38,10 +40,5 @@ public class MenuStationByRouteMain {
                 a.index();
                 break;
         }
-    }
-    
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        ControllerStationsByRoutes c = new ControllerStationsByRoutes();
-        c.index("#Main MENU#");
     }
 }

@@ -10,10 +10,12 @@ import org.json.JSONObject;
 //controller utama
 
 public class MainMenu {
-
+    Home u;
+    public MainMenu() {
+        u = new Home();
+    }
     public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
-        Home u = new Home();
         int pil;
         System.out.println("Menu : ");
         System.out.println("1. Login ");
@@ -44,7 +46,7 @@ public class MainMenu {
         JSONObject object = conUtama.doLogin(email, pass);
         if (object.getString("id").equals("gagal")) {
             System.out.println("gagal!!");
-        	this.login();
+            this.login();
         } else {
             if (object.getString("rule").equals("0")) {
                 User u = new User();
@@ -65,10 +67,10 @@ public class MainMenu {
         do {
             System.out.print("Nomor KTP : ");
             ktp = cin.nextLine();
-            if (!ktp.matches("^[0-9]*$") || ktp.length()!=16) {
+            if (!ktp.matches("^[0-9]*$") || ktp.length() != 16) {
                 System.out.println("Tidak Valid ");
             }
-        } while (!ktp.matches("^[0-9]*$") || ktp.length()!=16);
+        } while (!ktp.matches("^[0-9]*$") || ktp.length() != 16);
         do {
             System.out.print("Nama Lengkap : ");
             nama = cin.nextLine();
@@ -82,7 +84,7 @@ public class MainMenu {
             if (!u.isNumber(hp, 11, 12)) {
                 System.out.println("Tidak Valid");
             }
-         }while(!u.isNumber(hp, 11, 12));
+        } while (!u.isNumber(hp, 11, 12));
         System.out.print("Email : ");
         email = cin.nextLine();
         System.out.print("Password : ");

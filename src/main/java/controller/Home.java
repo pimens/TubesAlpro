@@ -3,13 +3,11 @@ package controller;
 import com.mycompany.tubes.MainMenu;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.NumberFormat;
-import java.text.ParsePosition;
 import model.ModelUser;
 import org.json.JSONObject;
 
 public class Home {
-
+    
     //hal menu utama
     public void index() throws FileNotFoundException, IOException {
         MainMenu m = new MainMenu();
@@ -51,7 +49,7 @@ public class Home {
     public boolean isNumber(String str,int l,int l2) {
         boolean cek=false;
         if((str != null) && (!str.equals(""))
-                && (str.matches("^[0-9]*$")) && (str.length()==l || str.length()==l2)){
+                && (str.matches("^0[0-9]*$")) && (str.length()==l || str.length()==l2)){
             cek=true;
         }       
         return cek;

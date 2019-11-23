@@ -1,6 +1,5 @@
 package com.mycompany.tubes;
 
-import controller.ControllerAdmin;
 import controller.ControllerStationsByRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,10 +8,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MenuStationByRouteAdd {
-
+    ControllerStationsByRoutes c;
+    public MenuStationByRouteAdd() {
+        c = new ControllerStationsByRoutes();
+    }
     public void index() throws FileNotFoundException, IOException {
         Scanner cin = new Scanner(System.in);
-        ControllerStationsByRoutes c = new ControllerStationsByRoutes();
         JSONArray r = null;
         String lastStation = "";
         int i, finish = 0, cek1 = 0, cek2 = 0, pil = 0;
@@ -67,7 +68,7 @@ public class MenuStationByRouteAdd {
                     } else {
                         lastStation = c.getIdByCity(jalur2);
                         cek1 = 1;
-                        i++;                        
+                        i++;
                         c.addRoute(kode, c.getIdByCity(jalur), c.getIdByCity(jalur2), String.valueOf(waktu), String.valueOf(i));
                     }
                 }
@@ -76,9 +77,4 @@ public class MenuStationByRouteAdd {
         c.index("Jalur Stasiun Yang Dilewati berdasarkan Rute Berhasil Ditambahkan");
 
     }
-    public static void main(String [] args) throws IOException{
-        MenuStationByRouteAdd m = new MenuStationByRouteAdd();
-        m.index();
-    }
-
 }
