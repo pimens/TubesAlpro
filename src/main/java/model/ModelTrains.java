@@ -59,7 +59,7 @@ public class ModelTrains extends ModelJSON {
                         String kode = jd.getJSONObject(j).getString("kode");
                         String date = tgl;
                         String depart = "";
-                        String arrive = "";
+                        String arrive = jd.getJSONObject(j).getString("arr");
                         String origin = "";
                         String destination = "";
                         String name = "";
@@ -69,11 +69,7 @@ public class ModelTrains extends ModelJSON {
                             if (waktu.getJSONObject(k).getString("kodeWaktu")
                                     .equals(jd.getJSONObject(j).getString("dep"))) {
                                 depart = waktu.getJSONObject(k).getString("waktu");
-                            }
-                            if (waktu.getJSONObject(k).getString("kodeWaktu")
-                                    .equals(jd.getJSONObject(j).getString("arr"))) {
-                                arrive = waktu.getJSONObject(k).getString("waktu");
-                            }
+                            }                           
                         }
 
                         String rute = jd.getJSONObject(j).getString("rute");

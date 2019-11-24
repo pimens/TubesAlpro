@@ -22,5 +22,13 @@
     "bisnis": "10000",
     "id": "3",
     "premium": "25000"
-  }  
+  },
+  {
+    "src": "1",
+    "dst": "2",
+    "kodeRute": "JKT-BDG",
+    "bisnis": "10000",
+    "id": "1",
+    "premium": "75000"
+  }
 ]
