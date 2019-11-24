@@ -1,22 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
-import com.mycompany.tubes.MenuUser;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import org.json.JSONException;
 
-/**
- *
- * @author pmen
- */
+
 public class Main {
-     public static void main(String[] args) throws IOException, JSONException {
-//          MenuUser m = new MenuUser();
-//          m.index();
+     public static void main(String[] args) throws IOException, JSONException, FileNotFoundException, ParseException {
         Home u = new Home();
         u.index();         
     }

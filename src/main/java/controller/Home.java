@@ -22,7 +22,7 @@ public class Home {
     }
 
     //hal register
-    public void register() throws FileNotFoundException, IOException {
+    public void register() throws FileNotFoundException, IOException, ParseException {
         MainMenu m = new MainMenu();
         m.registerUser();
     }

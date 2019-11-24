@@ -25,7 +25,7 @@ public class ControllerStationsByRoutes {
     }
 
     //--------------------addd Menu Station ByRoute-------------------------
-    public void indexAdd() throws FileNotFoundException, IOException {
+    public void indexAdd() throws FileNotFoundException, IOException, ParseException {
         MenuStationByRouteAdd m = new MenuStationByRouteAdd();
         m.index();
     }
@@ -93,7 +93,7 @@ public class ControllerStationsByRoutes {
     }
 
     //-----------------------------------------menu lihat jalur 
-    public void MenuSeeStation() throws IOException {
+    public void MenuSeeStation() throws IOException, FileNotFoundException, ParseException {
         MenuStationViewByRoute m = new MenuStationViewByRoute();
         m.index();
     }
@@ -110,7 +110,7 @@ public class ControllerStationsByRoutes {
     //-----------------------------------------menu lihat jalur 
     
     //---------------------------------------menu delete
-    public void indexDelete() throws IOException {
+    public void indexDelete() throws IOException, FileNotFoundException, ParseException {
         MenuStationByRouteDelete m = new MenuStationByRouteDelete();
         m.index();
     }

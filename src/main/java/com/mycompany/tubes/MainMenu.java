@@ -20,8 +20,6 @@ public class MainMenu {
 
     public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
-//        TextTable tt = new TextTable(columnNames, data);
-//        tt.printTable();
         int pil;
         System.out.println("Menu : ");
         System.out.println("1. Login ");
@@ -65,7 +63,7 @@ public class MainMenu {
         }
     }
 
-    public void registerUser() throws FileNotFoundException, IOException {
+    public void registerUser() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         Home u = new Home();
         String ktp, nama, hp, email, p, p2;
