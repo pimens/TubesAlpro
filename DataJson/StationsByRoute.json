@@ -5,7 +5,7 @@
         "dst": "6",
         "src": "5",
         "id": "1",
-        "time": "10"
+        "time": "40"
       },
       {
         "dst": "7",
@@ -14,7 +14,7 @@
         "time": "20"
       }
     ],
-    "kodeJalur": "BDG-JKT1",
+    "kodeJalur": "BDGJKT-JL1",
     "id": "1"
   },
   {
@@ -38,7 +38,7 @@
         "time": "30"
       }
     ],
-    "kodeJalur": "MLG-SBY1",
+    "kodeJalur": "MLGSBYJL1",
     "id": "2"
   },
   {
@@ -62,7 +62,7 @@
         "time": "30"
       }
     ],
-    "kodeJalur": "GRE-SDR1",
+    "kodeJalur": "GRESDRJL1",
     "id": "3"
   }
 ]

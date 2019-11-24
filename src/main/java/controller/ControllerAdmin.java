@@ -4,11 +4,12 @@ import com.mycompany.tubes.MenuAdmin;
 import com.mycompany.tubes.MenuPassengersManage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import model.ModelPassengers;
 
 public class ControllerAdmin {
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         MenuAdmin m = new MenuAdmin();
         m.index();
     }

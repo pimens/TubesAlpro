@@ -14,6 +14,7 @@ import controller.ControllerTrainsByRoute;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 import org.json.JSONObject;
 
@@ -25,7 +26,7 @@ public class MenuAdmin {
 
     public static JSONObject session;
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         int pil;
         ControllerAdmin admin = new ControllerAdmin();
@@ -51,6 +52,9 @@ public class MenuAdmin {
         System.out.print("Pilihan  :");
         pil = cin.nextInt();
         switch (pil) {
+            case 0:                
+                System.out.println("Terim Kasih");
+                break;
             case 1:
                 admin.managePassenger();
                 this.index();

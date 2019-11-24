@@ -9,6 +9,7 @@ import controller.ControllerAdmin;
 import controller.ControllerSchedules;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 /**
@@ -20,7 +21,7 @@ public class MenuGenerateSchedulesMain {
     public MenuGenerateSchedulesMain() {
         c = new ControllerSchedules();
     }
-    public void index() throws FileNotFoundException, IOException {        
+    public void index() throws FileNotFoundException, IOException, ParseException {        
         int pil;
         Scanner cin = new Scanner(System.in);
         System.out.println("1.Generate Jadwal");

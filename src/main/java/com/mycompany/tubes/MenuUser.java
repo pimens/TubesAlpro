@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import controller.ControllerBooking;
 
-public class MenuUser {  
+public class MenuUser {
 
     public void index() throws IOException {
         Scanner cin = new Scanner(System.in);
@@ -25,8 +25,11 @@ public class MenuUser {
         System.out.println("3. History ;");
         System.out.println("0. Logout ;");
         System.out.print("Pilihan :");
-        pil=cin.nextInt();
+        pil = cin.nextInt();
         switch (pil) {
+            case 0:
+                System.out.println("Terima Kasih :)");
+                break;
             case 1:
                 book.index();
                 this.index();
@@ -47,5 +50,5 @@ public class MenuUser {
                 break;
         }
     }
-    
+
 }

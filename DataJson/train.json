@@ -8,17 +8,17 @@
     "nameStation": "KAI 2913101"
   },
   {
-    "premium": "0",
-    "business": "0",
+    "premium": "2",
+    "business": "3",
     "kodeKAI": "KAXXXX",
-    "gerbong": "0",
+    "gerbong": "5",
     "id": "2",
     "nameStation": "'KAI Delta xxxx'"
   },
   {
     "premium": "2",
     "business": "7",
-    "kodeKAI": "KA11233333",
+    "kodeKAI": "KA111",
     "gerbong": "9",
     "id": "3",
     "nameStation": "'KAI2019'"

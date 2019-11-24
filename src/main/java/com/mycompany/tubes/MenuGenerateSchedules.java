@@ -8,6 +8,7 @@ package com.mycompany.tubes;
 import controller.ControllerSchedules;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 /**
@@ -20,7 +21,7 @@ public class MenuGenerateSchedules {
         c = new ControllerSchedules();
     }
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException, ParseException {
         char pil;
         int cek = 0;
         Scanner cin = new Scanner(System.in);

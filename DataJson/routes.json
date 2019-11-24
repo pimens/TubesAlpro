@@ -11,24 +11,24 @@
     "src": "4",
     "dst": "5",
     "kodeRute": "MLG-SBY",
-    "bisnis": "10000",
+    "bisnis": "15000",
     "id": "2",
     "premium": "25000"
   },
   {
-    "src": "4",
-    "dst": "5",
+    "src": "6",
+    "dst": "7",
     "kodeRute": "GRE-SDR",
-    "bisnis": "10000",
+    "bisnis": "20000",
     "id": "3",
-    "premium": "25000"
+    "premium": "3000"
   },
   {
     "src": "1",
     "dst": "2",
     "kodeRute": "JKT-BDG",
-    "bisnis": "10000",
-    "id": "1",
-    "premium": "75000"
+    "bisnis": "35000",
+    "id": "4",
+    "premium": "55000"
   }
 ]
