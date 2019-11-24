@@ -11,12 +11,17 @@ import org.json.JSONObject;
 //controller utama
 
 public class MainMenu {
+
     Home u;
+
     public MainMenu() {
         u = new Home();
     }
-    public void index() throws FileNotFoundException, IOException {
+
+    public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
+//        TextTable tt = new TextTable(columnNames, data);
+//        tt.printTable();
         int pil;
         System.out.println("Menu : ");
         System.out.println("1. Login ");

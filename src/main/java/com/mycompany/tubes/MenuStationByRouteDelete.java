@@ -3,6 +3,7 @@ package com.mycompany.tubes;
 import controller.ControllerStationsByRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -12,7 +13,7 @@ public class MenuStationByRouteDelete {
     public MenuStationByRouteDelete() {
         c = new ControllerStationsByRoutes();
     }
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         JSONObject r = null;
         JSONArray rute = null;

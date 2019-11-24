@@ -6,6 +6,7 @@ import com.mycompany.tubes.MenuStationByRouteAdd;
 import com.mycompany.tubes.MenuStationByRouteMain;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import model.ModelStationsByRoutes;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,7 +19,7 @@ public class ControllerStationsByRoutes {
     }
     
    //----------------------------------main menu
-    public void index(String msg) throws IOException {
+    public void index(String msg) throws IOException, FileNotFoundException, ParseException {
         MenuStationByRouteMain m = new MenuStationByRouteMain();
         m.index(msg);
     }

@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public class Home {
     
     //hal menu utama
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         MainMenu m = new MainMenu();
         m.index();
     }
@@ -27,7 +27,7 @@ public class Home {
         m.registerUser();
     }
 
-    public void addUser(String ktp, String nama, String handphone, String email, String pass) throws FileNotFoundException, IOException {
+    public void addUser(String ktp, String nama, String handphone, String email, String pass) throws FileNotFoundException, IOException, ParseException {
         ModelUser d = new ModelUser(ktp, handphone, nama, email, pass);
         d.addUser();
         this.index();
