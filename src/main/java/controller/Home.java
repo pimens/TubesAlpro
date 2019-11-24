@@ -3,6 +3,7 @@ package controller;
 import com.mycompany.tubes.MainMenu;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import model.ModelUser;
 import org.json.JSONObject;
 
@@ -15,7 +16,7 @@ public class Home {
     }
 
     //hal login
-    public void login() throws FileNotFoundException, IOException {
+    public void login() throws FileNotFoundException, IOException, ParseException {
         MainMenu m = new MainMenu();
         m.login();
     }

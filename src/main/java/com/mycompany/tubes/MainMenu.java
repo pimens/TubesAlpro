@@ -5,6 +5,7 @@ import controller.User;
 import controller.Home;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 import org.json.JSONObject;
 //controller utama
@@ -34,7 +35,7 @@ public class MainMenu {
         }
     }
 
-    public void login() throws FileNotFoundException, IOException {
+    public void login() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         String email = "", pass = "";
         System.out.println("#Login Sistem#");

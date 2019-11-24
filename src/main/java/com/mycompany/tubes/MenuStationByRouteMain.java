@@ -4,6 +4,7 @@ import controller.ControllerAdmin;
 import controller.ControllerStationsByRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class MenuStationByRouteMain {
@@ -11,7 +12,7 @@ public class MenuStationByRouteMain {
     public MenuStationByRouteMain() {
         c = new ControllerStationsByRoutes();
     }
-    public void index(String m) throws IOException {
+    public void index(String m) throws IOException, FileNotFoundException, ParseException {
         Scanner cin = new Scanner(System.in);
         int pil;
         System.out.println("---------------------------------------------------------------------------");

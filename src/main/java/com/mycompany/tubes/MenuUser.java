@@ -46,7 +46,8 @@ public class MenuUser {
                 this.index();
                 break;
             default:
-                System.out.println("Log");
+                System.out.println("Tidak ada di menu");
+                this.index();
                 break;
         }
     }
