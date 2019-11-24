@@ -22,23 +22,29 @@ public class ModelTrains extends ModelJSON {
     }
 
     public String convertRute(String orig, String dest) throws FileNotFoundException {
-        JSONArray skedul = readJson("DataJson/schedules.json");
-
+        JSONArray rute = readJson("DataJson/routes.json");
         String temp = "";
-
-        for (int i = 0; i < skedul.length(); i++) {
-            if ((skedul.getJSONObject(i).getString("dep").equals(orig))
-                    && (skedul.getJSONObject(i).getString("arr").equals(dest))) {
-                temp = skedul.getJSONObject(i).getString("kodeRute");
+        for (int i = 0; i < rute.length(); i++) {
+            if ((rute.getJSONObject(i).getString("src").equals(orig))
+                    && (rute.getJSONObject(i).getString("dst").equals(dest))) {
+                temp = rute.getJSONObject(i).getString("kodeRute");
             }
         }
-
+        return temp;
+    }    
+    public String getCityNameById(String id) throws FileNotFoundException{
+        JSONArray rute = readJson("DataJson/cities.json");
+        String temp = "";
+        for (int i = 0; i < rute.length(); i++) {
+            if ((rute.getJSONObject(i).getString("id").equals(id))) {
+                temp = rute.getJSONObject(i).getString("nama");
+            }
+        }
         return temp;
     }
-
     public ArrayList<Schedule> readSearch(String rut, String tgl) throws FileNotFoundException, IOException {
         JSONArray arr = readJson("DataJson/searchSchedule.json");
-        JSONArray skedul = readJson("DataJson/schedules.json");
+        JSONArray ruteArr = readJson("DataJson/routes.json");
         JSONArray waktu = readJson("DataJson/times.json");
         JSONArray sepur = readJson("DataJson/train.json");
         JSONArray status = readJson("DataJson/trainStatus.json");
@@ -71,10 +77,12 @@ public class ModelTrains extends ModelJSON {
                         }
 
                         String rute = jd.getJSONObject(j).getString("rute");
-                        for (int k = 0; k < skedul.length(); k++) {
-                            if (skedul.getJSONObject(k).getString("kodeRute").equals(rute)) {
-                                origin = skedul.getJSONObject(k).getString("dep");
-                                destination = skedul.getJSONObject(k).getString("arr");
+                        for (int k = 0; k < ruteArr.length(); k++) {
+                            if (ruteArr.getJSONObject(k).getString("kodeRute").equals(rute)) {
+                                String tmporigin = ruteArr.getJSONObject(k).getString("src");
+                                String tmpdestination = ruteArr.getJSONObject(k).getString("dst");
+                                origin = getCityNameById(tmporigin);
+                                destination = getCityNameById(tmpdestination);
                                 break;
                             }
                         }

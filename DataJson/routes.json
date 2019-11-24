@@ -1,11 +1,11 @@
 [
   {
-    "src": "1",
-    "dst": "2",
+    "src": "2",
+    "dst": "1",
     "kodeRute": "BDG-JKT",
     "bisnis": "10000",
     "id": "1",
-    "premium": "25000"
+    "premium": "45000"
   },
   {
     "src": "4",

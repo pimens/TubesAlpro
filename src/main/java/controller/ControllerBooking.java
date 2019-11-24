@@ -5,16 +5,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.mycompany.tubes.MenuBooking;
+import model.ModelStationsByRoutes;
 
 import org.json.JSONException;
 
 import model.ModelTrains;
 
 public class ControllerBooking {
+
     ModelTrains m;
+    ModelStationsByRoutes s;
 
     public ControllerBooking() throws FileNotFoundException {
         m = new ModelTrains();
+        s = new ModelStationsByRoutes();
     }
 
     public void index() throws FileNotFoundException, IOException {
@@ -30,8 +34,11 @@ public class ControllerBooking {
     }
 
     public ArrayList<Schedule> getSchedule(String origin, String destination, String tgl) throws FileNotFoundException, IOException {
-        String rute = m.convertRute(origin, destination);
         
+        //cari id orig & dest di json kota, cari di route yang id src dan dstnya ini, kode rutenya apa
+        String idSrc = s.getIdByCity(origin);
+        String idDest = s.getIdByCity(destination);
+        String rute = m.convertRute(idSrc, idDest);
         return m.readSearch(rute, tgl);
     }
 
@@ -54,5 +61,10 @@ public class ControllerBooking {
         } else if (act == 2) {
             b.payment();
         }
+    }
+
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        ControllerBooking c = new ControllerBooking();
+        c.index();
     }
 }
