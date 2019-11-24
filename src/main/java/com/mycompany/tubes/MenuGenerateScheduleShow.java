@@ -16,20 +16,25 @@ import java.util.ArrayList;
  * @author pmen
  */
 public class MenuGenerateScheduleShow {
+
     ControllerSchedules c;
-    public MenuGenerateScheduleShow(){
+
+    public MenuGenerateScheduleShow() {
         c = new ControllerSchedules();
-        
+
     }
-    public void index() throws FileNotFoundException, IOException{
+
+    public void index() throws FileNotFoundException, IOException {
+        Table st = new Table();
+        //st.setRightAlign(true);//if true then cell text is right aligned
+        st.setShowVerticalLines(true);//if false (default) then no vertical lines are shown
+        st.setHeaders("Kode Jadwal", "Tanggal", "Waktu Keberangkatan", "Keberangkatan", "Tujuan", "Waktu Tiba", "KAI", "Status");//optional - if not used then there will be no header and horizontal lines    
         ArrayList<Schedule> jadwal = new ArrayList<>();
-
         jadwal = c.getAllSchedules();
-
-        System.out.println("Kode Jadwal\tTanggal\t\tWaktu Keberangkatan\tKeberangkatan\tTujuan\t\tWaktu Tiba\tKAI\t\tStatus");
         for (Schedule j : jadwal) {
-            j.print();
+            st.addRow(j.getKode(),j.getDate(),j.getDepart(),j.getOrigin(),j.getDestination(),j.getArrive(),j.getName(),j.descStatus());
         }
-       
+        st.print();
+
     }
 }

@@ -87,7 +87,7 @@ public class ControllerStationsByRoutes {
         JSONArray o = new JSONArray();
         JSONObject route = new JSONObject();
         route.put("id", id);
-        route.put("kodeJalur", kodeRute + String.valueOf(1));
+        route.put("kodeJalur", "JL0"+String.valueOf(1));
         route.put("routes", o);
         m.addData(route, kodeRute);
     }
