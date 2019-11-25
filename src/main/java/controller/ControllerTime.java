@@ -3,6 +3,7 @@ package controller;
 import com.mycompany.tubes.MenuTimes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import model.ModelTimes;
 import org.json.JSONArray;
 
@@ -16,15 +17,15 @@ public class ControllerTime {
         mt = new ModelTimes();
     }
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         m.index();
     }
 
-    public void menuGenerateWaktu() throws IOException {
+    public void menuGenerateWaktu() throws IOException, FileNotFoundException, ParseException {
         m.generateWaktuMenu();
     }
 
-    public void menuShowWaktu() throws IOException {
+    public void menuShowWaktu() throws IOException, FileNotFoundException, ParseException {
         m.showTimeMenu();
     }
 
@@ -40,7 +41,7 @@ public class ControllerTime {
         return mt.getTimes();
     }
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
         ControllerTime c = new ControllerTime();
         c.index();
 

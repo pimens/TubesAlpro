@@ -26,8 +26,7 @@ public class MenuGenerateScheduleShow {
 
     public void index() throws FileNotFoundException, IOException {
         Table st = new Table();
-        //st.setRightAlign(true);//if true then cell text is right aligned
-        st.setShowVerticalLines(true);//if false (default) then no vertical lines are shown
+        st.setShowVerticalLines(true);
         st.setHeaders("Kode Jadwal", "Tanggal", "Waktu Keberangkatan", "Keberangkatan", "Tujuan", "Waktu Tiba", "KAI", "Status");//optional - if not used then there will be no header and horizontal lines    
         ArrayList<Schedule> jadwal = new ArrayList<>();
         jadwal = c.getAllSchedules();

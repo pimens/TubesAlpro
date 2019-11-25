@@ -1,9 +1,9 @@
 package com.mycompany.tubes;
 
-import model.ModelCities;
 import controller.ControllerCities;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -12,7 +12,7 @@ public class MenuKota {
 
     ControllerCities cc = new ControllerCities();
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         int pil;
 
@@ -43,7 +43,7 @@ public class MenuKota {
         }
     }
 
-    public void menuAddCity() throws FileNotFoundException, IOException {
+    public void menuAddCity() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         String input = "";
         String kota = "";
@@ -73,18 +73,20 @@ public class MenuKota {
 
     }
 
-    public void showCity() throws FileNotFoundException, IOException {
-        System.out.println("No.		Kode		Nama		");
+    public void showCity() throws FileNotFoundException, IOException, ParseException {
+         Table st = new Table();
+        st.setShowVerticalLines(true);
+        st.setHeaders("No.","Kode","Nama");//optional - if not used then there will be no header and horizontal lines    
         JSONArray kota = cc.getDataKota();
         for (int i = 0; i < kota.length(); i++) {
             JSONObject object = new JSONObject(kota.get(i).toString());
-            System.out.println((i + 1) + "		" + object.getString("kodeKota") + "		" + object.getString("nama") + "		");
-
+            st.addRow(String.valueOf(i+1),object.getString("kodeKota"),object.getString("nama"));
         }
+        st.print();
         cc.index();
     }
 
-    public void editCityMenu() throws FileNotFoundException, IOException {
+    public void editCityMenu() throws FileNotFoundException, IOException, ParseException {
 
         Scanner cin = new Scanner(System.in);
         String input = "";
@@ -99,7 +101,7 @@ public class MenuKota {
 
                 if (!cc.cityExist(kotalama[1])) {
                     cek = 1;
-                    System.out.print("Kota Tidak Ada");
+                    System.out.println("Kota Tidak Ada");
                 } else {
                     cek=0;
                     System.out.print("kode kota :");
@@ -114,10 +116,9 @@ public class MenuKota {
             }
         } while (cek == 1);
         cc.index();
-
     }
 
-    public void deleteCityMenu() throws FileNotFoundException, IOException {
+    public void deleteCityMenu() throws FileNotFoundException, IOException, ParseException {
 
         Scanner cin = new Scanner(System.in);
         String input = "";

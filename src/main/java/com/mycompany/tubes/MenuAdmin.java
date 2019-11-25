@@ -6,9 +6,11 @@
 package com.mycompany.tubes;
 
 import controller.ControllerAdmin;
+import controller.ControllerCities;
 import controller.ControllerReport;
 import controller.ControllerSchedules;
 import controller.ControllerStationsByRoutes;
+import controller.ControllerTime;
 import controller.ControllerTimeByRoute;
 import controller.ControllerTrainsByRoute;
 
@@ -35,6 +37,8 @@ public class MenuAdmin {
         ControllerTrainsByRoute trainsByRoute = new ControllerTrainsByRoute();
         ControllerStationsByRoutes stationByRoute = new ControllerStationsByRoutes();
         ControllerSchedules schedules = new ControllerSchedules();
+        ControllerCities city = new ControllerCities();
+        ControllerTime time = new ControllerTime();
         System.out.println("#Menu Admin#");
         System.out.println("Welcome, Admin");
         System.out.println("1. Kelola Akun ");
@@ -52,7 +56,7 @@ public class MenuAdmin {
         System.out.print("Pilihan  :");
         pil = cin.nextInt();
         switch (pil) {
-            case 0:                
+            case 0:
                 System.out.println("Terim Kasih");
                 break;
             case 1:
@@ -60,17 +64,17 @@ public class MenuAdmin {
                 this.index();
                 break;
             case 2:
-                System.out.println("2");
+                city.index();
                 break;
             case 3:
-                System.out.println("Waktu");
+                time.index();
                 break;
             case 4:
                 System.out.println("Rute");
                 break;
             case 5:
                 System.out.println("Stasiun");
-                break;          
+                break;
             case 6:
                 stationByRoute.index("#Menu Stasiun Berdasarkan Rute#");
                 this.index();

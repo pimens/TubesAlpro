@@ -15,10 +15,10 @@ import org.json.JSONObject;
 public class ControllerStationsByRoutes {
     ModelStationsByRoutes m;
     public ControllerStationsByRoutes() {
-        m=new ModelStationsByRoutes();
+        m = new ModelStationsByRoutes();
     }
-    
-   //----------------------------------main menu
+
+    //----------------------------------main menu
     public void index(String msg) throws IOException, FileNotFoundException, ParseException {
         MenuStationByRouteMain m = new MenuStationByRouteMain();
         m.index(msg);
@@ -31,35 +31,35 @@ public class ControllerStationsByRoutes {
     }
 
     //cek routes in json routes
-    public boolean cekRoute(String kode) throws FileNotFoundException {        
+    public boolean cekRoute(String kode) throws FileNotFoundException {
         return m.cekRoute(kode);
     }
 
     //cek city in json cities
-    public boolean cekCity(String city) throws FileNotFoundException {       
+    public boolean cekCity(String city) throws FileNotFoundException {
         return m.cekCity(city);
     }
 
     //cek city in json StationsByRoute
-    public boolean cekStation(String city, String kodeRute) throws FileNotFoundException {       
+    public boolean cekStation(String city, String kodeRute) throws FileNotFoundException {
         String idKota = m.getIdByCity(city);
         String idRute = m.getIdByKodeRute(kodeRute);
         return m.cekStation(idKota, idRute);
     }
 
     //get id kota dari nama
-    public String getIdByCity(String city) throws FileNotFoundException {       
+    public String getIdByCity(String city) throws FileNotFoundException {
         String id = m.getIdByCity(city);
         return id;
     }
 
     //get nama dari kota by id
-    public String getNameCityById(String id) throws FileNotFoundException {       
+    public String getNameCityById(String id) throws FileNotFoundException {
         String nama = m.getCityByName(id);
         return nama;
     }
 
-    public JSONArray getStationsByRoutes(String kode) throws FileNotFoundException {       
+    public JSONArray getStationsByRoutes(String kode) throws FileNotFoundException {
         String id = m.getIdByKodeRute(kode);
         JSONArray stations = m.getStationsByRoutes(id);
         return stations;
@@ -87,7 +87,7 @@ public class ControllerStationsByRoutes {
         JSONArray o = new JSONArray();
         JSONObject route = new JSONObject();
         route.put("id", id);
-        route.put("kodeJalur", "JL0"+String.valueOf(1));
+        route.put("kodeJalur", "JL0" + String.valueOf(1));
         route.put("routes", o);
         m.addData(route, kodeRute);
     }
@@ -107,8 +107,13 @@ public class ControllerStationsByRoutes {
         String kode = m.getCityById(idkota);
         return kode;
     }
+
+    public void print(String kode) throws FileNotFoundException {
+        MenuStationViewByRoute m = new MenuStationViewByRoute();
+        m.print(kode);
+    }
     //-----------------------------------------menu lihat jalur 
-    
+
     //---------------------------------------menu delete
     public void indexDelete() throws IOException, FileNotFoundException, ParseException {
         MenuStationByRouteDelete m = new MenuStationByRouteDelete();

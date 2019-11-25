@@ -19,8 +19,6 @@ public class MenuStationViewByRoute {
     public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         JSONObject r = null;
-        JSONArray rute = new JSONArray();
-        Table st = new Table();
         int total = 0, pil = 0;
         String kode = "";
         System.out.println("#LIHAT STASIUN BERDASARKAN RUTE#");
@@ -33,7 +31,15 @@ public class MenuStationViewByRoute {
         } while (!c.cekRoute(kode));
         System.out.println("Stasiun Awal Sampai Stasiun Akhir");
         System.out.println("-----------------------------------------------------------");
-        //st.setRightAlign(true);//if true then cell text is right aligned
+        c.print(kode);
+        c.index("#- MENU - Lihat Statsiun#");
+    }
+
+    public void print(String kode) throws FileNotFoundException {
+        JSONObject r = null;
+        JSONArray rute = new JSONArray();
+        Table st = new Table();
+        int total=0;
         st.setShowVerticalLines(true);//if false (default) then no vertical lines are shown
         st.setHeaders("No.", "KodeJalur", "KodeRute", "Jalur Yang Dilewati", "Waktu");//optional - if not used then there will be no header and horizontal lines    
         r = c.getDataByRoute(kode);
@@ -47,13 +53,11 @@ public class MenuStationViewByRoute {
         for (int i = 0; i < rute.length(); i++) {
             JSONObject a = rute.getJSONObject(i);
             if (i == 0) {
-                st.addRow("1", r.get("kodeJalur").toString(), kode, c.getCityById(a.getString("src"))+"-"+c.getCityById(a.getString("dst")), String.valueOf(total));
+                st.addRow("1", r.get("kodeJalur").toString(), kode, c.getCityById(a.getString("src")) + "-" + c.getCityById(a.getString("dst")), String.valueOf(total));
             } else {
-                st.addRow("", "", "", c.getCityById(a.getString("src"))+"-"+c.getCityById(a.getString("dst")), "");
+                st.addRow("", "", "", c.getCityById(a.getString("src")) + "-" + c.getCityById(a.getString("dst")), "");
             }
         }
         st.print();
-        c.index("#- MENU - Lihat Statsiun#");
-
     }
 }
