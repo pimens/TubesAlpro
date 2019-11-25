@@ -4,13 +4,14 @@ import controller.ControllerAdmin;
 import controller.ControllerTime;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MenuTimes {
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         ControllerTime c = new ControllerTime();
         int pil;
         Scanner cin = new Scanner(System.in);
@@ -32,7 +33,7 @@ public class MenuTimes {
 
     }
 
-    public void generateWaktuMenu() throws FileNotFoundException, IOException {
+    public void generateWaktuMenu() throws FileNotFoundException, IOException, ParseException {
         char pil;
         int cek=0;
         ControllerTime c = new ControllerTime();
@@ -50,7 +51,7 @@ public class MenuTimes {
         c.index();
     }
 
-    public void showTimeMenu() throws FileNotFoundException, IOException {
+    public void showTimeMenu() throws FileNotFoundException, IOException, ParseException {
         ControllerTime c = new ControllerTime();
         JSONArray time = c.getTime();
         System.out.println("No.		Kode Waktu		Waktu");
