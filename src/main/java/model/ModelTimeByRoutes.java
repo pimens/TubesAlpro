@@ -76,7 +76,7 @@ public class ModelTimeByRoutes extends ModelJSON {
         	timeByRoutes.put(i, input);
 		}
 	}
-	public void deleteData(String input) {
+	public void deleteDataById(String input) {
         JSONObject object = null;
         String kodeRute;
         

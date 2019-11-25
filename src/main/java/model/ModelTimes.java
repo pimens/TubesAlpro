@@ -2,6 +2,11 @@ package model;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -60,11 +65,24 @@ public class ModelTimes extends ModelJSON {
 
     }
 
+    public String getTimeByKodeWaktu(String input) {
+        JSONObject object = null;
+        
+        for (int i = 0; i < times.length(); i++) {
+            object = new JSONObject(times.get(i).toString());
+
+            if (object.getString("kodeWaktu").equals(input)) {
+            	return object.getString("waktu");
+            }
+        }
+        return "";
+    }
     /**
      * @return the times
      */
     public JSONArray getTimes() {
         return times;
     }
+
 
 }
