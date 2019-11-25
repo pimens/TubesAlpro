@@ -34,10 +34,13 @@ public class MenuBooking {
 
         jadwal = con.getSchedule(origin, destination, date);
 
-        System.out.println("Kode Jadwal\tTanggal\t\tWaktu Keberangkatan\tKeberangkatan\tTujuan\t\tWaktu Tiba\tKAI\t\tStatus");
+        Table st = new Table();
+        st.setShowVerticalLines(true);
+        st.setHeaders("Kode Jadwal", "Tanggal", "Waktu Keberangkatan", "Keberangkatan", "Tujuan", "Waktu Tiba", "KAI", "Status");//optional - if not used then there will be no header and horizontal lines    
         for (Schedule j : jadwal) {
-            j.print();
+            st.addRow(j.getKode(),j.getDate(),j.getDepart(),j.getOrigin(),j.getDestination(),j.getArrive(),j.getName(),j.descStatus());
         }
+        st.print();
 
         System.out.println("------------------------------");
         System.out.println("1. Booking Tiket");

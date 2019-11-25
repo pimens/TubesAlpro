@@ -194,8 +194,8 @@
           },
           {
             "kursi": [
-              {"status": "E"},
-              {"status": "E"},
+              {"status": "F"},
+              {"status": "F"},
               {"status": "E"},
               {"status": "E"},
               {"status": "E"},
@@ -210,6 +210,7 @@
           },
           {
             "kursi": [
+              {"status": "F"},
               {"status": "E"},
               {"status": "E"},
               {"status": "E"},
@@ -218,8 +219,7 @@
               {"status": "E"},
               {"status": "E"},
               {"status": "E"},
-              {"status": "E"},
-              {"status": "E"}
+              {"status": "F"}
             ],
             "jenis": "B",
             "gerbong": "4"
