@@ -315,6 +315,7 @@ public class ModelTrains extends ModelJSON {
             p.kode = book.getJSONObject(i).getString("kode");
             p.jadwal = book.getJSONObject(i).getString("jadwal");
             p.tanggal = book.getJSONObject(i).getString("tanggal");
+            p.harga = book.getJSONObject(i).getString("harga");
             JSONArray penumpang = book.getJSONObject(i).getJSONArray("penumpang");
             for (int j=0; j<penumpang.length(); j++) {
                 p.nama.add(penumpang.getJSONObject(j).getString("nama"));
@@ -337,6 +338,7 @@ public class ModelTrains extends ModelJSON {
             object.put("tanggal", list.get(i).tanggal);
             object.put("jadwal", list.get(i).jadwal);
             object.put("status", list.get(i).status);
+            object.put("harga", list.get(i).harga);
 
             JSONArray penumpang = new JSONArray();
             for (int j=0; j<list.get(i).nama.size(); j++) {
@@ -374,6 +376,7 @@ public class ModelTrains extends ModelJSON {
             p.kode = book.getJSONObject(i).getString("kode");
             p.jadwal = book.getJSONObject(i).getString("jadwal");
             p.tanggal = book.getJSONObject(i).getString("tanggal");
+            p.harga = book.getJSONObject(i).getString("harga");
             JSONArray penumpang = book.getJSONObject(i).getJSONArray("penumpang");
             for (int j=0; j<penumpang.length(); j++) {
                 p.nama.add(penumpang.getJSONObject(j).getString("nama"));
@@ -403,6 +406,7 @@ public class ModelTrains extends ModelJSON {
             object.put("tanggal", list.get(i).tanggal);
             object.put("jadwal", list.get(i).jadwal);
             object.put("status", list.get(i).status);
+            object.put("harga", list.get(i).harga);
 
             JSONArray penumpang = new JSONArray();
             for (int j=0; j<list.get(i).nama.size(); j++) {
@@ -524,6 +528,7 @@ class Pesan {
     public String tanggal;
     public String jadwal;
     public String status;
+    public String harga;
     public ArrayList<String> nama = new ArrayList<>();
     public ArrayList<String> kursi = new ArrayList<>();
 }

@@ -3,6 +3,7 @@
     "jadwal": "JW0",
     "kode": "0000000000",
     "tanggal": "01-11-2019",
+    "harga": "100000",
     "penumpang": [
       {
         "nama": "Ahmad",
@@ -19,6 +20,7 @@
     "jadwal": "JW0",
     "kode": "0000000001",
     "tanggal": "01-11-2019",
+    "harga": "100000",
     "penumpang": [
       {
         "nama": "Andri",
