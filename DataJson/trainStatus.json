@@ -196,9 +196,9 @@
             "kursi": [
               {"status": "F"},
               {"status": "F"},
-              {"status": "E"},
-              {"status": "E"},
-              {"status": "E"},
+              {"status": "F"},
+              {"status": "F"},
+              {"status": "F"},
               {"status": "E"},
               {"status": "E"},
               {"status": "E"},
@@ -211,7 +211,7 @@
           {
             "kursi": [
               {"status": "F"},
-              {"status": "E"},
+              {"status": "F"},
               {"status": "E"},
               {"status": "E"},
               {"status": "E"},

@@ -33,6 +33,10 @@ public class ControllerBooking {
         m.write();
     }
 
+    public String addBooking(String kode, String tgl, ArrayList<String> penumpang, ArrayList<String> kursi) throws JSONException, IOException {
+        return (m.addBooking(kode,tgl,penumpang, kursi));
+    }
+
     public ArrayList<Schedule> getSchedule(String origin, String destination, String tgl) throws FileNotFoundException, IOException {
         
         //cari id orig & dest di json kota, cari di route yang id src dan dstnya ini, kode rutenya apa

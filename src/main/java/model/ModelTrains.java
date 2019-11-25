@@ -355,6 +355,72 @@ public class ModelTrains extends ModelJSON {
 
         return temp;
     }
+
+    public String addBooking(String kode, String tgl, ArrayList<String> penumpangnew, ArrayList<String> kursi) throws JSONException, IOException {
+        JSONArray book = readJson("DataJson/booking.json");
+        
+        String tempp = String.valueOf(book.length());
+        String rekening = "";
+        while (rekening.length() < 10-tempp.length()) {
+            rekening += "0";
+        }
+        rekening += tempp;
+
+        ArrayList<Pesan> list = new ArrayList<>();
+
+        for (int i=0; i<book.length(); i++) {
+            Pesan p = new Pesan();
+
+            p.kode = book.getJSONObject(i).getString("kode");
+            p.jadwal = book.getJSONObject(i).getString("jadwal");
+            p.tanggal = book.getJSONObject(i).getString("tanggal");
+            JSONArray penumpang = book.getJSONObject(i).getJSONArray("penumpang");
+            for (int j=0; j<penumpang.length(); j++) {
+                p.nama.add(penumpang.getJSONObject(j).getString("nama"));
+                p.kursi.add(penumpang.getJSONObject(j).getString("kursi"));
+            }
+
+            p.status = book.getJSONObject(i).getString("status");
+            list.add(p);
+        }
+        Pesan p = new Pesan();
+
+        p.kode = rekening;
+        p.jadwal = kode;
+        p.tanggal = tgl;
+        for (int j=0; j<penumpangnew.size(); j++) {
+            p.nama.add(penumpangnew.get(j));
+            p.kursi.add(kursi.get(j));
+        }
+
+        p.status = "0";
+        list.add(p);
+
+        JSONArray arr = new JSONArray();
+        for (int i=0; i<list.size(); i++) {
+            JSONObject object = new JSONObject();
+            object.put("kode", list.get(i).kode);
+            object.put("tanggal", list.get(i).tanggal);
+            object.put("jadwal", list.get(i).jadwal);
+            object.put("status", list.get(i).status);
+
+            JSONArray penumpang = new JSONArray();
+            for (int j=0; j<list.get(i).nama.size(); j++) {
+                JSONObject o = new JSONObject();
+
+                o.put("nama", list.get(i).nama.get(j));
+                o.put("kursi", list.get(i).kursi.get(j));
+
+                penumpang.put(o);
+            }
+            object.put("penumpang", penumpang);
+            arr.put(object);
+        }
+
+        this.writeToJson(arr.toString(2), "DataJson/booking.json");
+
+        return rekening;
+    }
     
     
     public ArrayList getDataByDate(String date) throws FileNotFoundException{

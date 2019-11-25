@@ -1,17 +1,38 @@
-[{
-  "jadwal": "JW0",
-  "kode": "0000000000",
-  "tanggal": "01-11-2019",
-  "totalPembayaran": "400000",
-  "penumpang": [
-    {
-      "nama": "Ahmad",
-      "kursi": "P1-1"
-    },
-    {
-      "nama": "Idris",
-      "kursi": "P1-2"
-    }
-  ],
-  "status": "1"
-}]
+[
+  {
+    "jadwal": "JW0",
+    "kode": "0000000000",
+    "tanggal": "01-11-2019",
+    "penumpang": [
+      {
+        "nama": "Ahmad",
+        "kursi": "P1-1"
+      },
+      {
+        "nama": "Idris",
+        "kursi": "P1-2"
+      }
+    ],
+    "status": "1"
+  },
+  {
+    "jadwal": "JW0",
+    "kode": "0000000001",
+    "tanggal": "01-11-2019",
+    "penumpang": [
+      {
+        "nama": "Andri",
+        "kursi": "B3-3"
+      },
+      {
+        "nama": "Novri",
+        "kursi": "B3-4"
+      },
+      {
+        "nama": "Bejo",
+        "kursi": "B3-5"
+      }
+    ],
+    "status": "1"
+  }
+]

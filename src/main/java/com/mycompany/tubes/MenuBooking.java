@@ -88,10 +88,12 @@ public class MenuBooking {
 
         con.booking(tgl, kode, kursi);
 
+        String rekening = con.addBooking(kode, tgl, penumpang, kursi);
+
         System.out.println("------------------------------------------");
 
         System.out.println("Total Pembayaran = " + jumlah);
-        System.out.println("Kode Rekening = ");
+        System.out.println("Kode Rekening = " + rekening);
 
         System.out.println("------------------------------------------");
         System.out.println("1. Pembayaran");
@@ -106,11 +108,12 @@ public class MenuBooking {
         
         String status = "N";
         String rek;
+        double jumlah;
         do {
             System.out.print("Kode Rekening : ");
             rek = sc.next();
             System.out.print("Total Pembayaran : ");
-            double jumlah = sc.nextDouble();
+            jumlah = sc.nextDouble();
             System.out.print("Apakah data pembayaran sudah benar (Y/N)? ");
             status = sc.next();
         } while (status.equals("N"));
@@ -119,7 +122,7 @@ public class MenuBooking {
 
         System.out.println("------------------------------");
         System.out.println("Pembayaran Berhasil!");
-        System.out.println("Kode Tiket Anda = <Ini dummy>");
+        System.out.println("Kode Tiket Anda = " + Character.toUpperCase(penumpang.get(0).charAt(0)) + rek.substring(7) + Character.toUpperCase(penumpang.get(0).charAt(penumpang.get(0).length()-1)) + 'Z');
         for (int i=0; i<penumpang.size(); i++) {
             int no = i+1;
             System.out.println("Penumpang " + no + " = " + penumpang.get(i));
