@@ -55,6 +55,8 @@ public class MenuTimeByRouteShow implements IMenuTimeByRoute{
 	}
 	
 	int count;
+	String waktu;
+	String rute;
 	@Override
 	public void showContent(ArrayList<HashMap<String,String>>  data){
     	System.out.println("-------------------------------------------------------------------------------------------------------");
@@ -65,11 +67,19 @@ public class MenuTimeByRouteShow implements IMenuTimeByRoute{
         	List<String> kodeWaktu = new ArrayList<String>();
         	kodeWaktu = (List<String>) Arrays.asList(row.get("kodeWaktu").split("\\s*,\\s*"));
         	
+        	rute = timeByRoute.getRuteByKodeRute(row.get("kodeRute"));
+
         	for(int i=0;i<kodeWaktu.size();i++) {
+        		try {
+					waktu = timeByRoute.getWaktuByKodeWaktu(kodeWaktu.get(i));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        				
         		if(i==0) {
-        			System.out.println(count+"\t"+row.get("kodeWaktuRute")+"                 \t"+row.get("kodeRute")+"   \t - "+kodeWaktu.get(i));
+        			System.out.println(count+"\t"+row.get("kodeWaktuRute")+"                 \t"+rute+"\t\t - "+waktu);
         		}else {
-        			System.out.println("   "+"\t"+"     "                 +"                 \t"+"        "         +"   \t - "+kodeWaktu.get(i));
+        			System.out.println("   "+"\t"+"     "                 +"                 \t"+"        "         +"   \t - "+waktu);
             		}
         	}
         	count++;

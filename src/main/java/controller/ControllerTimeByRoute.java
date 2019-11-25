@@ -2,10 +2,12 @@ package controller;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.mycompany.tubes.IMenuTimeByRoute;
@@ -39,11 +41,11 @@ public class ControllerTimeByRoute {
 		m = new MenuTimeByRoute(this);
 	}
 	
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         m.index();
     }
     
-	public void subMenu(IMenuTimeByRoute subMenu) throws FileNotFoundException, IOException {
+	public void subMenu(IMenuTimeByRoute subMenu) throws FileNotFoundException, IOException, ParseException {
 		subMenu.index();
 	}
 
@@ -62,16 +64,33 @@ public class ControllerTimeByRoute {
     }
 
     public void addTimeByRoute(HashMap<String, String> input) throws FileNotFoundException, IOException {
+    	String kodeRute = input.get("kodeRute");
+    	String id = routes.getIdByKodeRute(kodeRute);
+    	input.put("kodeRute",id);
     	timeByRoutes.addData(input);
     	timeByRoutes.pushToJSONFile();
     }
     public void deleteTimeByRoute(String input) throws FileNotFoundException, IOException {
-    	timeByRoutes.deleteData(input);
+    	String id = routes.getIdByKodeRute(input);
+    	timeByRoutes.deleteDataById(id);
     	timeByRoutes.pushToJSONFile();
     }
-    public ArrayList<HashMap<String,String>> getDataTimeByRoute(String input) throws FileNotFoundException, IOException {	
-    	ArrayList<HashMap<String,String>> array_final = timeByRoutes.getDataByKodeRute(input);
+    
+    public ArrayList<HashMap<String,String>> getDataTimeByRoute(String input) throws FileNotFoundException, IOException {
+    	String id = routes.getIdByKodeRute(input);
+    	ArrayList<HashMap<String,String>> array_final = timeByRoutes.getDataByKodeRute(id);
     	return array_final;
+    }
+    
+	public String getRuteByKodeRute(String string) {
+		
+    	String rute = routes.getKodeRuteById(string);
+    	return rute;
+	}
+    public String getWaktuByKodeWaktu(String inputRoute) throws FileNotFoundException, IOException {	
+    	
+    	String waktu = times.getTimeByKodeWaktu(inputRoute);
+    	return waktu;
     }
    
 
@@ -91,6 +110,7 @@ public class ControllerTimeByRoute {
         }     
 		return map;
 	}
+
 
 
 }

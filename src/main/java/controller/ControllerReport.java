@@ -8,6 +8,7 @@ import com.mycompany.tubes.IMenuReport;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,14 +20,18 @@ import java.util.Scanner;
 import org.json.JSONObject;
 
 import model.ModelInvoices;
+import model.ModelSchedules;
+import model.ModelTrains;
 
 public class ControllerReport{
 	private MenuReport m;
 	public HashMap<Integer,IMenuReport> subMenu;
-	private ModelInvoices invoice;
+	private ModelTrains invoice;
+	private ModelSchedules searchSchedule;
 	
 	public ControllerReport() throws FileNotFoundException{
-		invoice = new ModelInvoices();
+		invoice = new ModelTrains();
+		searchSchedule = new ModelSchedules();
 		
 		subMenu = new HashMap<Integer,IMenuReport>();
 		subMenu.put(1, new MenuReportDaily(this));
@@ -36,7 +41,7 @@ public class ControllerReport{
 		m = new MenuReport(this);
 	}
 	
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         m.index();
     }
     
@@ -56,6 +61,17 @@ public class ControllerReport{
     	
     	
     	array_raw.forEach((data) -> {
+        	String kodeKereta = "";
+        	String kereta = "";
+
+			try {
+				kodeKereta = searchSchedule.getKodeKeretaByKodeJadwalTanggal(data.get("kodeJadwal"),data.get("tanggal"));
+	        	kereta = searchSchedule.getKeretaByKodeKereta(kodeKereta);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			
+        	data.put("kodeJadwal",kereta);
     		String primary_key = data.get("tanggal")+data.get("kodeJadwal");
     		
     		if(data_final.containsKey(primary_key) ){
@@ -179,7 +195,7 @@ public class ControllerReport{
 	    		map.put(count,i);
 	    		count++;
 			}
-        }     
+        }
 		return map;
 	}
 

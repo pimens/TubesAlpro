@@ -33,4 +33,28 @@ public class ModelRoutes extends ModelJSON {
         }
 		return false;
 	}
+    public String getIdByKodeRute(String input) {
+        JSONObject object = null;
+        
+        for (int i = 0; i < routes.length(); i++) {
+            object = new JSONObject(routes.get(i).toString());
+
+            if (object.getString("kodeRute").equals(input)) {
+            	return object.getString("id");
+            }
+        }
+        return "";
+    }
+	public String getKodeRuteById(String string) {
+        JSONObject object = null;
+        
+        for (int i = 0; i < routes.length(); i++) {
+            object = new JSONObject(routes.get(i).toString());
+
+            if (object.getString("id").equals(string)) {
+            	return object.getString("kodeRute");
+            }
+        }
+        return "";
+	}
 }

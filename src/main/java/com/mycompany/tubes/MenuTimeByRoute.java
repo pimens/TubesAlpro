@@ -2,6 +2,7 @@ package com.mycompany.tubes;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -26,12 +27,12 @@ public class MenuTimeByRoute {
     }
     
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
     	System.out.println("#KELOLA WAKTU PADA RUTE#");
     	this.menu(0);
     }
     
-    public void menu(int input_pil) throws FileNotFoundException, IOException {
+    public void menu(int input_pil) throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         int pil = 0;
         
