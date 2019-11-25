@@ -38,11 +38,11 @@ public class MenuReport {
     }
 
     // HEADER MENU
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
     	System.out.println("#LIHAT PEMASUKAN#");
     	this.menu(0);
     }
-    public void menu(int input_pil) throws FileNotFoundException, IOException {
+    public void menu(int input_pil) throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         int pil = 0;
         

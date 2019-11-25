@@ -1,7 +1,8 @@
 [{
-  "jadwal": "JW00001",
+  "jadwal": "JW0",
   "kode": "0000000000",
   "tanggal": "01-11-2019",
+  "totalPembayaran": "400000",
   "penumpang": [
     {
       "nama": "Ahmad",

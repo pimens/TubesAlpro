@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -359,4 +360,60 @@ public class ModelSchedules extends ModelJSON {
         }
         return jadwal;
     }
+
+	public String getKodeKeretaByKodeJadwalTanggal(String kodeJadwal, String tanggal) throws FileNotFoundException {
+
+        JSONArray data = readJson("DataJson/searchSchedule.json");
+
+        JSONObject object = null;
+        JSONObject object2 = null;
+        ArrayList array = new ArrayList();
+        HashMap map = new HashMap();
+        
+        int i = 0;
+        int cek = 0;
+        
+    	// GET ARRAY OF JADWAL IN TANGGAL
+        for (i = 0; i < data.length(); i++) {
+            object = new JSONObject(data.get(i).toString());
+//            System.out.println(object);
+            if (object.getString("tanggal").equals(tanggal)) {
+
+            	// GET KODE KERETA IN ARRAY OF JADWAL {}
+            	JSONArray arr_jadwal = object.getJSONArray("jadwal");
+                for (i = 0; i < arr_jadwal.length(); i++) {
+//                	System.out.println(object2);
+                    object2 = new JSONObject(arr_jadwal.get(i).toString());
+                    if (object2.getString("kode").equals(kodeJadwal)) {
+
+                    	// RETURN KODE KERETA
+		        		return object2.getString("kereta");
+                    }
+                }
+            }
+        }
+        return "";
+	}
+	public String getKeretaByKodeKereta(String kodeKereta) throws FileNotFoundException {
+        JSONArray data = readJson("DataJson/train.json");
+
+        JSONObject object = null;
+        ArrayList array = new ArrayList();
+        HashMap map = new HashMap();
+        
+        int i = 0;
+        int cek = 0;
+        
+    	// GET KERETA DARI KODE KERETA
+        for (i = 0; i < data.length(); i++) {
+            object = new JSONObject(data.get(i).toString());
+//            System.out.println(kodeKereta);
+//            System.out.println(object);
+            if (object.getString("id").equals(kodeKereta)) {
+            	// RETURN KERETA
+		        return object.getString("kodeKAI");
+            }
+        }
+        return "";
+	}
 }
