@@ -1,13 +1,23 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import controller.ControllerCities;
 
 public class ModelCities extends ModelJSON {
+
+    File file = new File("DataJson/cities" + ".json");
+    BufferedReader br;
+    static int indexUser = 0;
 
     private String namaKota;
     private String kodeKota;
@@ -39,7 +49,9 @@ public class ModelCities extends ModelJSON {
     }
 
     public int getMaxId() throws FileNotFoundException {
-        JSONArray currentKota = readJson("DataJson/cities.json");
+        br = new BufferedReader(new FileReader(file));
+        JSONTokener tokener = new JSONTokener(br);
+        JSONArray currentKota = new JSONArray(tokener);
         int max = 0;
         if (currentKota.length() > 0) {
             for (int i = 0; i < currentKota.length(); i++) {
@@ -54,7 +66,9 @@ public class ModelCities extends ModelJSON {
     }
 
     public void addCity() throws FileNotFoundException, IOException {
-        JSONArray currentKota = readJson("DataJson/cities.json");
+        br = new BufferedReader(new FileReader(file));
+        JSONTokener tokener = new JSONTokener(br);
+        JSONArray currentKota = new JSONArray(tokener);
         JSONObject kotaDetails = new JSONObject();
         kotaDetails.put("kodeKota", getKodeKota());
         kotaDetails.put("nama", getNamaKota());
@@ -71,7 +85,9 @@ public class ModelCities extends ModelJSON {
 
     public void editCity(String kodelama, String kodeBaru, String kotaBaru) throws JSONException, IOException {
 
-        JSONArray currentkota = readJson("DataJson/cities.json");
+        br = new BufferedReader(new FileReader(file));
+        JSONTokener tokener = new JSONTokener(br);
+        JSONArray currentkota = new JSONArray(tokener);
         int cek = 0;
         for (int i = 0; i < currentkota.length(); i++) {
 
@@ -88,44 +104,49 @@ public class ModelCities extends ModelJSON {
         this.writeToJson(currentkota.toString(2), "DataJson/cities" + ".json");
 
     }
+    
+    public String getKodeCity(String namakota) throws JSONException, IOException {
 
-    public boolean deleteCity(String kodelama) throws JSONException, IOException {
+        br = new BufferedReader(new FileReader(file));
+        JSONTokener tokener = new JSONTokener(br);
+        JSONArray currentkota = new JSONArray(tokener);
+        String kodekota=" ";
+        for (int i = 0; i < currentkota.length(); i++) {
+
+            JSONObject object = new JSONObject(currentkota.get(i).toString());
+            if (object.getString("nama").equals(namakota)) {
+
+              kodekota=object.getString("kodeKota");
+
+            }
+        }
+
+        return kodekota;
+
+    }
+
+    public void deleteCity(String kodelama) throws JSONException, IOException {
         JSONArray currentkota = readJson("DataJson/cities.json");
-        boolean exist = false;
-        JSONArray routes = readJson("DataJson/StationsByRoute.json");
-        ModelStationsByRoutes m = new ModelStationsByRoutes();
-        for (int i = 0; i < routes.length(); i++) {
-            JSONObject a = new JSONObject(routes.get(i).toString());
-            for (int j = 0; j < a.getJSONArray("routes").length(); j++) {
-                String k = m.getCityById(a.getJSONArray("routes").getJSONObject(j).getString("src"));
-                if (k.equals(kodelama)) {
-                    exist = true;
-                }
+        int cek = 0;
+        for (int i = 0; i < currentkota.length(); i++) {
+            JSONObject object = new JSONObject(currentkota.get(i).toString());
+            if (object.getString("kodeKota").equals(kodelama)) {
+
+                currentkota.remove(i);
+
             }
         }
-        if (!exist) {
-            int cek = 0;
-            for (int i = 0; i < currentkota.length(); i++) {
-                JSONObject object = new JSONObject(currentkota.get(i).toString());
-                if (object.getString("kodeKota").equals(kodelama)) {
-
-                    currentkota.remove(i);
-
-                }
-            }
-            this.writeToJson(currentkota.toString(2), "DataJson/cities" + ".json");
-        }
-        return exist;
+        this.writeToJson(currentkota.toString(2), "DataJson/cities" + ".json");
     }
 
     //cek city exist
     public boolean cityExist(String kode) throws FileNotFoundException {
         JSONArray city = readJson("DataJson/cities.json");
-        boolean cek = false;
-        for (int i = 0; i < city.length(); i++) {
+        boolean cek=false;
+        for(int i=0;i<city.length();i++){
             JSONObject o = city.getJSONObject(i);
-            if (kode.equals(o.get("kodeKota"))) {
-                cek = true;
+            if(kode.equals(o.get("kodeKota"))){                
+                cek=true;               
             }
         }
         return cek;
