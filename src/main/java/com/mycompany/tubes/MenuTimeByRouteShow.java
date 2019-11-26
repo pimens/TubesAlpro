@@ -33,14 +33,8 @@ public class MenuTimeByRouteShow implements IMenuTimeByRoute{
         System.out.println("#LIHAT WAKTU BERDASARKAN RUTE#");
         
         Scanner cin = new Scanner(System.in);
-//        do {
-            System.out.print("Kode Rute : ");
-        	inputRoute = cin.nextLine();
-//        	if(!checkInputRoute(inputRoute)) {
-//        		System.out.println("Kode Rute tidak ditemukan");
-//        	}
-//        }
-//        while(!checkInputRoute(inputRoute));
+        System.out.print("Kode Rute : ");
+        inputRoute = cin.nextLine();
 		System.out.println();
 
 		// GET DATA

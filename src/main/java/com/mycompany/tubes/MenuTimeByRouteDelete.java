@@ -9,7 +9,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 import controller.ControllerTimeByRoute;
@@ -18,6 +20,7 @@ public class MenuTimeByRouteDelete implements IMenuTimeByRoute{
 	private ControllerTimeByRoute timeByRoute;
 	private HashMap<Integer,Integer> inputMapper;
 	private String inputRoute ;
+	private String inputTime ;
 
     public MenuTimeByRouteDelete(ControllerTimeByRoute c){
     	timeByRoute = c;
@@ -40,12 +43,38 @@ public class MenuTimeByRouteDelete implements IMenuTimeByRoute{
         	}
         }
         while(!checkInputRoute(inputRoute));
-		System.out.println();
-		System.out.println("Waktu Available Untuk Rute");
-    	System.out.println("-------------------------------------------------------------------------------------------------------");
-	
+		
+
+		// SHOW CONTENT
+		ArrayList<HashMap<String,String>>  data = timeByRoute.getDataTimeByRoute(inputRoute);
+    	List array = new ArrayList<String>(Arrays.asList(data.get(0).get("kodeWaktu").split("\\s*,\\s*")));
+    	
+    	// PRINT INIT KODE WAKTU
+    	showContent(data);
+
 		// DELETE DATA
-		timeByRoute.deleteTimeByRoute(inputRoute);
+    	count = 1;
+    	do {
+    		System.out.print("Time "+count+" : ");
+        	inputTime = cin.nextLine();
+        	if(!inputTime.equals("99")){
+	        	if(!array.contains(inputTime)) {
+	        		System.out.println("Kode Waktu tidak ditemukan");
+	        	}else {
+	        		array.remove(inputTime);
+	        		count++;
+	        	}
+        	}
+        }    	
+    	while(!inputTime.equals("99"));
+    	
+    	Collections.sort(array);
+		// DELETE DATA
+    	HashMap<String,String> map = new HashMap<String,String>();
+    	map.put("kodeRute",inputRoute);
+    	map.put("kodeWaktu",String.join(",", array));
+    	
+		timeByRoute.addTimeByRoute(map);
 		
     	System.out.println("-------------------------------------------------------------------------------------------------------");
     	System.out.println("Waktu Untuk Rute Berhasil Dihapus");
@@ -57,9 +86,46 @@ public class MenuTimeByRouteDelete implements IMenuTimeByRoute{
 	private boolean checkInputRoute(String input) {
         return timeByRoute.isExistByRoute(input);
 	}
+    private boolean checkInputTime(String input) {
+        return timeByRoute.isExistByTime(input);
+	}
 
+	int count;
+	String waktu;
+	String rute;
 	@Override
-	public void showContent(ArrayList<HashMap<String, String>> data){
-    }
+	public void showContent(ArrayList<HashMap<String,String>>  data){
+		System.out.println();
+		System.out.println("Waktu Available Untuk Rute");
+    	System.out.println("-------------------------------------------------------------------------------------------------------");
+    	System.out.println("No   \tKode Waktu Rute \tKode Rute  \tWaktu Tersedia Rute");
+    	
+        count = 1;
+        data.forEach((row) -> {
+        	List<String> kodeWaktu = new ArrayList<String>();
+        	kodeWaktu = (List<String>) Arrays.asList(row.get("kodeWaktu").split("\\s*,\\s*"));
+        	
+        	rute = timeByRoute.getRuteByKodeRute(row.get("kodeRute"));
+
+        	for(int i=0;i<kodeWaktu.size();i++) {
+        		try {
+					waktu = timeByRoute.getWaktuByKodeWaktu(kodeWaktu.get(i));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        				
+        		if(i==0) {
+        			System.out.println(count+"\t"+row.get("kodeWaktuRute")+"                 \t"+rute+"\t\t - "+waktu);
+        		}else {
+        			System.out.println("   "+"\t"+"     "                 +"                 \t"+"        "         +"   \t - "+waktu);
+            		}
+        	}
+        	count++;
+    		});
+    	
+			
+    	
+    	System.out.println("-------------------------------------------------------------------------------------------------------");
+	}
 	
 }

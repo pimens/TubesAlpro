@@ -9,7 +9,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 import controller.ControllerTimeByRoute;
@@ -41,13 +43,21 @@ public class MenuTimeByRouteAdd implements IMenuTimeByRoute{
         	}
         }
         while(!checkInputRoute(inputRoute));
-		System.out.println();
-		System.out.println("Waktu Available Untuk Rute");
-    	System.out.println("-------------------------------------------------------------------------------------------------------");
-	
-		// INPUT DATA
-    	int count = 1;
-    	ArrayList array = new ArrayList();
+        
+		// SHOW CONTENT
+		ArrayList<HashMap<String,String>>  data = timeByRoute.getDataTimeByRoute(inputRoute);
+    	List array = new ArrayList<String>(Arrays.asList(data.get(0).get("kodeWaktu").split("\\s*,\\s*")));
+    	
+    	// PRINT INIT KODE WAKTU
+    	showContent(data);
+    	
+    	// ADD DATA
+    	count = 1;
+    	for(int i=0;i<array.size();i++) {
+    		System.out.println("Time "+count+" : "+array.get(i));
+    		count++;
+    	}
+    	
     	do {
     		System.out.print("Time "+count+" : ");
         	inputTime = cin.nextLine();
@@ -65,6 +75,7 @@ public class MenuTimeByRouteAdd implements IMenuTimeByRoute{
         }
         while(!inputTime.equals("99"));
     	
+    	Collections.sort(array);
 		// ADD DATA
     	HashMap<String,String> map = new HashMap<String,String>();
     	map.put("kodeRute",inputRoute);
@@ -86,9 +97,43 @@ public class MenuTimeByRouteAdd implements IMenuTimeByRoute{
         return timeByRoute.isExistByTime(input);
 	}
 
+	int count;
+	String waktu;
+	String rute;
 	@Override
-	public void showContent(ArrayList<HashMap<String, String>> data){
-    }
+	public void showContent(ArrayList<HashMap<String,String>>  data){
+		System.out.println();
+		System.out.println("Waktu Available Untuk Rute");
+    	System.out.println("-------------------------------------------------------------------------------------------------------");
+    	System.out.println("No   \tKode Waktu Rute \tKode Rute  \tWaktu Tersedia Rute");
+    	
+        count = 1;
+        data.forEach((row) -> {
+        	List<String> kodeWaktu = new ArrayList<String>();
+        	kodeWaktu = (List<String>) Arrays.asList(row.get("kodeWaktu").split("\\s*,\\s*"));
+        	
+        	rute = timeByRoute.getRuteByKodeRute(row.get("kodeRute"));
+
+        	for(int i=0;i<kodeWaktu.size();i++) {
+        		try {
+					waktu = timeByRoute.getWaktuByKodeWaktu(kodeWaktu.get(i));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        				
+        		if(i==0) {
+        			System.out.println(count+"\t"+row.get("kodeWaktuRute")+"                 \t"+rute+"\t\t - "+waktu);
+        		}else {
+        			System.out.println("   "+"\t"+"     "                 +"                 \t"+"        "         +"   \t - "+waktu);
+            		}
+        	}
+        	count++;
+    		});
+    	
+			
+    	
+    	System.out.println("-------------------------------------------------------------------------------------------------------");
+	}
 
 
 

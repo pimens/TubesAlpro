@@ -16,7 +16,6 @@ import com.mycompany.tubes.MenuTimeByRouteAdd;
 import com.mycompany.tubes.MenuTimeByRouteShow;
 import com.mycompany.tubes.MenuTimeByRouteDelete;
 
-import model.ModelInvoices;
 import model.ModelRoutes;
 import model.ModelTimeByRoutes;
 import model.ModelTimes;
@@ -79,6 +78,7 @@ public class ControllerTimeByRoute {
     public ArrayList<HashMap<String,String>> getDataTimeByRoute(String input) throws FileNotFoundException, IOException {
     	String id = routes.getIdByKodeRute(input);
     	ArrayList<HashMap<String,String>> array_final = timeByRoutes.getDataByKodeRute(id);
+    	
     	return array_final;
     }
     
