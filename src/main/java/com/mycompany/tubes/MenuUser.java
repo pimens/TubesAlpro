@@ -9,6 +9,7 @@ import controller.User;
 import java.io.IOException;
 import java.util.Scanner;
 import controller.ControllerBooking;
+import controller.ControllerHistory;
 
 public class MenuUser {
 
@@ -17,12 +18,13 @@ public class MenuUser {
         int pil = 0;
         User u = new User();
         ControllerBooking book = new ControllerBooking();
+        ControllerHistory history = new ControllerHistory();
 
         System.out.println("#Menu Pengguna#");
         System.out.println("Welcome, " + User.session.getString("namaLengkap".toString()));
         System.out.println("1. Booking Tiket ");
-        System.out.println("2. Kelola Profil ;");
-        System.out.println("3. History ;");
+        System.out.println("2. Kelola Profil ");
+        System.out.println("3. History ");
         System.out.println("0. Logout ;");
         System.out.print("Pilihan :");
         pil = cin.nextInt();
@@ -39,7 +41,8 @@ public class MenuUser {
                 this.index();
                 break;
             case 3:
-                System.out.println("History");
+                history.index();
+                this.index();
                 break;
             case 4:
                 book.subMenu(2, "");
