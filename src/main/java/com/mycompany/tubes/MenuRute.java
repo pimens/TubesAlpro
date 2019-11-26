@@ -5,10 +5,10 @@ import controller.ControllerCities;
 import controller.ControllerRute;
 import controller.User;
 import controller.ControllerTrain;
-import model.ModelTrain;
 import controller.Home;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 import org.json.JSONArray;
@@ -20,7 +20,7 @@ public class MenuRute {
 
     ControllerRute dkc=new ControllerRute();
     
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         int pil;
         
@@ -49,7 +49,7 @@ public class MenuRute {
         }
     }
 
-    public void addRuteMenu() throws FileNotFoundException, IOException {
+    public void addRuteMenu() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         String input = "";
         String kode_rute = "";
@@ -110,7 +110,7 @@ public class MenuRute {
         
     }
 
-    public void showRuteMenu() throws FileNotFoundException, IOException {
+    public void showRuteMenu() throws FileNotFoundException, IOException, ParseException {
     	
     	
         System.out.println("No.		Keberangkatan		Tujuan		Kode_Rute		Business		Premium");
@@ -123,7 +123,7 @@ public class MenuRute {
     	index();
        }
     
-    public void editRuteMenu() throws FileNotFoundException, IOException {
+    public void editRuteMenu() throws FileNotFoundException, IOException, ParseException {
     	
         Scanner cin = new Scanner(System.in);
         String input = "";
@@ -163,7 +163,7 @@ public class MenuRute {
 
 
     }
-    public void deleteRuteMenu() throws FileNotFoundException, IOException {
+    public void deleteRuteMenu() throws FileNotFoundException, IOException, ParseException {
     	
         Scanner cin = new Scanner(System.in);
         String input = "";

@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,27 +27,27 @@ public class ControllerRute extends ModelJSON{
     ModelRute modelRute;
 
     //===================================Akses menu via controller=============================
-    public void index() throws IOException {
+    public void index() throws IOException, ParseException {
         m = new MenuRute();
         m.index();
     }
 
-    public void showRute() throws IOException {
+    public void showRute() throws IOException, ParseException {
         m = new MenuRute();
         m.showRuteMenu();
     }
 
-    public void menuAddRute() throws IOException {
+    public void menuAddRute() throws IOException, ParseException {
         m = new MenuRute();
         m.addRuteMenu();
     }
 
-    public void editRute() throws IOException {
+    public void editRute() throws IOException, ParseException {
         m = new MenuRute();
         m.editRuteMenu();
     }
 
-    public void deleteRute() throws IOException {
+    public void deleteRute() throws IOException, ParseException {
         m = new MenuRute();
         m.deleteRuteMenu();
     }
@@ -89,7 +90,7 @@ public class ControllerRute extends ModelJSON{
     }
     
     //buat main sndiri utk ngecek
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         ControllerRute c = new ControllerRute();
         c.index();
     }

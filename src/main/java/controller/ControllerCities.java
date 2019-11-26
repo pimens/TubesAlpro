@@ -3,6 +3,8 @@ package controller;
 import com.mycompany.tubes.MenuKota;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
+
 import model.ModelCities;
 import org.json.JSONArray;
 
@@ -12,27 +14,27 @@ public class ControllerCities {
     ModelCities modelCity;
 
     //===================================Akses menu via controller=============================
-    public void index() throws IOException {
+    public void index() throws IOException, ParseException {
         m = new MenuKota();
         m.index();
     }
 
-    public void showCity() throws IOException {
+    public void showCity() throws IOException, ParseException {
         m = new MenuKota();
         m.showCity();
     }
 
-    public void menuAddCity() throws IOException {
+    public void menuAddCity() throws IOException, ParseException {
         m = new MenuKota();
         m.menuAddCity();
     }
 
-    public void editCity() throws IOException {
+    public void editCity() throws IOException, ParseException {
         m = new MenuKota();
         m.editCityMenu();
     }
 
-    public void deleteCity() throws IOException {
+    public void deleteCity() throws IOException, ParseException {
         m = new MenuKota();
         m.deleteCityMenu();
     }
@@ -47,10 +49,10 @@ public class ControllerCities {
     }
 
     //delete berdasarkan kode city, lempar kode ke JSON data,baru dijson data dicari kodenya itu, dihapus
-    public void deleteCity(String kode) throws IOException {
+    public boolean deleteCity(String kode) throws IOException {
         modelCity = new ModelCities();
         modelCity.deleteCity(kode);
-
+        return true;
     }
 
     //ambil smua data kota dari model city, return ke view
@@ -80,7 +82,7 @@ public class ControllerCities {
     }
     
     //buat main sndiri utk ngecek
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         ControllerCities c = new ControllerCities();
         c.index();
     }

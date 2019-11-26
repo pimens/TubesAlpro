@@ -1,6 +1,6 @@
 package com.mycompany.tubes;
 
-import controller.ContollerTrain;
+import controller.ControllerTrain;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
@@ -11,10 +11,10 @@ import org.json.JSONObject;
 //controller utama
 public class MenuTrain {
 
-    ContollerTrain c;
+    ControllerTrain c;
 
     public MenuTrain() {
-        c = new ContollerTrain();
+        c = new ControllerTrain();
     }
 
     public void index() throws FileNotFoundException, IOException, ParseException {
