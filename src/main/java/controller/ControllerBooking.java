@@ -33,8 +33,8 @@ public class ControllerBooking {
         m.write();
     }
 
-    public String addBooking(String kode, String tgl, ArrayList<String> penumpang, ArrayList<String> kursi) throws JSONException, IOException {
-        return (m.addBooking(kode,tgl,penumpang, kursi));
+    public String addBooking(String kode, String tgl, ArrayList<String> penumpang, ArrayList<String> kursi,long jumlah) throws JSONException, IOException {
+        return (m.addBooking(kode,tgl,penumpang, kursi,jumlah));
     }
 
     public ArrayList<Schedule> getSchedule(String origin, String destination, String tgl) throws FileNotFoundException, IOException {

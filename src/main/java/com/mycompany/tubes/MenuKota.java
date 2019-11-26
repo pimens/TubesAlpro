@@ -128,7 +128,9 @@ public class MenuKota {
         if (input.contains("DELETE_")) {
 
             String[] kotalama = input.split("_", 2);
-            cc.deleteCity(kotalama[1]);
+            if(cc.deleteCity(kotalama[1])){
+                System.out.println("Tidak dapat dihapus");
+            }
             index();
         } else {
             System.out.println("format salah");

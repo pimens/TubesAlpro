@@ -88,7 +88,7 @@ public class MenuBooking {
 
         con.booking(tgl, kode, kursi);
 
-        String rekening = con.addBooking(kode, tgl, penumpang, kursi);
+        String rekening = con.addBooking(kode, tgl, penumpang, kursi, (long) jumlah);
 
         System.out.println("------------------------------------------");
 

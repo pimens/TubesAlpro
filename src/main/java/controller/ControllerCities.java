@@ -48,9 +48,9 @@ public class ControllerCities {
     }
 
     //delete berdasarkan kode city, lempar kode ke JSON data,baru dijson data dicari kodenya itu, dihapus
-    public void deleteCity(String kode) throws IOException {
+    public boolean deleteCity(String kode) throws IOException {
         modelCity = new ModelCities();
-        modelCity.deleteCity(kode);
+        return modelCity.deleteCity(kode);
 
     }
 

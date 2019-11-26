@@ -1,9 +1,9 @@
 [
   {
     "jadwal": "JW0",
+    "harga": "100000",
     "kode": "0000000000",
     "tanggal": "01-11-2019",
-    "harga": "100000",
     "penumpang": [
       {
         "nama": "Ahmad",
@@ -14,13 +14,14 @@
         "kursi": "P1-2"
       }
     ],
+    "user": "1234123478907890",
     "status": "1"
   },
   {
     "jadwal": "JW0",
+    "harga": "100000",
     "kode": "0000000001",
     "tanggal": "01-11-2019",
-    "harga": "100000",
     "penumpang": [
       {
         "nama": "Andri",
@@ -35,6 +36,37 @@
         "kursi": "B3-5"
       }
     ],
+    "user": "1234123478907890",
+    "status": "1"
+  },
+  {
+    "jadwal": "JW0",
+    "harga": "45000",
+    "kode": "0000000002",
+    "tanggal": "01-11-2019",
+    "penumpang": [{
+      "nama": "andriroriamp",
+      "kursi": "B2-3"
+    }],
+    "user": "0831290031341234",
+    "status": "1"
+  },
+  {
+    "jadwal": "JW2",
+    "harga": "6000",
+    "kode": "0000000003",
+    "tanggal": "01-11-2019",
+    "penumpang": [
+      {
+        "nama": "qw",
+        "kursi": "B3-1"
+      },
+      {
+        "nama": "as",
+        "kursi": "B3-2"
+      }
+    ],
+    "user": "0831290031341234",
     "status": "1"
   }
 ]

@@ -1,17 +1,11 @@
 package model;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONTokener;
-
-import controller.ControllerCities;
 
 public class ModelCities extends ModelJSON {
 
@@ -95,18 +89,33 @@ public class ModelCities extends ModelJSON {
 
     }
 
-    public void deleteCity(String kodelama) throws JSONException, IOException {
+    public boolean deleteCity(String kodelama) throws JSONException, IOException {
         JSONArray currentkota = readJson("DataJson/cities.json");
-        int cek = 0;
-        for (int i = 0; i < currentkota.length(); i++) {
-            JSONObject object = new JSONObject(currentkota.get(i).toString());
-            if (object.getString("kodeKota").equals(kodelama)) {
-
-                currentkota.remove(i);
-
+        boolean exist = false;
+        JSONArray routes = readJson("DataJson/StationsByRoute.json");
+        ModelStationsByRoutes m = new ModelStationsByRoutes();
+        for (int i = 0; i < routes.length(); i++) {
+            JSONObject a = new JSONObject(routes.get(i).toString());
+            for (int j = 0; j < a.getJSONArray("routes").length(); j++) {
+                String k = m.getCityById(a.getJSONArray("routes").getJSONObject(j).getString("src"));
+                if (k.equals(kodelama)) {
+                    exist = true;
+                }
             }
         }
-        this.writeToJson(currentkota.toString(2), "DataJson/cities" + ".json");
+        if (!exist) {
+            int cek = 0;
+            for (int i = 0; i < currentkota.length(); i++) {
+                JSONObject object = new JSONObject(currentkota.get(i).toString());
+                if (object.getString("kodeKota").equals(kodelama)) {
+
+                    currentkota.remove(i);
+
+                }
+            }
+            this.writeToJson(currentkota.toString(2), "DataJson/cities" + ".json");
+        }
+        return exist;
     }
 
     //cek city exist

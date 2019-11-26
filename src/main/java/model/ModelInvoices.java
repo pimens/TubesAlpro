@@ -37,7 +37,7 @@ public class ModelInvoices extends ModelJSON {
         		map.put("id",object.getString("id"));
         		map.put("tanggal",object.getString("tanggal"));
         		map.put("kodeJadwal",object.getString("kodeJadwal"));
-        		map.put("totalPembayaran",object.getString("totalPembayaran"));
+        		map.put("harga",object.getString("harga"));
         		array.add(map);
             }
         }
@@ -69,7 +69,7 @@ public class ModelInvoices extends ModelJSON {
         		map.put("id",object.getString("id"));
         		map.put("tanggal",object.getString("tanggal"));
         		map.put("kodeJadwal",object.getString("kodeJadwal"));
-        		map.put("totalPembayaran",object.getString("totalPembayaran"));
+        		map.put("harga",object.getString("harga"));
         		array.add(map);
             }
         }
@@ -107,7 +107,7 @@ public class ModelInvoices extends ModelJSON {
                     
         		map.put("tanggal",dateString);
         		map.put("kodeJadwal",object.getString("kodeJadwal"));
-        		map.put("totalPembayaran",object.getString("totalPembayaran"));
+        		map.put("harga",object.getString("harga"));
         		array.add(map);
             }
         }

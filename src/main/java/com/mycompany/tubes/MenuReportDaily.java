@@ -73,10 +73,10 @@ public class MenuReportDaily implements IMenuReport{
         sum = (long) 0;
         count = 0;
         list.forEach((data) -> {
-        	Long totalPembayaran = Long.parseLong(data.get("totalPembayaran"));
-        	sum = sum + totalPembayaran;
+        	Long harga = Long.parseLong(data.get("harga"));
+        	sum = sum + harga;
         	count++;
-    		System.out.println(count+"\t"+data.get("tanggal")+"\t"+data.get("kodeJadwal")+"   \t"+formatter.format(totalPembayaran));
+    		System.out.println(count+"\t"+data.get("tanggal")+"\t"+data.get("kodeJadwal")+"   \t"+formatter.format(harga));
     	});
     	System.out.println();
     	System.out.println("Total Masukan Harian : "+formatter.format(sum));

@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import controller.Train;
 import controller.Wagon;
 import controller.Schedule;
+import controller.User;
 
 public class ModelTrains extends ModelJSON {
     private ArrayList<Status1> status;
@@ -316,6 +317,7 @@ public class ModelTrains extends ModelJSON {
             p.jadwal = book.getJSONObject(i).getString("jadwal");
             p.tanggal = book.getJSONObject(i).getString("tanggal");
             p.harga = book.getJSONObject(i).getString("harga");
+            p.user = book.getJSONObject(i).getString("user");
             JSONArray penumpang = book.getJSONObject(i).getJSONArray("penumpang");
             for (int j=0; j<penumpang.length(); j++) {
                 p.nama.add(penumpang.getJSONObject(j).getString("nama"));
@@ -339,7 +341,8 @@ public class ModelTrains extends ModelJSON {
             object.put("jadwal", list.get(i).jadwal);
             object.put("status", list.get(i).status);
             object.put("harga", list.get(i).harga);
-
+            //add ktp for history
+            object.put("user",list.get(i).user);
             JSONArray penumpang = new JSONArray();
             for (int j=0; j<list.get(i).nama.size(); j++) {
                 JSONObject o = new JSONObject();
@@ -358,7 +361,7 @@ public class ModelTrains extends ModelJSON {
         return temp;
     }
 
-    public String addBooking(String kode, String tgl, ArrayList<String> penumpangnew, ArrayList<String> kursi) throws JSONException, IOException {
+    public String addBooking(String kode, String tgl, ArrayList<String> penumpangnew, ArrayList<String> kursi,long jumlah) throws JSONException, IOException {
         JSONArray book = readJson("DataJson/booking.json");
         
         String tempp = String.valueOf(book.length());
@@ -377,6 +380,7 @@ public class ModelTrains extends ModelJSON {
             p.jadwal = book.getJSONObject(i).getString("jadwal");
             p.tanggal = book.getJSONObject(i).getString("tanggal");
             p.harga = book.getJSONObject(i).getString("harga");
+            p.user = book.getJSONObject(i).getString("user");
             JSONArray penumpang = book.getJSONObject(i).getJSONArray("penumpang");
             for (int j=0; j<penumpang.length(); j++) {
                 p.nama.add(penumpang.getJSONObject(j).getString("nama"));
@@ -395,8 +399,9 @@ public class ModelTrains extends ModelJSON {
             p.nama.add(penumpangnew.get(j));
             p.kursi.add(kursi.get(j));
         }
-
+        p.harga=String.valueOf(jumlah);
         p.status = "0";
+        p.user = User.session.getString("KTP");
         list.add(p);
 
         JSONArray arr = new JSONArray();
@@ -407,7 +412,7 @@ public class ModelTrains extends ModelJSON {
             object.put("jadwal", list.get(i).jadwal);
             object.put("status", list.get(i).status);
             object.put("harga", list.get(i).harga);
-
+            object.put("user", list.get(i).user);
             JSONArray penumpang = new JSONArray();
             for (int j=0; j<list.get(i).nama.size(); j++) {
                 JSONObject o = new JSONObject();
@@ -420,7 +425,7 @@ public class ModelTrains extends ModelJSON {
             object.put("penumpang", penumpang);
             arr.put(object);
         }
-
+//        System.out.println(arr.toString(2));
         this.writeToJson(arr.toString(2), "DataJson/booking.json");
 
         return rekening;
@@ -443,7 +448,7 @@ public class ModelTrains extends ModelJSON {
 	    		map = new HashMap();
 	    		map.put("tanggal",object.getString("tanggal"));
 	    		map.put("kodeJadwal",object.getString("jadwal"));
-	    		map.put("totalPembayaran",object.getString("totalPembayaran"));
+	    		map.put("harga",object.getString("harga"));
 	    		array.add(map);
 	        }
 	    }
@@ -476,7 +481,7 @@ public class ModelTrains extends ModelJSON {
 	    		map = new HashMap();
 	    		map.put("tanggal",object.getString("tanggal"));
 	    		map.put("kodeJadwal",object.getString("jadwal"));
-	    		map.put("totalPembayaran",object.getString("totalPembayaran"));
+	    		map.put("harga",object.getString("harga"));
 	    		array.add(map);
 	        }
 	    }
@@ -515,7 +520,7 @@ public class ModelTrains extends ModelJSON {
 	                
 	    		map.put("tanggal",dateString);
 	    		map.put("kodeJadwal",object.getString("jadwal"));
-	    		map.put("totalPembayaran",object.getString("totalPembayaran"));
+	    		map.put("harga",object.getString("harga"));
 	    		array.add(map);
 	        }
 	    }
@@ -528,7 +533,9 @@ class Pesan {
     public String tanggal;
     public String jadwal;
     public String status;
-    public String harga;
+    public String harga;    
+    public String user;
+    
     public ArrayList<String> nama = new ArrayList<>();
     public ArrayList<String> kursi = new ArrayList<>();
 }

@@ -75,8 +75,8 @@ public class ControllerReport{
     		String primary_key = data.get("tanggal")+data.get("kodeJadwal");
     		
     		if(data_final.containsKey(primary_key) ){
-    			Long newTotal =  Long.parseLong(data.get("totalPembayaran")) +  Long.parseLong(data_final.get(primary_key).get("totalPembayaran"));
-    			data.put("totalPembayaran",newTotal.toString());
+    			Long newTotal =  Long.parseLong(data.get("harga")) +  Long.parseLong(data_final.get(primary_key).get("harga"));
+    			data.put("harga",newTotal.toString());
     		}
     		
     		data_final.put(primary_key,data);
@@ -86,7 +86,7 @@ public class ControllerReport{
     		HashMap map = new HashMap();
     		map.put("tanggal",entry.getValue().get("tanggal"));
     		map.put("kodeJadwal",entry.getValue().get("kodeJadwal"));
-    		map.put("totalPembayaran",entry.getValue().get("totalPembayaran"));
+    		map.put("harga",entry.getValue().get("harga"));
     		array_final.add(map);
     		
     	}
@@ -114,8 +114,8 @@ public class ControllerReport{
     		String primary_key = data.get("tanggal");
     		
     		if(data_final.containsKey(primary_key) ){
-    			Long newTotal =  Long.parseLong(data.get("totalPembayaran")) +  Long.parseLong(data_final.get(primary_key).get("totalPembayaran"));
-    			data.put("totalPembayaran",newTotal.toString());
+    			Long newTotal =  Long.parseLong(data.get("harga")) +  Long.parseLong(data_final.get(primary_key).get("harga"));
+    			data.put("harga",newTotal.toString());
     		}
     		
     		data_final.put(primary_key,data);
@@ -125,7 +125,7 @@ public class ControllerReport{
     		HashMap map = new HashMap();
     		map.put("tanggal",entry.getValue().get("tanggal"));
     		map.put("kodeJadwal",entry.getValue().get("kodeJadwal"));
-    		map.put("totalPembayaran",entry.getValue().get("totalPembayaran"));
+    		map.put("harga",entry.getValue().get("harga"));
     		array_final.add(map);
     		
     	}
@@ -153,8 +153,8 @@ public class ControllerReport{
     		String primary_key = data.get("tanggal");
     		
     		if(data_final.containsKey(primary_key) ){
-    			Long newTotal =  Long.parseLong(data.get("totalPembayaran")) +  Long.parseLong(data_final.get(primary_key).get("totalPembayaran"));
-    			data.put("totalPembayaran",newTotal.toString());
+    			Long newTotal =  Long.parseLong(data.get("harga")) +  Long.parseLong(data_final.get(primary_key).get("harga"));
+    			data.put("harga",newTotal.toString());
     		}
     		
     		data_final.put(primary_key,data);
@@ -164,7 +164,7 @@ public class ControllerReport{
     		HashMap map = new HashMap();
     		map.put("tanggal",entry.getValue().get("tanggal"));
     		map.put("kodeJadwal",entry.getValue().get("kodeJadwal"));
-    		map.put("totalPembayaran",entry.getValue().get("totalPembayaran"));
+    		map.put("harga",entry.getValue().get("harga"));
     		array_final.add(map);
     		
     	}
