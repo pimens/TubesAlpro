@@ -20,24 +20,50 @@ public class MainMenu {
 
     public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
-        int pil;
+        int pil=-1;
+        String input;
+        
         System.out.println("Menu : ");
         System.out.println("1. Login ");
         System.out.println("2. Register ");
         do {
-            System.out.print("Pilihan : ");
-            pil = cin.nextInt();
-            if (pil > 2 || pil <= 0) {
-                System.out.println("Menu tidak valid");
-            }
-        } while (pil > 2 || pil <= 0);
-        if (pil == 1) {
-            u.login();
-        } else {
-            u.register();
+            System.out.print("Pilihan  :");
+            input = cin.nextLine();
+        	if(!checkInput(input)) {
+        		System.out.println("Input Salah");
+        	}else {
+        		pil = Integer.parseInt(input);
+        	}
+        }
+        while(!checkInput(input));
+        
+        
+        switch (pil) {
+            case 99:
+            	index();
+                break;
+            case 1:
+            	u.login();
+            	break;
+            case 2:
+            	u.register();
+            	break;
+            default:
+            	System.out.println("Input Salah");
+                System.out.println();
+                index();
+                break;
         }
     }
-
+    private boolean checkInput(String input) {
+        try {
+            Integer.valueOf(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+	}
+    
     public void login() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
         String email = "", pass = "";

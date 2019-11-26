@@ -56,6 +56,7 @@ public class MenuReport {
     			index++;
     		}
         }
+        System.out.println("99. Menu Utama");
     	
     	
         do {

@@ -30,7 +30,9 @@ public class MenuAdmin {
 
     public void index() throws FileNotFoundException, IOException, ParseException {
         Scanner cin = new Scanner(System.in);
-        int pil;
+        int pil = 0;
+        String input;
+        
         ControllerAdmin admin = new ControllerAdmin();
         ControllerReport reportService = new ControllerReport();
         ControllerTimeByRoute timeByRoute = new ControllerTimeByRoute();
@@ -53,11 +55,21 @@ public class MenuAdmin {
         System.out.println("10. Lihat Pemasukan ");
         System.out.println("11. Lihat Jadwal Kereta Api ");
         System.out.println("0. Logout ");
-        System.out.print("Pilihan  :");
-        pil = cin.nextInt();
+        
+        do {
+            System.out.print("Pilihan  :");
+            input = cin.nextLine();
+        	if(!checkInput(input)) {
+        		System.out.println("Input Salah");
+        	}else {
+        		pil = Integer.parseInt(input);
+        	}
+        }
+        while(!checkInput(input));
+        
         switch (pil) {
             case 0:
-                System.out.println("Terim Kasih");
+                System.out.println("Terima Kasih");
                 break;
             case 1:
                 admin.managePassenger();
@@ -105,4 +117,12 @@ public class MenuAdmin {
                 break;
         }
     }
+    private boolean checkInput(String input) {
+        try {
+            Integer.valueOf(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+	}
 }
