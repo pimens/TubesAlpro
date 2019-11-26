@@ -68,5 +68,41 @@
     ],
     "user": "0831290031341234",
     "status": "1"
+  },
+  {
+    "jadwal": "JW0",
+    "harga": "45000",
+    "kode": "0000000004",
+    "tanggal": "01-11-2019",
+    "penumpang": [{
+      "nama": "fr",
+      "kursi": "B4-3"
+    }],
+    "user": "6789678967896789",
+    "status": "1"
+  },
+  {
+    "jadwal": "JW0",
+    "harga": "45000",
+    "kode": "0000000005",
+    "tanggal": "01-11-2019",
+    "penumpang": [{
+      "nama": "K",
+      "kursi": "B4-4"
+    }],
+    "user": "6789678967896789",
+    "status": "0"
+  },
+  {
+    "jadwal": "JW0",
+    "harga": "45000",
+    "kode": "0000000006",
+    "tanggal": "01-11-2019",
+    "penumpang": [{
+      "nama": "p",
+      "kursi": "B4-5"
+    }],
+    "user": "6789678967896789",
+    "status": "1"
   }
 ]

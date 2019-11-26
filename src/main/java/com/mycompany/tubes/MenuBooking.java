@@ -92,7 +92,7 @@ public class MenuBooking {
 
         System.out.println("------------------------------------------");
 
-        System.out.println("Total Pembayaran = " + jumlah);
+        System.out.println("Total Pembayaran = " + printRupiah(jumlah));
         System.out.println("Kode Rekening = " + rekening);
 
         System.out.println("------------------------------------------");
@@ -103,12 +103,42 @@ public class MenuBooking {
         con.subMenu(pil + 1,"");
     }
 
+    public String printRupiah(double j) {
+        String rp = "Rp";
+        String angka = String.valueOf((int) j);
+        String tampung = "";
+
+        int flag = 0;
+        for (int i=angka.length()-1; i>=0; i--) {
+            tampung += angka.charAt(i);
+            flag += 1;
+            if (flag == 3) {
+                flag = 0;
+                tampung += '.';
+            }
+        }
+
+        StringBuilder input1 = new StringBuilder(); 
+  
+        // append a string into StringBuilder input1 
+        input1.append(tampung); 
+  
+        // reverse StringBuilder input1 
+        input1 = input1.reverse(); 
+  
+        // print reversed String 
+        rp += input1 + ",00";
+
+        return rp;
+    }
+
     public void payment() throws JSONException, IOException {
         System.out.println("# Pembayaran Tiket #");
         
         String status = "N";
         String rek;
         double jumlah;
+        int flag = 0;
         do {
             System.out.print("Kode Rekening : ");
             rek = sc.next();
@@ -116,16 +146,33 @@ public class MenuBooking {
             jumlah = sc.nextDouble();
             System.out.print("Apakah data pembayaran sudah benar (Y/N)? ");
             status = sc.next();
+
+            if (status.equals("Y")) {
+                System.out.println("------------------------------");
+                int cek = con.checkPayment(rek, String.valueOf((int) jumlah));
+                if (cek == 0) {
+                    System.out.println("Kode Rekening Tidak Ditemukan!");
+                } else if (cek == 2) {
+                    System.out.println("Harga kereta tidak sesuai dengan pembayaran!");
+                } else if (cek == 3) {
+                    System.out.println("Kode rekening di atas sudah dibayar!");
+                } else if (cek == 1) {
+                    System.out.println("Pembayaran Berhasil!");
+                    flag = 1;
+                } else if (cek == 4) {
+                    System.out.println("Kode Rekening tidak ditemukan pada akun anda!");   
+                }
+            }
         } while (status.equals("N"));
 
-        ArrayList<String> penumpang = con.payment(rek);
+        if (flag == 1) {
+            ArrayList<String> penumpang = con.payment(rek);
 
-        System.out.println("------------------------------");
-        System.out.println("Pembayaran Berhasil!");
-        System.out.println("Kode Tiket Anda = " + Character.toUpperCase(penumpang.get(0).charAt(0)) + rek.substring(7) + Character.toUpperCase(penumpang.get(0).charAt(penumpang.get(0).length()-1)) + 'Z');
-        for (int i=0; i<penumpang.size(); i++) {
-            int no = i+1;
-            System.out.println("Penumpang " + no + " = " + penumpang.get(i));
+            System.out.println("Kode Tiket Anda = " + Character.toUpperCase(penumpang.get(0).charAt(0)) + rek.substring(7) + Character.toUpperCase(penumpang.get(0).charAt(penumpang.get(0).length()-1)) + 'Z');
+            for (int i=0; i<penumpang.size(); i++) {
+                int no = i+1;
+                System.out.println("Penumpang " + no + " = " + penumpang.get(i));
+            }
         }
         System.out.println("------------------------------");
         System.out.println("99. Menu Utama");

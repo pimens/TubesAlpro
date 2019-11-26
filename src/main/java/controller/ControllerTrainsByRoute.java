@@ -57,6 +57,10 @@ public class ControllerTrainsByRoute {
         m.write();
     }
 
+    public ArrayList<String> getCurrent(String rute) {
+        return (m.getCurrent(rute));
+    }
+
     public boolean deleteData(String rute, String kode) throws FileNotFoundException, IOException {
         if (m.del(kode,rute)) {
             m.write();

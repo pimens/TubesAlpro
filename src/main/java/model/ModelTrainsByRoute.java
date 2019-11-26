@@ -46,6 +46,18 @@ public class ModelTrainsByRoute extends ModelJSON {
         return false;
     }
 
+    public ArrayList<String> getCurrent(String rute) {
+        ArrayList<String> temp = new ArrayList<>();
+
+        for (int i=0; i<routes.size(); i++) {
+            if (routes.get(i).equals(rute)) {
+                temp.add(trainCodes.get(i));
+            }
+        }
+
+        return (temp);
+    }
+
     public void read() throws FileNotFoundException, IOException {
         JSONArray arr = readJson("DataJson/trainbyroute.json");
         JSONArray kereta = readJson("DataJson/train.json");
@@ -94,7 +106,7 @@ public class ModelTrainsByRoute extends ModelJSON {
     public void write() throws FileNotFoundException, IOException {
         JSONArray arr = new JSONArray();
         
-        for (int i=0; i<routes.size(); i++) {
+        for (int i=0; i<trainCodes.size(); i++) {
             JSONObject object = new JSONObject();
             object.put("kodeKereta", getIdKereta(trainCodes.get(i)));
             object.put("kodeRute", getIdRute(routes.get(i)));

@@ -431,6 +431,31 @@ public class ModelTrains extends ModelJSON {
         return rekening;
     }
     
+    public int checkPayment(String rek, String jumlah, String user) throws FileNotFoundException {
+        JSONArray invoice = readJson("DataJson/booking.json");
+
+        int flag = 0;
+        for (int i=0; i<invoice.length(); i++) {
+            if (invoice.getJSONObject(i).getString("kode").equals(rek)) {
+                if (invoice.getJSONObject(i).getString("harga").equals(jumlah)) {
+                    flag = 1;
+                } else {
+                    flag = 2;
+                }
+                if (invoice.getJSONObject(i).getString("status").equals("1")) {
+                    flag = 3;
+                }
+
+                if (!invoice.getJSONObject(i).getString("user").equals(user)) {
+                    flag = 4;
+                }
+
+                break;
+            }
+        }
+
+        return flag;
+    }
     
     public ArrayList getDataByDate(String date) throws FileNotFoundException{
     	JSONArray invoice = readJson("DataJson/booking.json");

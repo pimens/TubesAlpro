@@ -37,6 +37,10 @@ public class ControllerBooking {
         return (m.addBooking(kode,tgl,penumpang, kursi,jumlah));
     }
 
+    public int checkPayment(String rek, String jumlah) throws FileNotFoundException {
+        return (m.checkPayment(rek, jumlah, User.session.getString("KTP")));
+    }
+
     public ArrayList<Schedule> getSchedule(String origin, String destination, String tgl) throws FileNotFoundException, IOException {
         
         //cari id orig & dest di json kota, cari di route yang id src dan dstnya ini, kode rutenya apa
