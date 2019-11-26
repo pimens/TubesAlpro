@@ -60,7 +60,7 @@ public class ControllerTrain {
     }
 
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
-        ContollerTrain c = new ContollerTrain();
+        ControllerTrain c = new ControllerTrain();
         c.index();
     }
 }
