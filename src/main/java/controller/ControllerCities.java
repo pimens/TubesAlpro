@@ -51,8 +51,7 @@ public class ControllerCities {
     //delete berdasarkan kode city, lempar kode ke JSON data,baru dijson data dicari kodenya itu, dihapus
     public boolean deleteCity(String kode) throws IOException {
         modelCity = new ModelCities();
-        modelCity.deleteCity(kode);
-        return true;
+        return modelCity.deleteCity(kode);
     }
 
     //ambil smua data kota dari model city, return ke view
@@ -60,27 +59,26 @@ public class ControllerCities {
         modelCity = new ModelCities();
         return modelCity.getDataKota();
     }
-    
+
     public String getKodeCity(String kota) throws IOException {
         modelCity = new ModelCities();
         return modelCity.getKodeCity(kota);
     }
 
     //edit city ambil input dari user lempar lagi ke JSON
-    public void editCity(String kodeLama,String kodeBaru,String kotaBaru) throws IOException {
+    public void editCity(String kodeLama, String kodeBaru, String kotaBaru) throws IOException {
         modelCity = new ModelCities();
-        modelCity.editCity(kodeLama,kodeBaru, kotaBaru);
+        modelCity.editCity(kodeLama, kodeBaru, kotaBaru);
 
     }
     //===================================END komunikasi JSON via Model=================================
-    
-    
+
     //ini cek apakah kota ada gak didatabase json
-    public boolean cityExist(String kode) throws FileNotFoundException{
+    public boolean cityExist(String kode) throws FileNotFoundException {
         modelCity = new ModelCities();
         return modelCity.cityExist(kode);
     }
-    
+
     //buat main sndiri utk ngecek
     public static void main(String[] args) throws IOException, ParseException {
         ControllerCities c = new ControllerCities();

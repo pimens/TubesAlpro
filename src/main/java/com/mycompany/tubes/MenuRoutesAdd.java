@@ -3,6 +3,7 @@ package com.mycompany.tubes;
 import controller.ControllerRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class MenuRoutesAdd {
@@ -15,7 +16,7 @@ public class MenuRoutesAdd {
         cin = new Scanner(System.in);
     }
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         String src, dst, b, p, idS, idD;
         int cek = 0;
         System.out.println("#TAMBAH DATA RUTE#");

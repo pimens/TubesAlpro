@@ -8,6 +8,7 @@ package com.mycompany.tubes;
 import controller.ControllerRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,7 +24,7 @@ public class MenuRoutesShow {
         c = new ControllerRoutes();
     }
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         System.out.println("#LIHAT DATA RUTE#");
         System.out.println("Lihat Data Lengkap Rute");
         print();

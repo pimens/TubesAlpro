@@ -62,9 +62,11 @@ public class ControllerTrainsByRoute {
     }
 
     public boolean deleteData(String rute, String kode) throws FileNotFoundException, IOException {
-        if (m.del(kode,rute)) {
+        boolean isDeleted = m.del(kode,rute);
+        
+        if (isDeleted) {
             m.write();
         }
-        return (m.del(kode,rute));
+        return (isDeleted);
     }
 }

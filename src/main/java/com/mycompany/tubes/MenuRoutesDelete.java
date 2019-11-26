@@ -8,6 +8,7 @@ package com.mycompany.tubes;
 import controller.ControllerRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 /**
@@ -22,7 +23,7 @@ public class MenuRoutesDelete {
         cin = new Scanner(System.in);
     }
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         String kode;
         System.out.println("#DELETE DATA RUTE#");
         c.print();

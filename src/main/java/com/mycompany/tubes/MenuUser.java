@@ -25,6 +25,7 @@ public class MenuUser {
         System.out.println("1. Booking Tiket ");
         System.out.println("2. Kelola Profil ");
         System.out.println("3. History ");
+        System.out.println("4. Lihat Daftar Booking ");
         System.out.println("0. Logout ;");
         System.out.print("Pilihan :");
         pil = cin.nextInt();

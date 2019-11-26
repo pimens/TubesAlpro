@@ -8,10 +8,12 @@ package com.mycompany.tubes;
 import controller.ControllerAdmin;
 import controller.ControllerCities;
 import controller.ControllerReport;
+import controller.ControllerRoutes;
 import controller.ControllerSchedules;
 import controller.ControllerStationsByRoutes;
 import controller.ControllerTime;
 import controller.ControllerTimeByRoute;
+import controller.ControllerTrain;
 import controller.ControllerTrainsByRoute;
 
 import java.io.FileNotFoundException;
@@ -39,13 +41,15 @@ public class MenuAdmin {
         ControllerSchedules schedules = new ControllerSchedules();
         ControllerCities city = new ControllerCities();
         ControllerTime time = new ControllerTime();
+        ControllerRoutes rute = new ControllerRoutes();
+        ControllerTrain train = new ControllerTrain();
         System.out.println("#Menu Admin#");
         System.out.println("Welcome, Admin");
         System.out.println("1. Kelola Akun ");
         System.out.println("2. Kelola Data Kota ");
         System.out.println("3. Generate Waktu ");
         System.out.println("4. Kelola Rute ");
-        System.out.println("5. Kelola Stasiun ");
+        System.out.println("5. Kelola Kereta ");
         System.out.println("6. Kelola Jalur Stasiun Pada Rute ");
         System.out.println("7. Kelola Waktu Pada Rute ");
         System.out.println("8. Kelola Kereta Pada Rute ");
@@ -70,10 +74,10 @@ public class MenuAdmin {
                 time.index();
                 break;
             case 4:
-                System.out.println("Rute");
+                rute.index();
                 break;
             case 5:
-                System.out.println("Stasiun");
+                train.index();
                 break;
             case 6:
                 stationByRoute.index("#Menu Stasiun Berdasarkan Rute#");

@@ -8,6 +8,7 @@ package com.mycompany.tubes;
 import controller.ControllerRoutes;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 /**
@@ -24,7 +25,7 @@ public class MenuRoutesEdit {
         cin = new Scanner(System.in);
     }
 
-    public void index() throws FileNotFoundException, IOException {
+    public void index() throws FileNotFoundException, IOException, ParseException {
         String kode;
         int cek = 0;
         String src, dst, b, p, idS, idD;
