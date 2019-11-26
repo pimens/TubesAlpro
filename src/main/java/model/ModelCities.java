@@ -15,10 +15,6 @@ import controller.ControllerCities;
 
 public class ModelCities extends ModelJSON {
 
-    File file = new File("DataJson/cities" + ".json");
-    BufferedReader br;
-    static int indexUser = 0;
-
     private String namaKota;
     private String kodeKota;
 
@@ -49,9 +45,7 @@ public class ModelCities extends ModelJSON {
     }
 
     public int getMaxId() throws FileNotFoundException {
-        br = new BufferedReader(new FileReader(file));
-        JSONTokener tokener = new JSONTokener(br);
-        JSONArray currentKota = new JSONArray(tokener);
+        JSONArray currentKota = readJson("DataJson/cities.json");
         int max = 0;
         if (currentKota.length() > 0) {
             for (int i = 0; i < currentKota.length(); i++) {
@@ -66,9 +60,7 @@ public class ModelCities extends ModelJSON {
     }
 
     public void addCity() throws FileNotFoundException, IOException {
-        br = new BufferedReader(new FileReader(file));
-        JSONTokener tokener = new JSONTokener(br);
-        JSONArray currentKota = new JSONArray(tokener);
+        JSONArray currentKota = readJson("DataJson/cities.json");
         JSONObject kotaDetails = new JSONObject();
         kotaDetails.put("kodeKota", getKodeKota());
         kotaDetails.put("nama", getNamaKota());
@@ -85,9 +77,7 @@ public class ModelCities extends ModelJSON {
 
     public void editCity(String kodelama, String kodeBaru, String kotaBaru) throws JSONException, IOException {
 
-        br = new BufferedReader(new FileReader(file));
-        JSONTokener tokener = new JSONTokener(br);
-        JSONArray currentkota = new JSONArray(tokener);
+        JSONArray currentkota = readJson("DataJson/cities.json");
         int cek = 0;
         for (int i = 0; i < currentkota.length(); i++) {
 
@@ -122,11 +112,11 @@ public class ModelCities extends ModelJSON {
     //cek city exist
     public boolean cityExist(String kode) throws FileNotFoundException {
         JSONArray city = readJson("DataJson/cities.json");
-        boolean cek=false;
-        for(int i=0;i<city.length();i++){
+        boolean cek = false;
+        for (int i = 0; i < city.length(); i++) {
             JSONObject o = city.getJSONObject(i);
-            if(kode.equals(o.get("kodeKota"))){                
-                cek=true;               
+            if (kode.equals(o.get("kodeKota"))) {
+                cek = true;
             }
         }
         return cek;
