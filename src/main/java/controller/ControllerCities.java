@@ -3,7 +3,6 @@ package controller;
 import com.mycompany.tubes.MenuKota;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
 import model.ModelCities;
 import org.json.JSONArray;
 
@@ -13,27 +12,27 @@ public class ControllerCities {
     ModelCities modelCity;
 
     //===================================Akses menu via controller=============================
-    public void index() throws IOException, FileNotFoundException, ParseException {
+    public void index() throws IOException {
         m = new MenuKota();
         m.index();
     }
 
-    public void showCity() throws IOException, FileNotFoundException, ParseException {
+    public void showCity() throws IOException {
         m = new MenuKota();
         m.showCity();
     }
 
-    public void menuAddCity() throws IOException, FileNotFoundException, ParseException {
+    public void menuAddCity() throws IOException {
         m = new MenuKota();
         m.menuAddCity();
     }
 
-    public void editCity() throws IOException, FileNotFoundException, ParseException {
+    public void editCity() throws IOException {
         m = new MenuKota();
         m.editCityMenu();
     }
 
-    public void deleteCity() throws IOException, FileNotFoundException, ParseException {
+    public void deleteCity() throws IOException {
         m = new MenuKota();
         m.deleteCityMenu();
     }
@@ -48,9 +47,9 @@ public class ControllerCities {
     }
 
     //delete berdasarkan kode city, lempar kode ke JSON data,baru dijson data dicari kodenya itu, dihapus
-    public boolean deleteCity(String kode) throws IOException {
+    public void deleteCity(String kode) throws IOException {
         modelCity = new ModelCities();
-        return modelCity.deleteCity(kode);
+        modelCity.deleteCity(kode);
 
     }
 
@@ -58,6 +57,11 @@ public class ControllerCities {
     public JSONArray getDataKota() throws IOException {
         modelCity = new ModelCities();
         return modelCity.getDataKota();
+    }
+    
+    public String getKodeCity(String kota) throws IOException {
+        modelCity = new ModelCities();
+        return modelCity.getKodeCity(kota);
     }
 
     //edit city ambil input dari user lempar lagi ke JSON
@@ -76,7 +80,7 @@ public class ControllerCities {
     }
     
     //buat main sndiri utk ngecek
-    public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
+    public static void main(String[] args) throws IOException {
         ControllerCities c = new ControllerCities();
         c.index();
     }
