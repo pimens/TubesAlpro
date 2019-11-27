@@ -46,8 +46,14 @@ public class MenuTimeByRouteAdd implements IMenuTimeByRoute{
         
 		// SHOW CONTENT
 		ArrayList<HashMap<String,String>>  data = timeByRoute.getDataTimeByRoute(inputRoute);
-    	List array = new ArrayList<String>(Arrays.asList(data.get(0).get("kodeWaktu").split("\\s*,\\s*")));
-    	
+		
+		List array = new ArrayList<String>();
+		
+		try {
+			array = new ArrayList<String>(Arrays.asList(data.get(0).get("kodeWaktu").split("\\s*,\\s*")));
+		}catch  (IndexOutOfBoundsException e)  {
+		}
+		
     	// PRINT INIT KODE WAKTU
     	showContent(data);
     	
