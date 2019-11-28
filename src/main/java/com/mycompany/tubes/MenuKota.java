@@ -104,9 +104,9 @@ public class MenuKota {
                     System.out.println("Kota Tidak Ada");
                 } else {
                     cek=0;
-                    System.out.print("kode kota :");
+                    System.out.print("Kode Kota : ");
                     kodekota = cin.nextLine();
-                    System.out.print("kota :");
+                    System.out.print("Kota : ");
                     kota = cin.nextLine();
                     cc.editCity(kotalama[1], kodekota, kota);
                 }
@@ -122,7 +122,7 @@ public class MenuKota {
 
         Scanner cin = new Scanner(System.in);
         String input = "";
-        System.out.print("Hapus Kota :");
+        System.out.print("Hapus Kota : ");
         input = cin.nextLine();
 
         if (input.contains("DELETE_")) {
@@ -133,7 +133,7 @@ public class MenuKota {
             }
             index();
         } else {
-            System.out.println("format salah");
+            System.out.println("Format Salah");
             index();
 
         }
