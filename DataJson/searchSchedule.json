@@ -10,10 +10,18 @@
         "dep": "TM95"
       },
       {
+        "arr": "01:00",
+        "rute": "MLG-SBY",
+        "kereta": "3",
+        "kode": "JW1",
+        "time": "60",
+        "dep": "TM1"
+      },
+      {
         "arr": "01:35",
         "rute": "GRE-SDR",
         "kereta": "2",
-        "kode": "JW1",
+        "kode": "JW2",
         "time": "65",
         "dep": "TM3"
       },
@@ -21,7 +29,7 @@
         "arr": "22:20",
         "rute": "GRE-SDR",
         "kereta": "2",
-        "kode": "JW2",
+        "kode": "JW3",
         "time": "65",
         "dep": "TM86"
       }
@@ -39,10 +47,18 @@
         "dep": "TM95"
       },
       {
+        "arr": "01:00",
+        "rute": "MLG-SBY",
+        "kereta": "3",
+        "kode": "JW1",
+        "time": "60",
+        "dep": "TM1"
+      },
+      {
         "arr": "01:35",
         "rute": "GRE-SDR",
         "kereta": "2",
-        "kode": "JW1",
+        "kode": "JW2",
         "time": "65",
         "dep": "TM3"
       },
@@ -50,7 +66,7 @@
         "arr": "22:20",
         "rute": "GRE-SDR",
         "kereta": "2",
-        "kode": "JW2",
+        "kode": "JW3",
         "time": "65",
         "dep": "TM86"
       }

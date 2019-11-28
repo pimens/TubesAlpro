@@ -1,12 +1,12 @@
 [
   {
-    "password": "f",
+    "password": "admin",
     "handphone": "567123456789",
     "KTP": "1231231231231234",
     "rule": "1",
     "id": "9",
     "namaLengkap": "flutttter",
-    "email": "f@"
+    "email": "admin@gmail.comm"
   },
   {
     "password": "0",
@@ -27,12 +27,12 @@
     "email": "al@gmail.com"
   },
   {
-    "password": "ggs",
-    "handphone": "678912343456",
+    "password": "rick",
+    "handphone": "089123789456",
     "KTP": "0831290031341234",
     "rule": "0",
     "id": "4",
-    "namaLengkap": "Ganteng ganteng serigala",
-    "email": "ggs@gmail.com"
+    "namaLengkap": "Ricky Harun",
+    "email": "rick@gmail.com"
   }
 ]

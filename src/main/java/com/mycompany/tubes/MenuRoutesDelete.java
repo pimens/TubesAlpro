@@ -29,7 +29,9 @@ public class MenuRoutesDelete {
         c.print();
         System.out.print("Kode Rute : ");
         kode = cin.next();
-        c.deleteRoute(kode);
+        if(c.deleteRoute(kode)){
+            System.out.println("Tidak dapat hapus rute, rute digunakan oleh banyak data");
+        }
         c.index();
     }
 

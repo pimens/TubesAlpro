@@ -91,7 +91,6 @@ public class ModelRoutes extends ModelJSON {
 
         for (int i = 0; i < getRoutes().length(); i++) {
             object = new JSONObject(getRoutes().get(i).toString());
-
             if (object.getString("id").equals(string)) {
                 return object.getString("kodeRute");
             }
@@ -107,19 +106,30 @@ public class ModelRoutes extends ModelJSON {
         routes = route;
     }
 
-    public void deleteRoute(String kode) throws IOException {
+    public boolean deleteRoute(String kode) throws IOException {
         JSONArray r = new JSONArray();
-        for (int i = 0; i < routes.length(); i++) {
-            JSONObject object = new JSONObject(routes.get(i).toString());
-            if (!object.getString("kodeRute").equals(kode)) {
-                r.put(object);
+        JSONArray sr = readJson("DataJson/StationsByRoute.json");
+        boolean exist = false;
+        for (int i = 0; i < sr.length(); i++) {
+            if (sr.getJSONObject(i).getString("id").equals(getIdByKodeRute(kode))) {
+                exist = true;
             }
         }
-        this.setRoutes(r);
-        writeToJson(routes.toString(2), "DataJson/routes.json");
+        if (!exist) {
+            for (int i = 0; i < routes.length(); i++) {
+                JSONObject object = new JSONObject(routes.get(i).toString());
+                if (!object.getString("kodeRute").equals(kode)) {
+                    r.put(object);
+                }
+            }
+            this.setRoutes(r);
+            writeToJson(routes.toString(2), "DataJson/routes.json");
+        }
+        return exist;
+
     }
 
-    public void edit(String src, String dst, String b, String p,String kode) throws FileNotFoundException, IOException {
+    public void edit(String src, String dst, String b, String p, String kode) throws FileNotFoundException, IOException {
         JSONObject o;
         ModelStationsByRoutes m = new ModelStationsByRoutes();
         String kodeS = m.getCityById(src);
@@ -132,7 +142,7 @@ public class ModelRoutes extends ModelJSON {
                 o.put("bisnis", b);
                 o.put("kodeRute", kodeS + "-" + kodeD);
                 o.put("premium", p);
-                routes.put(i,o);
+                routes.put(i, o);
             }
         }
         writeToJson(routes.toString(2), "DataJson/routes.json");

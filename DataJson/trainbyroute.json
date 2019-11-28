@@ -22,5 +22,9 @@
   {
     "kodeRute": "3",
     "kodeKereta": "1"
+  },
+  {
+    "kodeRute": "2",
+    "kodeKereta": "3"
   }
 ]

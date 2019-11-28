@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 public class ModelManageTrain extends ModelJSON {
 
     private String kodeKAI;
@@ -72,18 +71,25 @@ public class ModelManageTrain extends ModelJSON {
         return max;
     }
 
-    public void addTrain() throws FileNotFoundException, IOException {
+    public boolean addTrain() throws FileNotFoundException, IOException {
         JSONArray currentTrain = readJson("DataJson/train.json");
         JSONObject trainDetails = new JSONObject();
-        trainDetails.put("kodeKAI", kodeKAI);
-        trainDetails.put("nameStation", nameStation);
-        trainDetails.put("gerbong", gerbong);
-        trainDetails.put("business", business);
-        trainDetails.put("premium", premium);
-        System.out.println("idmu " + this.getMaxId());
-        trainDetails.put("id", String.valueOf(this.getMaxId() + 1));
-        currentTrain.put(trainDetails);
-        this.writeToJson(currentTrain.toString(2), "DataJson/train" + ".json");
+        String id = getIdKereta(kodeKAI);        
+        if (id.equals("")) {
+            trainDetails.put("kodeKAI", kodeKAI);
+            trainDetails.put("nameStation", nameStation);
+            trainDetails.put("gerbong", gerbong);
+            trainDetails.put("business", business);
+            trainDetails.put("premium", premium);
+            trainDetails.put("id", String.valueOf(this.getMaxId() + 1));
+            currentTrain.put(trainDetails);
+            this.writeToJson(currentTrain.toString(2), "DataJson/train" + ".json");
+            return false;
+        }else
+        {
+            return true;
+        }
+
     }
 
     public JSONArray getDataTrain() throws FileNotFoundException, IOException {
@@ -110,19 +116,41 @@ public class ModelManageTrain extends ModelJSON {
         this.writeToJson(currentTrain.toString(2), "DataJson/train" + ".json");
     }
 
-    public void deleteTrain(String kodelama) throws JSONException, IOException {
-        JSONArray currentTrain = readJson("DataJson/train.json");
-        int cek = 0;
-        for (int i = 0; i < currentTrain.length(); i++) {
-            JSONObject object = new JSONObject(currentTrain.get(i).toString());
-            if (object.getString("kodeKAI").equals(kodelama)) {
-
-                currentTrain.remove(i);
-
+    public String getIdKereta(String kode) throws FileNotFoundException {
+        String id = "";
+        JSONArray tr = readJson("DataJson/train.json");
+        for (int i = 0; i < tr.length(); i++) {
+            JSONObject o = tr.getJSONObject(i);
+            if (kode.equals(o.get("kodeKAI"))) {
+                id = o.getString("id");
             }
         }
+        return id;
+    }
 
-        this.writeToJson(currentTrain.toString(2), "DataJson/train" + ".json");
+    public boolean deleteTrain(String kodelama) throws JSONException, IOException {
+        JSONArray currentTrain = readJson("DataJson/train.json");
+        JSONArray tr = readJson("DataJson/trainbyroute.json");
+        String id = getIdKereta(kodelama);
+        boolean exist = false;
+        int cek = 0;
+        for (int i = 0; i < tr.length(); i++) {
+            JSONObject a = tr.getJSONObject(i);
+            if (a.getString("kodeKereta").equals(id)) {
+                exist = true;
+                break;
+            }
+        }
+        if (!exist) {
+            for (int i = 0; i < currentTrain.length(); i++) {
+                JSONObject object = new JSONObject(currentTrain.get(i).toString());
+                if (object.getString("kodeKAI").equals(kodelama)) {
+                    currentTrain.remove(i);
+                }
+            }
+            this.writeToJson(currentTrain.toString(2), "DataJson/train" + ".json");
+        }
+        return exist;
 
     }
 

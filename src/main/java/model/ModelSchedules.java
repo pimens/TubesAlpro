@@ -241,7 +241,6 @@ public class ModelSchedules extends ModelJSON {
                 }//for tra
             }//while token
         }//loop time
-
         System.out.println("No.\t Rute       \t dep     \t arrival \t KodeKereta \t waktu");
         for (int i = 0; i < sch.length(); i++) {
             JSONObject o = sch.getJSONObject(i);
@@ -285,6 +284,7 @@ public class ModelSchedules extends ModelJSON {
 
         }
         m.writeToJson(ts.toString(2), "DataJson/trainStatus.json");
+        m.writeToJson("", "DataJson/booking.json");
         m.writeToJson(jad.toString(2), "DataJson/searchSchedule.json");
     }
 
@@ -423,10 +423,10 @@ public class ModelSchedules extends ModelJSON {
         JSONArray arr = readJson("DataJson/searchSchedule.json");
         JSONObject o = arr.getJSONObject(0);
         arr = o.getJSONArray("jadwal");
-        for(int i=0;i<arr.length();i++){
+        for (int i = 0; i < arr.length(); i++) {
             JSONObject j = arr.getJSONObject(i);
-            if(kodeJadwal.equals(arr.getJSONObject(i).get("kode"))){
-                kj=arr.getJSONObject(i).getString("rute");
+            if (kodeJadwal.equals(arr.getJSONObject(i).get("kode"))) {
+                kj = arr.getJSONObject(i).getString("rute");
             }
         }
         return kj;

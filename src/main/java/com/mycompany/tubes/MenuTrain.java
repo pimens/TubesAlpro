@@ -70,7 +70,9 @@ public class MenuTrain {
 
             if (Integer.valueOf(gerbong) == (Integer.valueOf(business) + Integer.valueOf(premium))) {
                 if (Integer.valueOf(gerbong) <= 6) {
-                    c.addTrain(kodeKAI, gerbong, premium, business, nameStation);
+                    if(c.addTrain(kodeKAI, gerbong, premium, business, nameStation)){
+                        System.out.println("Sudah Ada");
+                    }
                     System.out.println("");
                 }else{
                     System.out.println("Gerbong maksimal 6 ");
@@ -154,7 +156,9 @@ public class MenuTrain {
         input = cin.nextLine();
         if (input.contains("DELETE_")) {
             String[] kotalama = input.split("_", 2);
-            c.deleteTrain(kotalama[1]);
+            if(c.deleteTrain(kotalama[1])){
+                System.out.println("Tidak Dapat Dihapus");
+            }
             index();
         } else {
             System.out.println("format salah");

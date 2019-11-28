@@ -24,13 +24,13 @@ public class ControllerTrain {
         m.addTrainMenu();
     }
 
-    public void addTrain(String kodeKAI, String gerbong, String premium, String business, String nameStation) throws IOException {
+    public boolean addTrain(String kodeKAI, String gerbong, String premium, String business, String nameStation) throws IOException {
         model.setBusiness(business);
         model.setGerbong(gerbong);
         model.setKodeKAI(kodeKAI);
         model.setNameStation(nameStation);
         model.setPremium(premium);
-        model.addTrain();
+        return model.addTrain();
     }
 
     public void showTrainMenu() throws IOException, FileNotFoundException, ParseException {
@@ -55,8 +55,8 @@ public class ControllerTrain {
         MenuTrain m = new MenuTrain();
         m.deleteTrainMenu();
     }
-    public void deleteTrain(String kodelama) throws JSONException, IOException{
-        model.deleteTrain(kodelama);
+    public boolean deleteTrain(String kodelama) throws JSONException, IOException{
+        return model.deleteTrain(kodelama);
     }
 
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {

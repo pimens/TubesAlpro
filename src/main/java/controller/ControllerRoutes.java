@@ -87,8 +87,8 @@ public class ControllerRoutes {
     }
 
 
-    public void deleteRoute(String kode) throws IOException {
-        model.deleteRoute(kode);
+    public boolean deleteRoute(String kode) throws IOException {
+        return model.deleteRoute(kode);
     }
 
     public void editRoute(String src, String dst, String b, String p,String kode) throws FileNotFoundException, IOException {
