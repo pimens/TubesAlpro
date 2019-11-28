@@ -57,7 +57,7 @@ public class MenuTrain {
         String business = "";
         String premium = "";
 
-        System.out.print("tambah stasiun :");
+        System.out.print("Tambah Kereta Api :");
         input = cin.nextLine();
         if (input.contains(" ")) {
             System.out.println("proses.....mohon tunggu");
@@ -77,12 +77,12 @@ public class MenuTrain {
                 }
                 index();
             } else {
-                System.out.println("format salah");
+                System.out.println("Format Salah");
                 index();
             }
 
         } else {
-            System.out.print("(Input Format Tidak Sesuai");
+            System.out.print("Input Format Tidak Sesuai");
             index();
 
         }
@@ -118,9 +118,9 @@ public class MenuTrain {
         input = cin.nextLine();
 
         if (input.contains("EDIT_")) {
-            System.out.print("kode KAI :");
+            System.out.print("Kode KAI :");
             kodeKAI = cin.nextLine();
-            System.out.print("Nama Stasiun :");
+            System.out.print("Nama Kereta :");
             nameStation = cin.nextLine();
             System.out.print("Gerbong :");
             gerbong = cin.nextLine();
@@ -134,12 +134,12 @@ public class MenuTrain {
                 c.editTrain(kotalama[1], kodeKAI, nameStation, gerbong, business, premium);
                 index();
             } else {
-                System.out.println("format salah");
+                System.out.println("Format Salah");
                 index();
             }
 
         } else {
-            System.out.println("format salah");
+            System.out.println("Format Salah");
             index();
 
         }
@@ -157,7 +157,7 @@ public class MenuTrain {
             c.deleteTrain(kotalama[1]);
             index();
         } else {
-            System.out.println("format salah");
+            System.out.println("Format Salah");
             index();
 
         }
