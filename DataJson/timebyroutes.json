@@ -1,26 +1,15 @@
 [
+  
   {
-    "kodeWaktu": "TM95",
-    "kodeWaktuRute": "WR0",
-    "kodeRute": "1",
-    "id": "0"
-  },
-  {
-    "kodeWaktu": "TM1",
+    "kodeWaktu": "TM1,TM19,TM5,TM57,TM90,TM93",
     "kodeWaktuRute": "WR1",
-    "kodeRute": "2",
+    "kodeRute": "1",
     "id": "1"
   },
   {
-    "kodeWaktu": "TM3,TM86",
-    "kodeWaktuRute": "WR2",
-    "kodeRute": "3",
-    "id": "2"
-  },
-  {
-    "kodeWaktu": "TM20,TM35",
-    "kodeWaktuRute": "WR3",
-    "kodeRute": "4",
-    "id": "3"
+    "kodeWaktu": "TM15,TM2,TM7,TM77,TM8,TM87",
+    "kodeWaktuRute": "WR0",
+    "kodeRute": "2",
+    "id": "0"
   }
 ]

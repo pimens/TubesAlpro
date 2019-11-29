@@ -29,9 +29,11 @@ import org.json.JSONObject;
 public class MenuAdmin {
 
     public static JSONObject session;
-
+    Scanner cin;
+    public MenuAdmin(){
+       cin = new Scanner(System.in);
+    }
     public void index() throws FileNotFoundException, IOException, ParseException {
-        Scanner cin = new Scanner(System.in);
         int pil = 0;
         String input;
         
@@ -74,6 +76,7 @@ public class MenuAdmin {
         switch (pil) {
             case 0:
                 System.out.println("Terima Kasih");
+                System.exit(0);
                 break;
             case 1:
                 admin.managePassenger();

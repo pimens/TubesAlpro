@@ -13,13 +13,13 @@ import org.json.JSONObject;
 public class MainMenu {
 
     Home u;
-
+    Scanner cin ;
     public MainMenu() {
         u = new Home();
+        cin = new Scanner(System.in);
     }
 
     public void index() throws FileNotFoundException, IOException, ParseException {
-        Scanner cin = new Scanner(System.in);
         int pil=-1;
         String input;
         
@@ -65,7 +65,7 @@ public class MainMenu {
 	}
     
     public void login() throws FileNotFoundException, IOException, ParseException {
-        Scanner cin = new Scanner(System.in);
+       
         String email = "", pass = "";
         System.out.println("#Login Sistem#");
         System.out.print("Email :");
@@ -90,7 +90,6 @@ public class MainMenu {
     }
 
     public void registerUser() throws FileNotFoundException, IOException, ParseException {
-        Scanner cin = new Scanner(System.in);
         Home u = new Home();
         String ktp, nama, hp, email, p, p2;
         System.out.println("#Register Sistem#");

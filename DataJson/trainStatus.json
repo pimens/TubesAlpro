@@ -87,6 +87,38 @@
             ],
             "jenis": "B",
             "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
           }
         ]
       },
@@ -160,6 +192,54 @@
             ],
             "jenis": "B",
             "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
           }
         ]
       },
@@ -265,11 +345,253 @@
             ],
             "jenis": "B",
             "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
           }
         ]
       },
       {
         "id": "JW3",
+        "duduk": [
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          }
+        ]
+      },
+      {
+        "id": "JW4",
+        "duduk": [
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
+          }
+        ]
+      },
+      {
+        "id": "JW5",
         "duduk": [
           {
             "kursi": [
@@ -464,6 +786,38 @@
             ],
             "jenis": "B",
             "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
           }
         ]
       },
@@ -537,6 +891,54 @@
             ],
             "jenis": "B",
             "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
           }
         ]
       },
@@ -642,11 +1044,253 @@
             ],
             "jenis": "B",
             "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
           }
         ]
       },
       {
         "id": "JW3",
+        "duduk": [
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          }
+        ]
+      },
+      {
+        "id": "JW4",
+        "duduk": [
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "P",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "1"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "2"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "3"
+          },
+          {
+            "kursi": [
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"},
+              {"status": "E"}
+            ],
+            "jenis": "B",
+            "gerbong": "4"
+          }
+        ]
+      },
+      {
+        "id": "JW5",
         "duduk": [
           {
             "kursi": [

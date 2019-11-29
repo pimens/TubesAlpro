@@ -2,36 +2,52 @@
   {
     "jadwal": [
       {
-        "arr": "00:30",
+        "arr": "01:20",
         "rute": "BDG-JKT",
         "kereta": "1",
         "kode": "JW0",
-        "time": "60",
-        "dep": "TM95"
-      },
-      {
-        "arr": "01:00",
-        "rute": "MLG-SBY",
-        "kereta": "3",
-        "kode": "JW1",
-        "time": "60",
+        "time": "80",
         "dep": "TM1"
       },
       {
-        "arr": "01:35",
-        "rute": "GRE-SDR",
-        "kereta": "2",
-        "kode": "JW2",
-        "time": "65",
-        "dep": "TM3"
+        "arr": "05:50",
+        "rute": "BDG-JKT",
+        "kereta": "1",
+        "kode": "JW1",
+        "time": "80",
+        "dep": "TM19"
       },
       {
-        "arr": "22:20",
-        "rute": "GRE-SDR",
-        "kereta": "2",
+        "arr": "15:20",
+        "rute": "BDG-JKT",
+        "kereta": "1",
+        "kode": "JW2",
+        "time": "80",
+        "dep": "TM57"
+      },
+      {
+        "arr": "05:10",
+        "rute": "MLG-SBY",
+        "kereta": "3",
         "kode": "JW3",
-        "time": "65",
-        "dep": "TM86"
+        "time": "100",
+        "dep": "TM15"
+      },
+      {
+        "arr": "20:40",
+        "rute": "MLG-SBY",
+        "kereta": "1",
+        "kode": "JW4",
+        "time": "100",
+        "dep": "TM77"
+      },
+      {
+        "arr": "23:10",
+        "rute": "MLG-SBY",
+        "kereta": "3",
+        "kode": "JW5",
+        "time": "100",
+        "dep": "TM87"
       }
     ],
     "tanggal": "01-11-2019"
@@ -39,36 +55,52 @@
   {
     "jadwal": [
       {
-        "arr": "00:30",
+        "arr": "01:20",
         "rute": "BDG-JKT",
         "kereta": "1",
         "kode": "JW0",
-        "time": "60",
-        "dep": "TM95"
-      },
-      {
-        "arr": "01:00",
-        "rute": "MLG-SBY",
-        "kereta": "3",
-        "kode": "JW1",
-        "time": "60",
+        "time": "80",
         "dep": "TM1"
       },
       {
-        "arr": "01:35",
-        "rute": "GRE-SDR",
-        "kereta": "2",
-        "kode": "JW2",
-        "time": "65",
-        "dep": "TM3"
+        "arr": "05:50",
+        "rute": "BDG-JKT",
+        "kereta": "1",
+        "kode": "JW1",
+        "time": "80",
+        "dep": "TM19"
       },
       {
-        "arr": "22:20",
-        "rute": "GRE-SDR",
-        "kereta": "2",
+        "arr": "15:20",
+        "rute": "BDG-JKT",
+        "kereta": "1",
+        "kode": "JW2",
+        "time": "80",
+        "dep": "TM57"
+      },
+      {
+        "arr": "05:10",
+        "rute": "MLG-SBY",
+        "kereta": "3",
         "kode": "JW3",
-        "time": "65",
-        "dep": "TM86"
+        "time": "100",
+        "dep": "TM15"
+      },
+      {
+        "arr": "20:40",
+        "rute": "MLG-SBY",
+        "kereta": "1",
+        "kode": "JW4",
+        "time": "100",
+        "dep": "TM77"
+      },
+      {
+        "arr": "23:10",
+        "rute": "MLG-SBY",
+        "kereta": "3",
+        "kode": "JW5",
+        "time": "100",
+        "dep": "TM87"
       }
     ],
     "tanggal": "02-11-2019"

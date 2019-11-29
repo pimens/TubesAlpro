@@ -50,10 +50,10 @@ public class MenuRoutesEdit {
             }
             idS = c.getIdByCity(src);
             idD = c.getIdByCity(dst);
-            if (c.isExistBySrcDsc(idS, idD)) {
-                System.out.println("Rute Sudah Ada");
-                cek = 1;
-            }
+            // if (c.isExistBySrcDsc(idS, idD)) {
+            //     System.out.println("Rute Sudah Ada");
+            //     cek = 1;
+            // }
         } while (cek == 1);
         c.editRoute(idS, idD, b, p,kode);
         c.index();

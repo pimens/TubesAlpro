@@ -32,6 +32,7 @@ public class MenuUser {
         switch (pil) {
             case 0:
                 System.out.println("Terima Kasih :)");
+                System.exit(0);
                 break;
             case 1:
                 book.index();
