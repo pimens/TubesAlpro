@@ -19,6 +19,7 @@ import java.util.Scanner;
 
 import org.json.JSONObject;
 
+import model.ModelManageTrain;
 import model.ModelSchedules;
 import model.ModelTrains;
 
@@ -27,10 +28,12 @@ public class ControllerReport{
 	public HashMap<Integer,IMenuReport> subMenu;
 	private ModelTrains invoice;
 	private ModelSchedules searchSchedule;
+	private ModelManageTrain trains;
 	
 	public ControllerReport() throws FileNotFoundException{
 		invoice = new ModelTrains();
 		searchSchedule = new ModelSchedules();
+		trains = new ModelManageTrain();
 		
 		subMenu = new HashMap<Integer,IMenuReport>();
 		subMenu.put(1, new MenuReportDaily(this));
@@ -65,7 +68,7 @@ public class ControllerReport{
 
 			try {
 				kodeKereta = searchSchedule.getKodeKeretaByKodeJadwalTanggal(data.get("kodeJadwal"),data.get("tanggal"));
-	        	kereta = searchSchedule.getKeretaByKodeKereta(kodeKereta);
+	        	kereta = trains.getKeretaByKodeKereta(kodeKereta);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}

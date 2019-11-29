@@ -77,7 +77,7 @@ public class ControllerTimeByRoute {
     
     public ArrayList<HashMap<String,String>> getDataTimeByRoute(String input) throws FileNotFoundException, IOException {
     	String id = routes.getIdByKodeRute(input);
-    	ArrayList<HashMap<String,String>> array_final = timeByRoutes.getDataByKodeRute(id);
+    	ArrayList<HashMap<String,String>> array_final = timeByRoutes.getDataById(id);
     	
     	return array_final;
     }

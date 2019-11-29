@@ -395,28 +395,7 @@ public class ModelSchedules extends ModelJSON {
         return "";
     }
 
-    public String getKeretaByKodeKereta(String kodeKereta) throws FileNotFoundException {
-        JSONArray data = readJson("DataJson/train.json");
 
-        JSONObject object = null;
-        ArrayList array = new ArrayList();
-        HashMap map = new HashMap();
-
-        int i = 0;
-        int cek = 0;
-
-        // GET KERETA DARI KODE KERETA
-        for (i = 0; i < data.length(); i++) {
-            object = new JSONObject(data.get(i).toString());
-//            System.out.println(kodeKereta);
-//            System.out.println(object);
-            if (object.getString("id").equals(kodeKereta)) {
-                // RETURN KERETA
-                return object.getString("kodeKAI");
-            }
-        }
-        return "";
-    }
 
     public String getRuteByKodeJadwal(String kodeJadwal) throws FileNotFoundException {
         String kj = "";

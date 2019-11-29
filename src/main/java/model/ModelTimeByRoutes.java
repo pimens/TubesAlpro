@@ -90,7 +90,7 @@ public class ModelTimeByRoutes extends ModelJSON {
             }
         }
 	}
-	public ArrayList<HashMap<String, String>> getDataByKodeRute(String input) {
+	public ArrayList<HashMap<String, String>> getDataById(String input) {
 
         JSONObject object = null;
         String kodeRute;
