@@ -240,12 +240,7 @@ public class ModelSchedules extends ModelJSON {
                     }
                 }//for tra
             }//while token
-        }//loop time
-        System.out.println("No.\t Rute       \t dep     \t arrival \t KodeKereta \t waktu");
-        for (int i = 0; i < sch.length(); i++) {
-            JSONObject o = sch.getJSONObject(i);
-            System.out.println(i + "--\t" + o.getString("rute") + " \t " + m.getWaktuByKode(o.getString("dep")) + " \t           " + o.getString("arr") + "\t      " + o.getString("kereta") + " \t         " + o.getString("time") + "   " + o.getString("kode"));
-        }
+        }//loop time       
         SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("dd-MM-yyyy");
         Calendar calendar = Calendar.getInstance();
         calendar.set(2019, Calendar.NOVEMBER, 1);
@@ -254,7 +249,7 @@ public class ModelSchedules extends ModelJSON {
         //json array paling luar
         JSONArray ts = new JSONArray();
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             //for json sch
             JSONObject jadwal = new JSONObject();
             String tgl = simpleDateFormat1.format(calendar.getTime());

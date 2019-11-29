@@ -22,6 +22,7 @@ public class MainMenu {
     public void index() throws FileNotFoundException, IOException, ParseException {
         int pil=-1;
         String input;
+        System.out.println("================Sistem Managemen Penjadwalan Kereta API================");
         
         System.out.println("Menu : ");
         System.out.println("1. Login ");
