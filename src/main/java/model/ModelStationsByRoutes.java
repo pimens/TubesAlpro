@@ -3,15 +3,16 @@ package model;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ModelStationsByRoutes extends ModelJSON {
 
-    //cek station exist in routes
+    // cek station exist in routes
     public boolean cekStation(String station, String idRute) throws FileNotFoundException {
         JSONArray stations = getStationsByRoutes(idRute);
         boolean cek = false;
-        //not check last data, cz last dest will be src in the next route
+        // not check last data, cz last dest will be src in the next route
         for (int i = 0; i < stations.length() - 1; i++) {
             JSONObject a = new JSONObject(stations.get(i).toString());
             if (station.equals(a.get("src")) || station.equals(a.get("dst"))) {
@@ -22,7 +23,7 @@ public class ModelStationsByRoutes extends ModelJSON {
         return cek;
     }
 
-    //get code city, add route need code city
+    // get code city, add route need code city
     public String getCityByName(String id) throws FileNotFoundException {
         JSONArray cities = readJson("DataJson/cities.json");
         String nama = "";
@@ -35,7 +36,7 @@ public class ModelStationsByRoutes extends ModelJSON {
         }
         return nama;
     }
-    
+
     public String getIdByCity(String city) throws FileNotFoundException {
         JSONArray cities = readJson("DataJson/cities.json");
         String id = "";
@@ -63,7 +64,7 @@ public class ModelStationsByRoutes extends ModelJSON {
 
     }
 
-    //getstation by route spesifik untuk rute 
+    // getstation by route spesifik untuk rute
     public JSONArray getStationsByRoutes(String id) throws FileNotFoundException {
         JSONArray routes = readJson("DataJson/StationsByRoute.json");
         JSONArray spesifik = null;
@@ -77,6 +78,18 @@ public class ModelStationsByRoutes extends ModelJSON {
         return spesifik;
     }
 
+    public void clean() throws JSONException, IOException {
+        JSONArray routes = readJson("DataJson/StationsByRoute.json");
+        for (int i = 0; i < routes.length(); i++) {
+            JSONObject a = new JSONObject(routes.get(i).toString());
+            if(a.getJSONArray("routes").length()==0){                
+                routes.remove(i);
+            }
+            
+        }
+        writeToJson(routes.toString(2), "DataJson/StationsByRoute.json");
+       
+    }
     public void addData(JSONObject r, String id) throws FileNotFoundException, IOException {
         JSONArray routes = readJson("DataJson/StationsByRoute.json");
         JSONArray newRoutes = new JSONArray();

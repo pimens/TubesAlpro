@@ -107,7 +107,9 @@ public class ModelRoutes extends ModelJSON {
     }
 
     public boolean deleteRoute(String kode) throws IOException {
-        JSONArray r = new JSONArray();
+        JSONArray r = new JSONArray();        
+        ModelStationsByRoutes m = new ModelStationsByRoutes();
+        m.clean();
         JSONArray sr = readJson("DataJson/StationsByRoute.json");
         boolean exist = false;
         for (int i = 0; i < sr.length(); i++) {
